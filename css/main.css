@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
+
+/* Trying new font familes */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Roboto+Condensed|Staatliches');
+
 /**
  * Base Variables
  */
@@ -84,17 +88,17 @@ ol, ul {
  * Underline Slide from left and back
  */
 /**
- * Button Slide
- * Need to still add hover state in parent element
- * box-shadow: inset 175px 0 0 0 $color-alpha;
- * color: $color-white;
- */
+   * Button Slide
+   * Need to still add hover state in parent element
+   * box-shadow: inset 175px 0 0 0 $color-alpha;
+   * color: $color-white;
+   */
 /**
- * Flex Grid
- */
+   * Flex Grid
+   */
 /**
- * Box Shadow
- */
+   * Box Shadow
+   */
 /**
  * Letter Spacing
  */
@@ -104,8 +108,8 @@ ol, ul {
   text-transform: uppercase; }
 
 /**
- * Black Color Overlay
- */
+   * Black Color Overlay
+   */
 .previews > *:first-child:after, .card__img:after, .mast:after, .next__link:after {
   content: '';
   position: absolute;
@@ -123,8 +127,8 @@ body {
   background-color: #f8f9f9; }
 
 /**
- * Sections
- */
+   * Sections
+   */
 section {
   position: relative; }
 
@@ -135,15 +139,15 @@ section {
   padding: 2em 0; }
 
 /**
- * Class Container (BEM)
- */
+   * Class Container (BEM)
+   */
 [class*='__container'] {
   position: relative;
   z-index: 1; }
 
 /**
- * Blog page
- */
+   * Blog page
+   */
 @media (max-width: 54em) {
   .previews {
     display: -ms-flexbox;
@@ -211,9 +215,9 @@ section {
           animation: fade-in 1s both; }
 
 /**
- * Blog Post Preview
- * On the Blog page
- */
+   * Blog Post Preview
+   * On the Blog page
+   */
 .previews__container {
   display: -ms-flexbox;
   display: flex;
@@ -277,9 +281,9 @@ section {
     transition: all 0.4s ease-in-out; }
 
 /**
- * Category Card
- * On the blog page under category tab
- */
+   * Category Card
+   * On the blog page under category tab
+   */
 .cards {
   display: -ms-flexbox;
   display: flex;
@@ -356,9 +360,9 @@ section {
   transition: all 0.4s ease-in-out; }
 
 /**
- * Pagination
- * On the Blog page when enough posts to paginate
- */
+   * Pagination
+   * On the Blog page when enough posts to paginate
+   */
 .pagination {
   display: -ms-flexbox;
   display: flex;
@@ -379,8 +383,8 @@ section {
       background-color: #877565; }
 
 /**
- * Footer
- */
+   * Footer
+   */
 .footer {
   display: -ms-flexbox;
   display: flex;
@@ -425,9 +429,9 @@ section {
       margin-right: 1em; }
 
 /**
- * Mast
- * On the Post page for the header section
- */
+   * Mast
+   * On the Post page for the header section
+   */
 .mast {
   position: relative;
   height: 35em;
@@ -456,8 +460,8 @@ section {
     line-height: 1.2; }
 
 /**
- * Navigation
- */
+   * Navigation
+   */
 .nav {
   position: fixed;
   padding: .60975609756em;
@@ -492,8 +496,8 @@ section {
       color: #fff; }
 
 /**
- * Profile Card
- */
+   * Profile Card
+   */
 .profile {
   width: 90%;
   max-width: 54em;
@@ -544,9 +548,9 @@ section {
       margin-right: 1em; }
 
 /**
- * Next Post
- * On the Post page for single post pagination
- */
+   * Next Post
+   * On the Post page for single post pagination
+   */
 .next {
   background-color: #0a0a0a; }
   .next__link {
@@ -576,9 +580,9 @@ section {
       font-family: "Inconsolata", monospace; }
 
 /**
- * Archives Page
- * Should be layout, but more elements added
- */
+   * Archives Page
+   * Should be layout, but more elements added
+   */
 .archives__header {
   padding: 1em;
   text-align: center; }
@@ -732,8 +736,8 @@ section {
   background-position: 50%; }
 
 /**
- * Color Helpers
- */
+   * Color Helpers
+   */
 .bg-black {
   background-color: #0a0a0a; }
 
