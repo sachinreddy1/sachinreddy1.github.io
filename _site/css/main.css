@@ -9,6 +9,7 @@
   box-sizing: border-box; }
 
 body {
+  /* Getting a new font for the body */
   font-family: "Inconsolata", monospace;
   -webkit-font-feature-settings: 'liga' 0;
           font-feature-settings: 'liga' 0;

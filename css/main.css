@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
-
-/* Trying new font familes */
-@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Roboto+Condensed|Staatliches');
-
 /**
  * Base Variables
  */
@@ -13,6 +9,7 @@
   box-sizing: border-box; }
 
 body {
+  /* Getting a new font for the body */
   font-family: "Inconsolata", monospace;
   -webkit-font-feature-settings: 'liga' 0;
      -moz-font-feature-settings: 'liga' 0;

@@ -82,11 +82,12 @@ var wow = new WOW({
     animateClass: 'fade-in'
 });
 
+// Scroll saving for the movie tab also?
 var scrollSave = (function() {
     return {
 
         init: function() {
-            if (document.getElementsByTagName("title")[0].innerHTML == "Dylan Huang"){
+            if (document.getElementsByTagName("title")[0].innerHTML == "Sachin Reddy"){
                 scrollSave.restore();
                 scrollSave.save();
             }
@@ -105,6 +106,7 @@ var scrollSave = (function() {
     }
 })();
 
+// Open and close the github activity tab
 var GithubTab = (function() {
     var state = false;
     tab = document.getElementById('gh-button');
@@ -126,14 +128,15 @@ var GithubTab = (function() {
     }
 })();
 
+// Initialize the tabs, the github tab, and the activity
 document.addEventListener('DOMContentLoaded', function() {
     Tabs.init();
     wow.init();
     GithubTab.init();
     GitHubActivity.feed({
-        username: "dphuang2",
+        username: "sachinreddy1",
         selector: "#feed",
     });
     scrollSave.init();
-    console.log("Nice to meet you fellow developer.");
+    console.log("Nice to meet you fellow developer! :^)");
 });
