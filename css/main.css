@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url('https://fonts.googleapis.com/css?family=Roboto|Staatliches');
 /**
  * Base Variables
  */
+
 /**
  * Base Settings/Overwrite Normalize
  */
@@ -10,12 +12,13 @@
 
 body {
   /* Getting a new font for the body */
-  font-family: "Inconsolata", monospace;
+  font-family: "Roboto", monospace;
   -webkit-font-feature-settings: 'liga' 0;
      -moz-font-feature-settings: 'liga' 0;
           font-feature-settings: 'liga' 0;
-  font-size: 100%;
-  line-height: 1.6; }
+          font-size: 100%;
+          line-height: 1.7; }
+
   @media (min-width: 20em) {
     body {
       font-size: 102.5%; } }
@@ -37,7 +40,7 @@ body {
 
 h1, h2 {
   margin: 0;
-  font-family: "Raleway", serif; }
+  font-family: "Staatliches", serif; }
 
 @media (min-width: 54em) {
   h1 {
@@ -50,12 +53,26 @@ h1, h2 {
 p {
   margin: 0 0 0.75em; }
 
+/* Profile Icon Animations */
 a {
   color: #0a0a0a;
   text-decoration: none;
   transition: color 0.4s ease-in-out; }
   a:hover, a:active, a:focus {
-    color: #877565; }
+    color: #e6365c93; }
+
+/* State Icon Animations */
+q {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.4s ease-in-out; }
+  q:hover, q:active, q:focus {
+    color: #e6365c93; }
+
+@media (min-width: 54em) {
+  q {
+    font-size: 3em; } }
+
 
 figure {
   margin: 0; }
@@ -74,11 +91,11 @@ ol, ul {
  */
 ::-moz-selection {
   color: #fff;
-  background-color: #877565;
+  background-color: #e6365c93;
   text-shadow: none; }
 ::selection {
   color: #fff;
-  background-color: #877565;
+  background-color: #e6365c93;
   text-shadow: none; }
 
 /**
@@ -100,7 +117,7 @@ ol, ul {
  * Letter Spacing
  */
 .tabs, .previews__container span, .preview__more, .card__more, .pagination, .footer__archive, .nav, .next__container span, .archives__header {
-  font-family: "Raleway", serif;
+  font-family: "Staatliches", serif;
   letter-spacing: 0.05em;
   text-transform: uppercase; }
 
@@ -114,7 +131,7 @@ ol, ul {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(10, 10, 10, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   transition: background-color 0.4s ease-in-out; }
 
 /**
@@ -169,6 +186,18 @@ section {
   @media (min-width: 54em) {
     .previews > *:last-child {
       margin-left: 45%; } }
+
+
+@font-face {
+  font-family: 'StateFaceRegular';
+  src: url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.eot');
+  src: url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.woff') format('woff'),
+        url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.ttf') format('truetype'),
+        url('stateface-regular-webfont.svg#StateFaceRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /**
  * Tabs
@@ -229,7 +258,7 @@ section {
   padding: 2em;
   color: #fff; }
   .previews__container span {
-    font-family: "Inconsolata", monospace; }
+    font-family: "Staatliches", monospace; }
 
 .preview {
   transition: background-color 0.2s ease-in-out; }
@@ -262,7 +291,7 @@ section {
         padding-left: 10em;
         padding-right: 14em; } }
   .preview__date {
-    font-family: "Raleway", serif;
+    font-family: "Staatliches", serif;
     color: #0a0a0a; }
   .preview__header {
     color: #877565; }
@@ -271,7 +300,7 @@ section {
   .preview__more {
     display: inline-block;
     padding: 0.5em;
-    font-family: "Raleway", serif;
+    font-family: "Staatliches", serif;
     color: #877565;
     border: 3px solid #877565;
     box-shadow: inset 0 0 0 0 #877565;
@@ -350,7 +379,7 @@ section {
 .card__more {
   display: inline-block;
   padding: 0.25em;
-  font-family: "Raleway", serif;
+  font-family: "Staatliches", serif;
   color: #877565;
   border: 3px solid #877565;
   box-shadow: inset 0 0 0 0 #877565;
@@ -397,9 +426,11 @@ section {
     .footer {
       -ms-flex-direction: row;
           flex-direction: row; } }
+
   .footer__archive {
     position: relative;
     color: #0a0a0a; }
+
     .footer__archive:after {
       content: '';
       position: absolute;
@@ -408,8 +439,10 @@ section {
       width: 0%;
       border-bottom: 3px solid #877565;
       transition: width 0.4s ease-in-out; }
+
     .footer__archive:hover:after {
       width: 100%; }
+
   .footer__social {
     display: -ms-flexbox;
     display: flex;
@@ -419,11 +452,107 @@ section {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
+
     @media (min-width: 30em) {
       .footer__social {
         margin-top: 0; } }
+
     .footer__social > *:not(:last-child) {
       margin-right: 1em; }
+
+/* --------------------------------------------- */
+
+.footer-states {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding-left: 2em;
+  padding-right: 2em; }
+  @media (min-width: 30em) {
+    .footer-states {
+      -ms-flex-direction: row;
+          flex-direction: row; } }
+
+  .footer-states__archive {
+    position: relative;
+    color: #0a0a0a; }
+
+    .footer-states__archive:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      border-bottom: 3px solid #877565;
+      transition: width 0.4s ease-in-out; }
+
+    .footer-states__archive:hover:after {
+      width: 100%; }
+
+  .footer-states__icons {
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 1em;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -10%); 
+          }
+
+    @media (min-width: 30em) {
+      .footer-states__icons {
+        margin-top: 0; } }
+
+    .footer-states__icons > *:not(:last-child) {
+      margin-right: 16em; 
+    }
+
+/* --------------------------------------------- */
+
+.flex-container {
+  display: -ms-flexbox;
+  display: flex;
+  /* flex-direction: row;
+  justify-content: center; */
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+@media (min-width: 30em) {
+  .flex-container {
+    -ms-flex-direction: row;
+        flex-direction: row; } }
+
+.flex-container > div {
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 80%;
+}
+
+.flex-container > *:not(:last-child) {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+}
+
+.flex-container > *:not(:first-child) {
+  position: absolute;
+  bottom: 0;
+  right: 3%;
+}
+
+/* --------------------------------------------- */
 
 /**
    * Mast
@@ -810,7 +939,7 @@ span.gha-time {
   left: 1px;
   width: calc(100% - 20px);
   padding: 10px;
-  height: 67px;
+  height: 77px;
   border-bottom: 1px solid #ddd;
   background: #ffffff;
   /* Old browsers */
@@ -1338,7 +1467,7 @@ span.gha-time {
 
 #about {
   text-align: center;
-  padding: 30px;
+  padding: 14px;
   margin: 0; }
 
 #picture-caption {
@@ -1375,17 +1504,14 @@ span.gha-time {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
 
-#sj-quote {
-  font-size: .9em; }
-
-#vimaddict {
+#movieaddict {
   position: relative;
-  padding-left: 19px; }
+  padding-left: 38px; }
 
-#vimsvg {
+#moviesvg {
   position: absolute;
-  top: 3px;
-  left: 0px; }
+  top: 0px;
+  left: 0px; } 
 
 /*
  *Github Activity Feed
@@ -1438,16 +1564,16 @@ span.gha-time {
   font-size: 1.5em; }
 
 .no-webp .hero_profile_img {
-  background-image: url("/assets/image/profile.jpg"); }
+  background-image: url("/assets/images/profile.jpg"); }
 
 .webp .hero_profile_img {
-  background-image: url("/assets/image/webp/profile.webp"); }
+  background-image: url("/assets/images/profile.webp"); }
 
 .no-webp .post_card_img {
-  background-image: url("/assets/image/card.jpg"); }
+  background-image: url("/assets/images/hero_profile_pic.jpg"); }
 
 .webp .post_card_img {
-  background-image: url("/assets/image/webp/card.webp"); }
+  background-image: url("/assets/images/webp/card.webp"); }
 
 .markdown-body {
   box-sizing: border-box;

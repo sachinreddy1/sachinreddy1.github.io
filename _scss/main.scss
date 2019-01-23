@@ -60,19 +60,16 @@
   top: 50%;
   transform: translateY(-50%);
 }
-#sj-quote{
-  font-size: .9em;
-}
 
-#vimaddict{
-  position: relative;
-  padding-left: 19px;
-}
-#vimsvg{
-  position: absolute;
-  top: 3px;
-  left: 0px;
-}
+// #vimaddict{
+//   position: relative;
+//   padding-left: 19px;
+// }
+// #vimsvg{
+//   position: absolute;
+//   top: 3px;
+//   left: 0px;
+// }
 
 /*
  *Github Activity Feed
@@ -141,6 +138,7 @@
   font-size: 1.5em;
 }
 
+// NEED TO CHANGE THESE FILES
 .no-webp .hero_profile_img {
     background-image: url('/assets/image/profile.jpg');
 }
