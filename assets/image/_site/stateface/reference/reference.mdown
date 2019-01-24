@@ -1,0 +1,160 @@
+# <div id="us">z<div id="ak">A</div><div id="hi">K</div></div> **StateFace**
+
+A font you can use in your web apps when you want tiny state shapes as a design element.
+
+It's designed to be used at small sizes, and the shapes have been highly simplified to make for a really small font. All 50 states plus D.C. and a wee continental U.S. map fit in about 22k, and they look great on Retina displays.
+
+At ProPublica we're using it in our [super PAC tracker](http://projects.propublica.org/pactrack).
+
+Download: [ZIP](http://propublica.github.com/stateface/pkg/stateface.zip) | [tar.gz](http://propublica.github.com/stateface/pkg/stateface.tar.gz) | [Source Repo](http://github.com/propublica/stateface) | [Bower](#bower)
+
+## How to Use
+
+The easiest way to use StateFace on the web is to use FontSquirrel's technique to serve StateFace in a reliably cross-platform way:
+
+1. In the `font/webfont` directory, find the following files and upload them to your webserver.
+
+        stateface-regular-webfont.eot
+        stateface-regular-webfont.woff
+        stateface-regular-webfont.ttf
+        stateface-regular-webfont.svg
+
+    Note: Firefox gets a bit testy about cross-domain-origin assets so it's really best to serve them from your actual webserver.
+
+2. Include this chunk of CSS in a stylesheet that's called from your web page. Use the correct paths, of course.
+
+        @font-face {
+            font-family: 'StateFaceRegular';
+            src: url('stateface-regular-webfont.eot');
+            src: url('stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('stateface-regular-webfont.woff') format('woff'),
+                 url('stateface-regular-webfont.ttf') format('truetype'),
+                 url('stateface-regular-webfont.svg#StateFaceRegular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+3. Now, any text that has or inherits the font-family 'StateFaceRegular' style will appear as a state shape. See the character reference below to know which letter will draw which state, or [download the handy json file](http://propublica.github.com/stateface/reference/stateface.json) for programmatic access.
+
+4. As an alternative to the StateFace code, you can use the [stylesheet](stateface.css) put together by [Paul Smith](https://github.com/paulsmith) to add CSS classes that correspond to a stateface's two-letter USPS abbreviation.
+
+If you just want the OpenType font to use in a print layout you can [download it here](http://propublica.github.com/stateface/font/StateFace-Regular.otf).
+
+## CSS Replacement
+
+[Paul Smith](https://github.com/paulsmith) put together a [stylesheet](stateface.css) that allows for css-based replacement (or prepending) of text. For example, for replacement you'd use:
+
+        <span class="stateface stateface-replace stateface-{abbrev}">{statename}</span>
+
+Which could produce <span class="stateface stateface-replace stateface-md">Maryland</span>
+
+If you only want to prepend the state shape to the span you can do:
+
+        <span class="stateface stateface-{abbrev}">{statename}</span>
+
+So you can write sentences like: I was born in <span class="stateface stateface-co">Colorado</span> and then moved to <span class="stateface stateface-fl">Florida</span>, and graduated from high school in
+<span class="stateface stateface-ca">California</span>.
+
+There is a full demo [here](reference/cssclass.html).
+
+[Angela Murrell](https://github.com/amurrell) wrote a [Sass](reference/stateface.scss) file you can use in your Sass projects. It compiles to this CSS [stylesheet](reference/stateface-generated.css), but you could rewrite the Sass to generate custom CSS easily.
+
+<p><strong>Note:</strong> Support for Guam is in this Sass file, but it's not yet an icon. We'll get to it soon.</p>
+
+To use it to replace,
+
+        <span class="sf-new-mexico sf-replace">Words, and you must have them!</span>
+
+
+Many argue that <span class="sf-california sf-replace">california</span> is the best state.
+
+To use it to prepend,
+
+        <span class="sf-new-mexico">Words, prepended by a state icon.</span>
+
+Let's borrow that sentence again: I was born in <span class="sf-colorado">Colorado</span> and then moved to <span class="sf-fl">Florida</span>, and graduated from high school in
+<span class="sf-06">California</span>.
+
+Here's the full range of what you can do with that great primary battleground state, <span class="sf-nh">New Hampshire:</span>
+
+        <span class="sf-new-hampshire">Words, prepended by a state icon.</span>
+        <span class="sf-nh">Words, prepended by a state icon.</span>
+        <span class="sf-33">Words, prepended by a state icon.</span>
+        <span class="sf-new-hampshire sf-replace">Words, and you must have them!</span>
+        <span class="sf-nh sf-replace">Words, and you must have them!</span>
+        <span class="sf-33 sf-replace">Words, and you must have them!</span>
+
+
+## StateFace Keyboard Map
+
+<%= table %>
+
+## Projection Info
+
+Each state is projected using a relevant state plane projection, and the U.S. (lowercase z) is projected using [Texas Centric Albers Equal Area](http://spatialreference.org/ref/epsg/3083/). The source [shapefiles](https://github.com/propublica/stateface/tree/master/tools/us-states) are adapted from [Natural Earth data](http://www.naturalearthdata.com/). See Natural Earth's [terms of use](http://www.naturalearthdata.com/about/terms-of-use/) for details.
+
+<a name="bower"></a>
+## Installing via Bower
+
+You can install and manage StateFace using [Bower](https://bower.io):
+
+    > bower install stateface
+
+Or, add to your `bower.json`:
+
+    {
+      "name": "my bower-powered project",
+      "dependencies": {
+        "stateface": "1.0.0"
+      }
+    }
+
+
+## Forking and Contributing
+
+The [Glyphs Mini](http://itunes.apple.com/us/app/glyphs-mini/id469036911?mt=12) `.glyphs` file is [included in the repo](http://propublica.github.com/stateface/font/stateface.glyphs) if any type (especially hinting) experts want to try their hand at tuning it.
+
+FontSquirrel's [FontFace Generator](http://www.fontsquirrel.com/fontface/generator) generated the files in `font/webfont`.
+
+If you want to re-make the `.eps` files the `tools` directory includes a program to do so. You'll need to have [GDAL](http://www.gdal.org/) installed.
+Running `make state-plane` or `make albers` will make a fresh copy.
+
+## Packages and Modules Including StateFace
+
+* [stateface-rails](https://github.com/farski/stateface-rails)
+* [django-stateface](https://github.com/ryanpitts/django-stateface)
+* [latimes-statestyle](https://github.com/datadesk/latimes-statestyle)
+* [AP Style in Ruby, with StateFace](https://gist.github.com/2045456)
+
+## In The Wild
+
+* [Huffington Post Elections Dashboard](http://elections.huffingtonpost.com/2012/general)
+* [Washington Post: The Race for House Control](http://www.washingtonpost.com/wp-srv/special/politics/election-map-2012/house/)
+* [The Guardian: Is Barack Obama the President?](http://www.isbarackobamathepresident.com/)
+* [Talking Points Memo: PollTracker](http://polltracker.talkingpointsmemo.com/)
+* [ShiftIcons](https://www.shifticons.com/icons/propublica/stateface/)
+* [Spokesman-Review Election Center](http://www.spokesman.com/elections/)
+
+## License
+
+    Copyright (c) 2012, ProPublica
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is furnished
+    to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+    IN THE SOFTWARE.
+
+_StateFace is a project of ProPublica._

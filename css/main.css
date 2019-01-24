@@ -194,7 +194,7 @@ section {
   src: url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
         url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.woff') format('woff'),
         url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.ttf') format('truetype'),
-        url('stateface-regular-webfont.svg#StateFaceRegular') format('svg');
+        url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/image/stateface/font/webfont/stateface-regular-webfont.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1564,16 +1564,16 @@ span.gha-time {
   font-size: 1.5em; }
 
 .no-webp .hero_profile_img {
-  background-image: url("/assets/images/profile.jpg"); }
+  background-image: url("/assets/image/profile.jpg"); }
 
 .webp .hero_profile_img {
-  background-image: url("/assets/images/profile.webp"); }
+  background-image: url("/assets/image/profile.webp"); }
 
 .no-webp .post_card_img {
-  background-image: url("/assets/images/hero_profile_pic.jpg"); }
+  background-image: url("/assets/image/hero_profile_pic.jpg"); }
 
 .webp .post_card_img {
-  background-image: url("/assets/images/webp/card.webp"); }
+  background-image: url("/assets/image/webp/card.webp"); }
 
 .markdown-body {
   box-sizing: border-box;
