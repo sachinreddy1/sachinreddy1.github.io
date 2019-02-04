@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 @import url('https://fonts.googleapis.com/css?family=Roboto|Staatliches');
+@font-face {
+  font-family: 'StateFaceRegular';
+  src: url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.eot');
+  src: url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.woff') format('woff'),
+        url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.ttf') format('truetype'),
+        url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/image/stateface/font/webfont/stateface-regular-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
 /**
  * Base Variables
  */
@@ -18,40 +28,53 @@ body {
           font-feature-settings: 'liga' 0;
           font-size: 100%;
           line-height: 1.7; }
+/* Font size based on width */
+@media (min-width: 20em) {
+  body {
+    font-size: 102.5%; } }
+@media (min-width: 30em) {
+  body {
+    font-size: 105%; } }
+@media (min-width: 54em) {
+  body {
+    font-size: 107.5%; } }
+@media (min-width: 64em) {
+  body {
+    font-size: 110%; } }
+@media (min-width: 76.5em) {
+  body {
+    font-size: 115%; } }
+@media (min-width: 114em) {
+  body {
+    font-size: 125%; } }
 
-  @media (min-width: 20em) {
-    body {
-      font-size: 102.5%; } }
-  @media (min-width: 30em) {
-    body {
-      font-size: 105%; } }
-  @media (min-width: 54em) {
-    body {
-      font-size: 107.5%; } }
-  @media (min-width: 64em) {
-    body {
-      font-size: 110%; } }
-  @media (min-width: 76.5em) {
-    body {
-      font-size: 115%; } }
-  @media (min-width: 114em) {
-    body {
-      font-size: 125%; } }
-
+/* Header for the webpage */
 h1, h2 {
   margin: 0;
   font-family: "Staatliches", serif; }
-
 @media (min-width: 54em) {
   h1 {
     font-size: 3em; } }
-
 @media (min-width: 76.5em) {
   h1 {
     font-size: 3.5em; } }
 
+@media (min-width: 54em) {
+  h2 {
+    font-size: 20px; } }
+@media (min-width: 76.5em) {
+  h2 {
+    font-size: 24px; } }
+  
+
 p {
   margin: 0 0 0.75em; }
+
+r {
+  font-family: "Roboto";
+  color: #000000;
+  font-weight: 500;
+}
 
 /* Profile Icon Animations */
 a {
@@ -68,18 +91,16 @@ img {
   display: block;
   max-width: 100%; }
 
-
+/* State icons for the footer */
 qi {
+    padding-bottom: 3%;
+    padding: 3%;
     list-style: none;
-    font-size: 50px;
-}
+    font-size: 50px; }
 
 g {
   display: block;
   max-width: 100%; }
-  /* transition: color 0.4s ease-in-out; }
-  g:hover, g:active, g:focus {
-    color: #e6365c93; } */
 
 ol, ul {
   margin: 0;
@@ -140,6 +161,28 @@ ol, ul {
 body {
   background-color: #f8f9f9; }
 
+/* --------------------------------------------- */
+/**
+   * Movie Page Layout
+*/
+
+m {
+  position: relative;
+  padding-left: 0%;
+  color: #000000;
+  font-weight: 500;
+}
+
+.checked {
+  color: orange;
+}
+
+.unchecked {
+  color: white;
+}
+
+/* --------------------------------------------- */
+
 /**
    * Sections
    */
@@ -179,27 +222,138 @@ section {
       top: 0;
       left: 0;
       height: 100%;
-      width: 45%; } }
+      width: 42%; } }
 
 .previews > *:last-child {
   min-height: 100vh; }
   @media (min-width: 54em) {
     .previews > *:last-child {
-      margin-left: 45%; } }
-
-
-@font-face {
-  font-family: 'StateFaceRegular';
-  src: url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.eot');
-  src: url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.woff') format('woff'),
-        url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.ttf') format('truetype'),
-        url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/image/stateface/font/webfont/stateface-regular-webfont.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+      margin-left: 42%; } }
 
 /* --------------------------------------------- */
+
+/**
+   * Blog Post Preview
+   * On the Blog page
+   */
+   .previews__container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 2em;
+    color: #fff; }
+    .previews__container span {
+      font-family: "Staatliches", monospace; }
+  
+  .preview {
+    transition: background-color 0.2s ease-in-out; }
+    .preview:nth-child(even) {
+      background-color: #fff; }
+    .preview:hover {
+      background-color: rgba(135, 117, 101, 0.05); }
+      .preview:hover .preview__more {
+        box-shadow: inset 175px 0 0 0 #877565;
+        color: #fff; }
+    .preview__img {
+      will-change: opacity;
+      -webkit-animation: fade-in 1s both;
+              animation: fade-in 1s both; }
+    .preview__link {
+      display: block;
+      padding: 2em calc(2em + 6.5em) 2em 1em;
+      position: relative; }
+      @media (min-width: 54em) {
+        .preview__link {
+          padding: 3em calc(3em + 7em) 3em 2em; } }
+      @media (min-width: 64em) {
+        .preview__link {
+          padding: 3em calc(3em + 10em) 3em 3em; } }
+      @media (min-width: 76.5em) {
+        .preview__link {
+          padding: 3em calc(3em + 13em) 3em 5em; } }
+      @media (min-width: 114em) {
+        .preview__link {
+          padding-left: 10em;
+          padding-right: 14em; } }
+    .preview__date {
+      font-family: "Staatliches", serif;
+      color: #0a0a0a; }
+    .preview__header {
+      color: #877565; }
+    .preview__excerpt {
+      color: #0a0a0a; }
+    .preview__more {
+      display: inline-block;
+      padding: 0.5em;
+      font-family: "Staatliches", serif;
+      color: #877565;
+      border: 3px solid #877565;
+      box-shadow: inset 0 0 0 0 #877565;
+      transition: all 0.4s ease-in-out; }
+
+/* --------------------------------------------- */
+
+  .mpreview {
+    transition: background-color 0.2s ease-in-out; }
+
+    .mpreview:nth-child(even) {
+      background-color: #fff; }
+    .mpreview:hover {
+      background-color: rgba(135, 117, 101, 0.05); }
+      .mpreview:hover .mpreview__more {
+        box-shadow: inset 175px 0 0 0 #877565;
+        color: #fff; }
+    .mpreview__img {
+      will-change: opacity;
+      -webkit-animation: fade-in 1s both;
+              animation: fade-in 1s both; }
+
+    .mpreview__link {
+      display: block;
+      padding: 1em calc(2em + 3em) 2em 1em;
+      position: relative; }
+
+      @media (min-width: 54em) {
+        .mpreview__link {
+          padding: 1em calc(2em + 3em) 2em 2em; } }
+      @media (min-width: 64em) {
+        .mpreview__link {
+          padding: 1em calc(2em + 5em) 2em 2em; } }
+      @media (min-width: 76.5em) {
+        .mpreview__link {
+          padding: 1em calc(2em + 5em) 2em 2em; } }
+      @media (min-width: 114em) {
+        .mpreview__link {
+          padding-left: 10em;
+          padding-right: 14em; } }
+
+    .mpreview__date {
+      padding-bottom: 10%;
+      font-family: "Staatliches", serif;
+      color: #0a0a0a; }
+
+    .mpreview__header {
+      color: #877565; }
+
+    .mpreview__excerpt {
+      color: #0a0a0a; }
+
+    .mpreview__more {
+      display: inline-block;
+      padding: 0.5em;
+      font-family: "Staatliches", serif;
+      color: #877565;
+      border: 3px solid #877565;
+      box-shadow: inset 0 0 0 0 #877565;
+      transition: all 0.4s ease-in-out; }
+
 /* --------------------------------------------- */
 
 /**
@@ -209,105 +363,73 @@ section {
 .tabs {
   display: -ms-flexbox;
   display: flex;
+  /* -ms-flex-direction: column;
+      flex-direction: column; */
   -ms-flex-pack: distribute;
       justify-content: space-around;
   padding: 1em; }
+
+  /* Adjusting the width for different layouts */
   @media (min-width: 54em) {
     .tabs {
-      padding-left: 8em;
-      padding-right: 8em; } }
+      padding-left: 1em;
+      padding-right: 1em; } }
   @media (min-width: 114em) {
     .tabs {
-      padding-left: 10em;
-      padding-right: 10em; } }
+      padding-left: 1em;
+      padding-right: 1em; } }
+
   .tabs__item {
     cursor: pointer; }
+
     .tabs__item:not(.active) {
       position: relative;
       color: #0a0a0a; }
+
       .tabs__item:not(.active):after {
         content: '';
         position: absolute;
         bottom: 0;
-        left: 0;
+        right: 0%;
         width: 0%;
-        border-bottom: 3px solid #877565;
-        transition: width 0.4s ease-in-out; }
+        border-bottom: 4px solid #876565;
+        transition: width 0.4s ease-in-out;
+      }
+
       .tabs__item:not(.active):hover:after {
-        width: 100%; }
+        width: 100%;        
+      }
+    
     .tabs__item.active {
-      border-bottom: 3px solid #877565; }
+      border-bottom: 4px solid #876565; }
 
 .tab.active {
   will-change: opacity;
   -webkit-animation: fade-in 1s both;
           animation: fade-in 1s both; }
 
-/**
-   * Blog Post Preview
-   * On the Blog page
-   */
-.previews__container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center;
-  height: 100%;
-  width: 100%;
-  padding: 2em;
-  color: #fff; }
-  .previews__container span {
-    font-family: "Staatliches", monospace; }
+/* --------------------------------------------- */
 
-.preview {
-  transition: background-color 0.2s ease-in-out; }
-  .preview:nth-child(even) {
-    background-color: #fff; }
-  .preview:hover {
-    background-color: rgba(135, 117, 101, 0.05); }
-    .preview:hover .preview__more {
-      box-shadow: inset 175px 0 0 0 #877565;
-      color: #fff; }
-  .preview__img {
-    will-change: opacity;
-    -webkit-animation: fade-in 1s both;
-            animation: fade-in 1s both; }
-  .preview__link {
-    display: block;
-    padding: 2em calc(2em + 6.5em) 2em 1em;
-    position: relative; }
-    @media (min-width: 54em) {
-      .preview__link {
-        padding: 3em calc(3em + 7em) 3em 2em; } }
-    @media (min-width: 64em) {
-      .preview__link {
-        padding: 3em calc(3em + 10em) 3em 3em; } }
-    @media (min-width: 76.5em) {
-      .preview__link {
-        padding: 3em calc(3em + 13em) 3em 5em; } }
-    @media (min-width: 114em) {
-      .preview__link {
-        padding-left: 10em;
-        padding-right: 14em; } }
-  .preview__date {
-    font-family: "Staatliches", serif;
-    color: #0a0a0a; }
-  .preview__header {
-    color: #877565; }
-  .preview__excerpt {
-    color: #0a0a0a; }
-  .preview__more {
-    display: inline-block;
-    padding: 0.5em;
-    font-family: "Staatliches", serif;
-    color: #877565;
-    border: 3px solid #877565;
-    box-shadow: inset 0 0 0 0 #877565;
-    transition: all 0.4s ease-in-out; }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* --------------------------------------------- */
 
 /**
    * Category Card
@@ -411,6 +533,8 @@ section {
       color: #fff;
       background-color: #877565; }
 
+/* --------------------------------------------- */
+
 /**
    * Footer
    */
@@ -463,6 +587,7 @@ section {
     .footer__social > *:not(:last-child) {
       margin-right: 1em; }
 
+/* --------------------------------------------- */
 
 .flex-container {
   display: -ms-flexbox;
@@ -480,8 +605,6 @@ section {
   .flex-container {
     -ms-flex-direction: row;
         flex-direction: row; } }
-
-/* --------------------------------------------- */
 
 .flex-container > ul {
   width: 100px;
@@ -1429,12 +1552,31 @@ span.gha-time {
   margin-left: .5em;
   font-size: 0.7em; }
 
+.post-video-wrapper {
+  height: 8em;
+  width: 15em;
+  position: absolute;
+  right: 2em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  overflow: hidden; }
+  @media (min-width: 54em) {
+    .post-video-wrapper {
+      right: 2em; } }
+  @media (min-width: 64em) {
+    .post-video-wrapper {
+      right: 2em; } }
+  @media (min-width: 76.5em) {
+    .post-video-wrapper {
+      right: 2em; } }
+
 .post-image-wrapper {
   height: 7em;
   width: 7em;
   border-radius: 50%;
   position: absolute;
-  right: 1em;
+  right: 2em;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -1444,14 +1586,14 @@ span.gha-time {
       right: 2em; } }
   @media (min-width: 64em) {
     .post-image-wrapper {
-      right: 3em; } }
+      right: 2em; } }
   @media (min-width: 76.5em) {
     .post-image-wrapper {
-      right: 5em; } }
+      right: 2em; } }
 
 .post-image {
-  width: initial;
-  max-width: initial;
+  width: inherit;
+  max-width: 100%;
   height: inherit;
   min-width: 100%;
   position: absolute;
@@ -1459,8 +1601,53 @@ span.gha-time {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
 
+/* ------------------------------------------- */
+table {
+  margin: 0 0;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 20px;
+}
+
+table tr {
+  text-align: left;
+  background: rgba(0, 0, 0, 0);
+}
+ 
+table td {
+  padding: 0px 0px;
+}
+
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #f8ce0b;
+}
+
+
+/* ------------------------------------------- */
+
 #movieaddict {
   position: relative;
+  padding-bottom: 1em;
   padding-left: 38px; }
 
 #moviesvg {
@@ -1470,12 +1657,19 @@ span.gha-time {
 
 #illini_img {
   position: relative;
-  padding-left: 38px; }
+  padding-left: 36px; }
 
 #illini_svg {
   position: absolute;
   bottom: 10%;
   right: 5%; } 
+
+#profileIcon {
+  position: relative;
+  padding-bottom: 1em;
+  padding-left: 42px; }
+
+
 
 /*
  *Github Activity Feed
@@ -1516,10 +1710,11 @@ span.gha-time {
     position: absolute;
     top: 30%;
     left: 14em;
-    width: 8em;
+    width: 8.2em;
     background: white;
     z-index: 5;
-    cursor: e-resize; }
+    cursor: e-resize; 
+  }
   @media (max-width: 54em) {
     #gh-wrapper {
       display: none; } }
@@ -1554,3 +1749,7 @@ span.gha-time {
 
 .highlight {
   overflow: auto; }
+
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
