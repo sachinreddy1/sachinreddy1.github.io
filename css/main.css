@@ -73,7 +73,8 @@ p {
 r {
   font-family: "Roboto";
   color: #000000;
-  font-weight: 500;
+  font-style: italic;
+  font-weight: 470;
 }
 
 /* Profile Icon Animations */
@@ -173,6 +174,19 @@ m {
   font-weight: 500;
 }
 
+n {
+  position: absolute;
+  padding-right: 10%;
+  color: #000000;
+  font-weight: 500;
+}
+
+rat { 
+  position: relative;
+  padding-left: 0%;
+  color: #0000004d;
+}
+
 .checked {
   color: orange;
 }
@@ -229,6 +243,16 @@ section {
   @media (min-width: 54em) {
     .previews > *:last-child {
       margin-left: 42%; } }
+
+/* --------------------------------------------- */
+
+.movieTop {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+ }
+
 
 /* --------------------------------------------- */
 
@@ -1552,7 +1576,27 @@ span.gha-time {
   margin-left: .5em;
   font-size: 0.7em; }
 
-.post-video-wrapper {
+.post-video-wrapper iframe{
+  height: 8em;
+  width: 15em;
+  position: absolute;
+  right: 2em;
+  top: 25%;
+  /* -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  overflow: hidden;  */
+}
+  @media (min-width: 54em) {
+    .post-video-wrapper {
+      right: 2em; } }
+  @media (min-width: 64em) {
+    .post-video-wrapper {
+      right: 2em; } }
+  @media (min-width: 76.5em) {
+    .post-video-wrapper {
+      right: 2em; } }
+
+/* .post-video-wrapper {
   height: 8em;
   width: 15em;
   position: absolute;
@@ -1569,7 +1613,7 @@ span.gha-time {
       right: 2em; } }
   @media (min-width: 76.5em) {
     .post-video-wrapper {
-      right: 2em; } }
+      right: 2em; } } */
 
 .post-image-wrapper {
   height: 7em;
@@ -1639,7 +1683,7 @@ table td {
 
 .stars-inner::before {
   content: "\f005 \f005 \f005 \f005 \f005";
-  color: #f8ce0b;
+  color: #ffd82a;
 }
 
 
@@ -1666,8 +1710,35 @@ table td {
 
 #profileIcon {
   position: relative;
-  padding-bottom: 1em;
+  padding-bottom: 5px;
   padding-left: 42px; }
+
+#tomatoesvg {
+  position: absolute;
+  top: 4px;
+  left: 0px; } 
+
+#tomatoeIcon {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  /* padding-bottom: 0em; */
+  padding-left: 36px; }
+
+#datePos {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  /* padding-bottom: 0em; */ }
+
+#hp  {
+  position: absolute;
+  top: -1.18em;
+  left: -1.84em;
+  -ms-transform: rotate(-17deg); /* IE 9 */
+  -webkit-transform: rotate(-17deg); /* Safari 3-8 */
+  transform: rotate(-17deg);
+  }
 
 
 
