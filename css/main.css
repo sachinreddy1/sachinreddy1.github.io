@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Staatliches');
 @font-face {
   font-family: 'StateFaceRegular';
-  src: url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.eot');
-  src: url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.woff') format('woff'),
-        url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/images/stateface/font/webfont/stateface-regular-webfont.ttf') format('truetype'),
-        url('https://s3.us-east-2.amazonaws.com/sachin.reddy.personalwebsite/PersonalWebsite/assets/image/stateface/font/webfont/stateface-regular-webfont.svg') format('svg');
+  src: url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.eot');
+  src: url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.woff') format('woff'),
+        url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.ttf') format('truetype'),
+        url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.svg') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -1577,24 +1577,38 @@ span.gha-time {
   font-size: 0.7em; }
 
 .post-video-wrapper iframe{
-  height: 8em;
-  width: 15em;
+  bottom: 25%;
+  width: 37%;
   position: absolute;
   right: 2em;
   top: 25%;
+  
   /* -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   overflow: hidden;  */
 }
-  @media (min-width: 54em) {
-    .post-video-wrapper {
+  @media (min-width: 35em) {
+    .post-video-wrapper iframe{
+      width: 32%;
       right: 2em; } }
+
+  @media (min-width: 40em) {
+    .post-video-wrapper iframe{
+      width: 32%;
+      right: 2em; } }
+
+  @media (min-width: 52em) {
+    .post-video-wrapper iframe {
+      width: 32%;
+      right: 2em; } }
+
   @media (min-width: 64em) {
-    .post-video-wrapper {
+    .post-video-wrapper iframe{
       right: 2em; } }
+
   @media (min-width: 76.5em) {
-    .post-video-wrapper {
-      right: 2em; } }
+    .post-video-wrapper iframe{
+      right: 2em; } }      
 
 /* .post-video-wrapper {
   height: 8em;
@@ -1740,8 +1754,6 @@ table td {
   transform: rotate(-17deg);
   }
 
-
-
 /*
  *Github Activity Feed
  */
@@ -1794,16 +1806,16 @@ table td {
   font-size: 1.5em; }
 
 .no-webp .hero_profile_img {
-  background-image: url("/assets/image/profile.jpg"); }
+  background-image: url("https://s3.amazonaws.com/sachinreddy.com/assets/image/profile.jpg"); } 
 
 .webp .hero_profile_img {
-  background-image: url("/assets/image/profile.webp"); }
+  background-image: url("https://s3.amazonaws.com/sachinreddy.com/assets/image/profile.png"); }
 
 .no-webp .post_card_img {
-  background-image: url("/assets/image/hero_profile_pic.jpg"); }
+  background-image: url("https://s3.amazonaws.com/sachinreddy.com/assets/image/profile.jpg"); }
 
 .webp .post_card_img {
-  background-image: url("/assets/image/webp/card.webp"); }
+  background-image: url("https://s3.amazonaws.com/sachinreddy.com/assets/image/webp/profile.webp"); }
 
 .markdown-body {
   box-sizing: border-box;
