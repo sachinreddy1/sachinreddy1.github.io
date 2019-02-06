@@ -4,9 +4,10 @@
   font-family: 'StateFaceRegular';
   src: url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.eot');
   src: url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.woff2') format('woff2'), /* */
         url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.woff') format('woff'),
         url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.ttf') format('truetype'),
-        url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.svg') format('svg');
+        url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.svg#StateFaceRegular') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -51,7 +52,7 @@ body {
     font-size: 125%; } }
 
 /* Header for the webpage */
-h1, h2 {
+h1{
   margin: 0;
   font-family: "Staatliches", serif; }
 @media (min-width: 54em) {
@@ -60,6 +61,11 @@ h1, h2 {
 @media (min-width: 76.5em) {
   h1 {
     font-size: 3.5em; } }
+
+h2 {
+  margin: 0;
+  font-size: 24px;
+  font-family: "Staatliches", serif; }
 
 @media (min-width: 54em) {
   h2 {
@@ -74,8 +80,9 @@ p {
 r {
   font-family: "Roboto";
   color: #000000;
+  text-rendering: optimizeLegibility; 
   font-style: italic;
-  font-weight: 470;
+  font-weight: 485;
 }
 
 /* Profile Icon Animations */
@@ -84,6 +91,14 @@ a {
   text-decoration: none;
   transition: color 0.4s ease-in-out; }
   a:hover, a:active, a:focus {
+    color: #e6365c93; }
+
+aq {
+  font-family: 'StateFaceRegular';
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.4s ease-in-out; }
+  aq:hover, aq:active, aq:focus {
     color: #e6365c93; }
 
 figure {
@@ -97,8 +112,10 @@ img {
 qi {
     padding-bottom: 3%;
     padding: 3%;
-    list-style: none;
-    font-size: 50px; }
+    font-size: 50px;
+    color: #ffffff;
+     }
+ 
 
 g {
   display: block;
@@ -590,6 +607,7 @@ section {
 
 .flex-container {
   display: flex;
+  bottom: 8%;
   /* flex-direction: row;
   justify-content: center; */
   flex-direction: column;
@@ -601,7 +619,7 @@ section {
     flex-direction: row; } }
 
 .flex-container > ul {
-  width: 100px;
+  width: 100%;
   margin: 10px;
   text-align: center;
   line-height: 75px;
@@ -617,7 +635,7 @@ section {
 .flex-container > *:not(:first-child) {
   position: absolute;
   bottom: 8%;
-  right: 3%;
+  right: 2%;
 
 }
 
@@ -1521,11 +1539,11 @@ span.gha-time {
   font-size: 0.7em; }
 
 .post-video-wrapper iframe{
-  border-radius: 19.5%;
+  border-radius: 25px;
   bottom: 25%;
-  width: 37%;
+  width: 32.5%;
   position: absolute;
-  right: 2em;
+  right: 1.25em;
   top: 25%;
   
   /* -webkit-transform: translateY(-50%);
@@ -1534,26 +1552,33 @@ span.gha-time {
 }
   @media (min-width: 35em) {
     .post-video-wrapper iframe{
-      width: 32%;
-      right: 2em; } }
+      width: 30%;
+      } 
+    }
 
   @media (min-width: 40em) {
     .post-video-wrapper iframe{
-      width: 32%;
-      right: 2em; } }
+      width: 30%;
+      } 
+    }
 
   @media (min-width: 52em) {
     .post-video-wrapper iframe {
-      width: 32%;
-      right: 2em; } }
+      width: 30%;
+      } 
+    }
 
   @media (min-width: 64em) {
     .post-video-wrapper iframe{
-      right: 2em; } }
+      right: 1.25em; 
+    } 
+  }
 
   @media (min-width: 76.5em) {
     .post-video-wrapper iframe{
-      right: 2em; } }      
+      right: 1.25em; 
+    } 
+  }      
 
 /* .post-video-wrapper {
   height: 8em;
