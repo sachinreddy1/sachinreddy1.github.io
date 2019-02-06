@@ -283,7 +283,7 @@ section {
     .preview:hover {
       background-color: rgba(135, 117, 101, 0.05); }
       .preview:hover .preview__more {
-        box-shadow: inset 175px 0 0 0 #877565;
+        box-shadow: inset 175px 0 0 0 #2c7481;
         color: #fff; }
     .preview__img {
       will-change: opacity;
@@ -310,7 +310,7 @@ section {
       font-family: "Staatliches", serif;
       color: #0a0a0a; }
     .preview__header {
-      color: #877565; }
+      color: #2c7481; }
     .preview__excerpt {
       color: #0a0a0a; }
     .preview__more {
@@ -332,7 +332,7 @@ section {
     .mpreview:hover {
       background-color: rgba(135, 117, 101, 0.05); }
       .mpreview:hover .mpreview__more {
-        box-shadow: inset 175px 0 0 0 #877565;
+        box-shadow: inset 175px 0 0 0 #2c7481;
         color: #fff; }
     .mpreview__img {
       will-change: opacity;
@@ -364,7 +364,7 @@ section {
       color: #0a0a0a; }
 
     .mpreview__header {
-      color: #877565; }
+      color: #2c7481; }
 
     .mpreview__excerpt {
       color: #0a0a0a; }
@@ -416,7 +416,7 @@ section {
         bottom: 0;
         right: 0%;
         width: 0%;
-        border-bottom: 4px solid #876565;
+        border-bottom: 4px solid #2c7481;
         transition: width 0.4s ease-in-out;
       }
 
@@ -425,7 +425,7 @@ section {
       }
     
     .tabs__item.active {
-      border-bottom: 4px solid #876565; }
+      border-bottom: 4px solid #2c7481; }
 
 .tab.active {
   will-change: opacity;
