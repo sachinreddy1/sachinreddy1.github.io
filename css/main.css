@@ -65,7 +65,7 @@ h1{
 
 h2 {
   margin: 0;
-  font-size: 24px;
+  font-size: 22px;
   font-family: "Staatliches", serif; }
 
 @media (min-width: 54em) {
@@ -73,7 +73,7 @@ h2 {
     font-size: 20px; } }
 @media (min-width: 76.5em) {
   h2 {
-    font-size: 24px; } }
+    font-size: 22px; } }
 
 p {
   margin: 0 0 0.75em; }
@@ -1637,6 +1637,30 @@ span.gha-time {
       right: 1.25em; 
     } 
   }      
+
+/* ------------------------------------------- */
+
+.iframe 
+{
+    /* border: 4px solid black; */
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -o-border-radius: 25px;
+    position: absolute;
+    overflow: hidden;
+
+    bottom: 25%;
+    top: 25%;
+    width: 32.5%;
+    right: 1.25em;
+}
+.iframe iframe
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* ------------------------------------------- */
 
 /* .post-video-wrapper {
   height: 8em;
