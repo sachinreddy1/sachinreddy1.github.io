@@ -28,9 +28,12 @@ body {
           font-size: 100%;
           line-height: 1.7; }
 /* Font size based on width */
+@media (min-width: 16em) {
+  body {
+    font-size: 95.5%; } }
 @media (min-width: 20em) {
   body {
-    font-size: 102.5%; } }
+    font-size: 95.5%; } }
 @media (min-width: 30em) {
   body {
     font-size: 105%; } }
@@ -64,7 +67,6 @@ h1, h2 {
 @media (min-width: 76.5em) {
   h2 {
     font-size: 24px; } }
-  
 
 p {
   margin: 0 0 0.75em; }
@@ -1519,6 +1521,7 @@ span.gha-time {
   font-size: 0.7em; }
 
 .post-video-wrapper iframe{
+  border-radius: 20%;
   bottom: 25%;
   width: 37%;
   position: absolute;
