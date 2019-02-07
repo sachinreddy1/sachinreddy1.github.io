@@ -1659,6 +1659,10 @@ span.gha-time {
   max-width: 75%;
 }
 
+.directorWrapper {
+  max-width: 67%;
+}
+
 .demo-1 {
   overflow: hidden;
   display: -webkit-box;

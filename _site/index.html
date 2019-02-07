@@ -289,7 +289,8 @@
                 movie_4: ['Ant-Man and the Wasp', '2018', 'UUkn-enk2RU', 0.71, 'Feb 2, 2019', 0, 0.64, 0.67],
                 movie_5: ['Incredibles 2', '2018', 'i5qOzqD9Rms', 0.71, 'Feb 4, 2019', 0, 0.81, 0.67],
                 movie_6: ['Call Me by Your Name', '2017', 'Z9AYPxH5NTM', 0.85, 'Feb 5, 2019', 1, 0.78, 0.84],
-                movie_7: ['The Life Aquatic with Steve Zissou', '2004', 'JyyosKJWXkE', 0.68, 'Feb 5, 2019', 0, 0.80, 0.62]
+                movie_7: ['The Life Aquatic with Steve Zissou', '2004', 'JyyosKJWXkE', 0.68, 'Feb 5, 2019', 0, 0.80, 0.62],
+                movie_8: ['Indiana Jones and the Temple of Doom', '1984', 'elehy4EIBjc', 0.73, 'Feb 6, 2019', 0, 0.76, 0.71]
             };
 
             var i;
@@ -416,8 +417,14 @@
                             <iframe src="https://www.youtube.com/embed/${mret[k][1][2]}" frameborder="0" allowfullscreen></iframe>
                         </div>
                         
-                        <p class="preview__excerpt" itemprop="description"><strong>Directed by:<strong> ${mret[k][0].Director}</p>
-                        
+                        <div class="preview__excerpt" itemprop="description" style="padding-bottom:10px;">
+                            <div class="directorWrapper">
+                                <div class="demo-1">
+                                    <strong>Directed by: ${mret[k][0].Director}</strong>
+                                </div>
+                            </div>
+                        </div>
+
                         <div id="profileIcon"> 
                             <div id="moviesvg">
                                 <svg id="svg" version="1.1" width="20%" height="20%" viewBox="0 0 724.8642 724.8642" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
