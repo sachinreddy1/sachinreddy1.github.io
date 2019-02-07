@@ -403,7 +403,14 @@
                 <li class="mpreview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                     <a class="mpreview__link" target="_blank" itemprop="url">
 
-                        <h2 class="mpreview__header" itemprop="name"><div>${mret[k][0].Title} (${mret[k][0].Year}) ${favorite}</div> ${tomatoe}</h2>
+                        <h2 class="mpreview__header" itemprop="name">
+                            <div class="titleWrapper">
+                                <div class="demo-1">
+                                    ${mret[k][0].Title} (${mret[k][0].Year}) ${favorite} 
+                                </div>
+                                ${tomatoe}
+                            </div>
+                        </h2>
 
                         <div class="iframe">
                             <iframe src="https://www.youtube.com/embed/${mret[k][1][2]}" frameborder="0" allowfullscreen></iframe>
@@ -457,12 +464,12 @@
                         </div>
 
                         <m><strong>Style:</strong></m>
-                        <div class="w3-grey w3-small w3-round-xlarge" style="width:40%">
+                        <div class="w3-grey w3-small w3-round-xlarge" style="width:55%">
                             <div class="w3-container w3-${stylebarcolor} w3-round-xlarge" style="width:${stylebar}">${stylebar}</div>
                         </div>
 
                         <m><strong>Substance:</strong></m>
-                        <div class="w3-grey w3-small w3-round-xlarge" style="width:40%">
+                        <div class="w3-grey w3-small w3-round-xlarge" style="width:55%">
                             <div class="w3-container w3-${substancecolor} w3-round-xlarge" style="width:${substancebar}">${substancebar}</div>
                         </div>
                         <div id="datePos"> 
