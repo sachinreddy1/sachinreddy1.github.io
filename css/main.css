@@ -84,6 +84,7 @@ r {
   text-rendering: optimizeLegibility; 
   font-style: italic;
   font-weight: 485;
+  max-width: 50%;
 }
 
 /* Profile Icon Animations */
