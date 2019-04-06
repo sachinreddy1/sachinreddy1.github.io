@@ -55,9 +55,23 @@
         
         <link rel="alternate" type="application/rss+xml" title="Sachin Reddy" href="sachinreddy.com/feed.xml">
         <link rel="canonical" href="sachinreddy.com/">
-        
-        <!--Google Analytics-->
-        
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                size_li = $("#myList li").size();
+                x=5;
+                $('#myList li:lt('+x+')').show();
+                $('#loadMore').click(function () {
+                    x= (x+3 <= size_li) ? x+3 : size_li;
+                    $('#myList li:lt('+x+')').show();
+                    if(x == size_li){
+                        $('#loadMore').hide();
+                    }
+                });
+            });
+        </script>
+                
     </head>
         
     <body>
@@ -112,6 +126,7 @@
 
                     </div>
                 </div>
+
                 <div>
                     <!--Tabs: Replace text with icons-->
                     <header>
@@ -122,7 +137,6 @@
                         </ul>
                     </header>
                     
-                    <!--Need to be able to change this at random.-->
                     <!--About Tab-->
                     <div class="tab">
                             <p id="about">
@@ -194,6 +208,7 @@
                                         </picture>
                                     </div>
                                     <p class="preview__excerpt" itemprop="description"><strong>Personal Project</strong></p>
+                                    <span class="preview__more">More</span>
                                 </a>
                             </li>
             
@@ -213,6 +228,7 @@
                                         </picture>
                                     </div>
                                     <p class="preview__excerpt" itemprop="description"><strong>University of Illinois at Urbana–Champaign</strong></p>
+                                    <span class="preview__more">More</span>
                                 </a>
                             </li>        
                         </ul>
@@ -220,13 +236,15 @@
 
                     <!--Movies Tab-->
                     <div class="tab">
-                        
                         <ul itemscope itemtype="http://schema.org/Blog">
-                        <!-- ---------------------------------------------------- -->
-                        <p id="movies"></p>
-                        <!-- ---------------------------------------------------- -->
+                            <ul id="myList">
+                                <div id="movies">
+                                </div>
+                            </ul>
                         </ul>
+                        <a id="loadMore">More</a>
                     </div>
+
                 </div>
             </section>
         </main>
@@ -269,9 +287,11 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script type='text/javascript' src='https://s3.amazonaws.com/sachinreddy.com/assets/js/bundles.js'></script>
 
+        
+
         <!-- Random Quotes Generator -->
         <script>
-            var quotes_names = [["\"Ain't no thing like me, except me.\"", "~ Rocket Raccoon | Guardians of the Galaxy"], ["\"Personally, I prefer the air.\"", "~ Falco Lombardi | Star Fox"], ["\"This aggression will not stand, man.\"", "~ The Dude | The Big Lebowski"], ["\"Strikes and gutters, ups and downs.\"", "~ The Dude | The Big Lebowski"], ["\"This is not ‘Nam. This is bowling. There are rules.\"", "Walter Sobchak | The Big Lebowski"], ["\"Yeah, well, you know, that’s just, like, your opinion, man.\"", "The Dude | The Big Lebowski"], ["\"The Dude abides.\"", "The Dude | The Big Lebowski"], ["\"I ain't got time to bleed.\"", "Blain | Predator"] ];
+            var quotes_names = [["\"Ain't no thing like me, except me.\"", "~ Rocket Raccoon | Guardians of the Galaxy"], ["\"Personally, I prefer the air.\"", "~ Falco Lombardi | Star Fox"], ["\"This aggression will not stand, man.\"", "~ The Dude | The Big Lebowski"], ["\"Strikes and gutters, ups and downs.\"", "~ The Dude | The Big Lebowski"], ["\"This is not ‘Nam. This is bowling. There are rules.\"", "Walter Sobchak | The Big Lebowski"], ["\"Yeah, well, you know, that’s just, like, your opinion, man.\"", "The Dude | The Big Lebowski"], ["\"I ain't got time to bleed.\"", "Blain | Predator"] ];
             
             var v = Math.floor(Math.random() * quotes_names.length)
             q = quotes_names[v][0]
@@ -283,18 +303,21 @@
         <!-- MovieDB and Markup -->
         <script>
             const movies = {
-                movie_1: ['Call Me by Your Name', '2017', 'Z9AYPxH5NTM', 0.90, 'Feb 2, 2019', 1, 0.81, 0.93],
-                movie_2: ['They Shall Not Grow Old', '2018', 'IrabKK9Bhds', 0.65, 'Feb 7, 2019', 0, 0.70, 0.61],
-                movie_3: ['Casino Royale', '2006', 'A1AMUmkj-ck', 0.85, 'Feb 9, 2019', 1, 0.86, 0.84],
-                movie_5: ['Blade Runner 2049', '2017', 'dZOaI_Fn5o4', 0.74, 'Feb 19, 2019', 0, 0.76, 0.72],
-                movie_6: ['Aliens', '1986', 'XOwTCvn0UIg', 0.91, 'Feb 20, 2019', 1, 0.86, 0.92],
-                movie_7: ['The Lego Movie 2: The Second Part', '2019', 'cksYkEzUa7k', 0.80, 'Feb 23, 2019', 0, 0.76, 0.82],
-                movie_8: ['The Fly', '1986', 'cWwqwSO119U', 0.88, 'Feb 27, 2019', 1, 0.86, 0.90],
-                movie_9: ['Diamonds Are Forever', '1971', 'qPeSPB68i2c', 0.53, 'Mar 3, 2019', 0, 0.62, 0.44],
-                movie_10: ['The Dark Knight', '2008', 'k_B_n-Rbros', 0.92, 'Mar 4, 2019', 1, 0.90, 0.94],
-                movie_11: ['Captain Marvel', '2019', 'GX33bIOA5aA', 0.75, 'Mar 8, 2019', 0, 0.79, 0.74],
+                movie_0: ['Call Me by Your Name', '2017', 'Z9AYPxH5NTM', 0.90, 'Feb 2, 2019', 1, 0.81, 0.93],
+                movie_1: ['They Shall Not Grow Old', '2018', 'IrabKK9Bhds', 0.65, 'Feb 7, 2019', 0, 0.70, 0.61],
+                movie_2: ['Casino Royale', '2006', 'A1AMUmkj-ck', 0.85, 'Feb 9, 2019', 1, 0.86, 0.84],
+                movie_3: ['Blade Runner 2049', '2017', 'dZOaI_Fn5o4', 0.74, 'Feb 19, 2019', 0, 0.76, 0.72],
+                movie_4: ['Aliens', '1986', 'XOwTCvn0UIg', 0.91, 'Feb 20, 2019', 1, 0.86, 0.92],
+                movie_5: ['The Lego Movie 2: The Second Part', '2019', 'cksYkEzUa7k', 0.80, 'Feb 23, 2019', 0, 0.76, 0.82],
+                movie_6: ['The Fly', '1986', 'cWwqwSO119U', 0.88, 'Feb 27, 2019', 1, 0.86, 0.90],
+                movie_7: ['The Dark Knight', '2008', 'k_B_n-Rbros', 0.92, 'Mar 4, 2019', 1, 0.90, 0.94],
+                movie_8: ['Captain Marvel', '2019', '9pQNYeOEFJc', 0.75, 'Mar 8, 2019', 0, 0.74, 0.66],
+                movie_9: ['Raging Bull', '1980', 'Tx-kB1KKLJ0', 0.88, 'Mar 23, 2019', 0, 0.84, 0.91],
+                movie_10: ['Gone with the Wind', '1939', 'lrhNPS4nbmQ', 0.92, 'Mar 28, 2019', 0, 0.90, 0.94],
+                movie_11: ['The Good, the Bad and the Ugly', '1966', 'vg0jjjfKvtM', 0.94, 'Mar 31, 2019', 1, 0.96, 0.94],
             };
 
+            function movieMarkup(movies) {
             var i;
             var ret = [];
 
@@ -427,7 +450,7 @@
                         </h2>
 
                         <div class="iframe">
-                            <iframe src="https://www.youtube.com/embed/${mret[k][1][2]}?&theme=dark&color=white&autohide=1&modestbranding=1&showinfo=0&rel=0&controls=0" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/${mret[k][1][2]}?&theme=dark&color=white&autohide=1&modestbranding=1&showinfo=0&rel=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         
                         <div class="preview__excerpt" itemprop="description" style="padding-bottom:10px;">
@@ -492,22 +515,28 @@
                         <div class="w3-grey w3-small w3-round-xlarge" style="width:55%">
                             <div class="w3-container w3-${substancecolor} w3-round-xlarge" style="width:${substancebar}">${substancebar}</div>
                         </div>
+
                         <div id="datePos"> 
                             <m class="mpreview__date" itemprop="datePublished" datetime="2018-12-28T00:00:00+00:00">${mret[k][1][4]}</m>
                         </div>
+
                     </a>
                 </li>
                 `;
             }
-            document.getElementById("movies").innerHTML = out;
 
-            // 4) Adding Ratings to stars
+            return out
+        }
+            
+            document.getElementById("movies").innerHTML = movieMarkup(movies);
+
             for (var movie in movies) {
                 var starPercentage = movies[movie][3] * 100;
                 var starPercentageRounded = starPercentage + "%";
                 document.querySelector("." + movie + " .stars-inner").style.width = starPercentageRounded;
             }
         </script>
+
 
     </body>
 </html>

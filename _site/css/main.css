@@ -83,6 +83,7 @@ r {
   text-rendering: optimizeLegibility; 
   font-style: italic;
   font-weight: 485;
+  max-width: 50%;
 }
 
 /* Profile Icon Animations */
@@ -156,7 +157,7 @@ ol, ul {
 /**
  * Letter Spacing
  */
-.tabs, .previews__container span, .preview__more, .card__more, .pagination, .footer__archive, .nav, .next__container span, .archives__header {
+.movietabs, .tabs, .previews__container span, .preview__more, .card__more, .pagination, .footer__archive, .nav, .next__container span, .archives__header {
   font-family: "Staatliches", serif;
   letter-spacing: 0.05em;
   text-transform: uppercase; }
@@ -327,9 +328,9 @@ section {
       display: inline-block;
       padding: 0.5em;
       font-family: "Staatliches", serif;
-      color: #877565;
-      border: 3px solid #877565;
-      box-shadow: inset 0 0 0 0 #877565;
+      color: #495961;
+      border: 3px solid #495961;
+      box-shadow: inset 0 0 0 0 #495961;
       transition: all 0.4s ease-in-out; }
 
 /* --------------------------------------------- */
@@ -436,6 +437,58 @@ section {
       border-bottom: 4px solid #495961; }
 
 .tab.active {
+  will-change: opacity;
+  -webkit-animation: fade-in 1s both;
+          animation: fade-in 1s both; }
+
+/* --------------------------------------------- */
+
+/**
+ * Movietabs
+ * On the Blog page for posts and categories
+ */
+ .movietabs {
+  display: flex;
+  /* -ms-flex-direction: column;
+      flex-direction: column; */
+  justify-content: space-around;
+  padding: 1em; }
+
+  /* Adjusting the width for different layouts */
+  @media (min-width: 54em) {
+    .movietabs {
+      padding-left: 1em;
+      padding-right: 1em; } }
+  @media (min-width: 114em) {
+    .movietabs {
+      padding-left: 1em;
+      padding-right: 1em; } }
+
+  .movietabs__item {
+    cursor: pointer; }
+
+    .movietabs__item:not(.active) {
+      position: relative;
+      color: #0a0a0a; }
+
+      .movietabs__item:not(.active):after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0%;
+        width: 0%;
+        border-bottom: 4px solid #495961;
+        transition: width 0.4s ease-in-out;
+      }
+
+      .movietabs__item:not(.active):hover:after {
+        width: 100%;        
+      }
+    
+    .movietabs__item.active {
+      border-bottom: 4px solid #495961; }
+
+.movietab.active {
   will-change: opacity;
   -webkit-animation: fade-in 1s both;
           animation: fade-in 1s both; }
@@ -1846,3 +1899,30 @@ table td {
 .mySlides {display:none}
 .w3-left, .w3-right, .w3-badge {cursor:pointer}
 .w3-badge {height:13px;width:13px;padding:0}
+
+#myList li { 
+  display: none;
+}
+
+#loadMore {
+  background-color: #495961;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+
+  font-family: "Staatliches", serif;
+
+  opacity: 0.6;
+  font-weight: bold;
+  border-radius: 12px;
+}
+#loadMore:hover {
+  transition: all 0.4s ease-in-out;
+  opacity: 1
+}

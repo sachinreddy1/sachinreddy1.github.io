@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,9 +55,23 @@
         
         <link rel="alternate" type="application/rss+xml" title="Sachin Reddy" href="sachinreddy.com/feed.xml">
         <link rel="canonical" href="sachinreddy.com/">
-        
-        <!--Google Analytics-->
-        
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                size_li = $("#myList li").size();
+                x=5;
+                $('#myList li:lt('+x+')').show();
+                $('#loadMore').click(function () {
+                    x= (x+3 <= size_li) ? x+3 : size_li;
+                    $('#myList li:lt('+x+')').show();
+                    if(x == size_li){
+                        $('#loadMore').hide();
+                    }
+                });
+            });
+        </script>
+                
     </head>
         
     <body>
@@ -111,6 +126,7 @@
 
                     </div>
                 </div>
+
                 <div>
                     <!--Tabs: Replace text with icons-->
                     <header>
@@ -121,11 +137,10 @@
                         </ul>
                     </header>
                     
-                    <!--Need to be able to change this at random.-->
                     <!--About Tab-->
                     <div class="tab">
                             <p id="about">
-                                <r id="quote"></r>                   
+                                <r id="quote"></r>
                             </p>
 
                         <p id="about">
@@ -148,14 +163,14 @@
                             <div class="w3-display-container mySlides">
                                 <img src="https://s3.amazonaws.com/sachinreddy.com/assets/image/gallery/image_me.png" style="width:100%">
                                 <div class="w3-display-bottomright w3-medium w3-container w3-padding-16" style="font-family: Roboto;font-weight: bold;color: white;border-top-left-radius:25px;background-color:black;">
-                                    Some nerd.
+                                    Me =^)
                                 </div>
                             </div>
                                 
                             <div class="w3-display-container mySlides">
-                                <img src="https://s3.amazonaws.com/sachinreddy.com/assets/image/gallery/image8.png" style="width:100%">
+                                <img src="https://s3.amazonaws.com/sachinreddy.com/assets/image/gallery/image9.jpg" style="width:100%">
                                 <div class="w3-display-bottomright w3-medium w3-container w3-padding-16" style="font-family: Roboto;font-weight: bold;color: white;border-top-left-radius:25px;background-color:black;">
-                                    Barcelona, Spain
+                                    Pattadakal, Karnataka
                                 </div>
                             </div>
                             
@@ -193,6 +208,7 @@
                                         </picture>
                                     </div>
                                     <p class="preview__excerpt" itemprop="description"><strong>Personal Project</strong></p>
+                                    <span class="preview__more">More</span>
                                 </a>
                             </li>
             
@@ -212,6 +228,7 @@
                                         </picture>
                                     </div>
                                     <p class="preview__excerpt" itemprop="description"><strong>University of Illinois at Urbana–Champaign</strong></p>
+                                    <span class="preview__more">More</span>
                                 </a>
                             </li>        
                         </ul>
@@ -219,13 +236,15 @@
 
                     <!--Movies Tab-->
                     <div class="tab">
-                        
                         <ul itemscope itemtype="http://schema.org/Blog">
-                        <!-- ---------------------------------------------------- -->
-                        <p id="movies"></p>
-                        <!-- ---------------------------------------------------- -->
+                            <ul id="myList">
+                                <div id="movies">
+                                </div>
+                            </ul>
                         </ul>
+                        <a id="loadMore">More</a>
                     </div>
+
                 </div>
             </section>
         </main>
@@ -268,9 +287,11 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script type='text/javascript' src='https://s3.amazonaws.com/sachinreddy.com/assets/js/bundles.js'></script>
 
+        
+
         <!-- Random Quotes Generator -->
         <script>
-            var quotes_names = [["\"Ain't no thing like me, except me.\"", "~ Rocket Raccoon | Guardians of the Galaxy"], ["\"Personally, I prefer the air.\"", "~ Falco Lombardi | Star Fox"], [ "\"It’s just a flesh wound.\"", "~ The Black Knight | Monty Python and the Holy Grail"], ["\"Its a Trap!\"", "~ Admiral Ackbar | Star Wars"], ["\"Bread makes you fat?\"", "~ Scott Pilgrim | Scott Pilgrim vs. The World"], ["\"This aggression will not stand.\"", "~ The Dude | The Big Lebowski"], ["\"Strikes and gutters, ups and downs.\"", "~ The Dude | The Big Lebowski"], ["\"Yes it's true. This man has no dick.\"", "~ Venkman | Ghostbusters"] ];
+            var quotes_names = [["\"Ain't no thing like me, except me.\"", "~ Rocket Raccoon | Guardians of the Galaxy"], ["\"Personally, I prefer the air.\"", "~ Falco Lombardi | Star Fox"], ["\"This aggression will not stand, man.\"", "~ The Dude | The Big Lebowski"], ["\"Strikes and gutters, ups and downs.\"", "~ The Dude | The Big Lebowski"], ["\"This is not ‘Nam. This is bowling. There are rules.\"", "Walter Sobchak | The Big Lebowski"], ["\"Yeah, well, you know, that’s just, like, your opinion, man.\"", "The Dude | The Big Lebowski"], ["\"I ain't got time to bleed.\"", "Blain | Predator"] ];
             
             var v = Math.floor(Math.random() * quotes_names.length)
             q = quotes_names[v][0]
@@ -282,21 +303,21 @@
         <!-- MovieDB and Markup -->
         <script>
             const movies = {
-                movie_0: ['The Royal Tenenbaums', '2001', '949DcEoeSec', 0.83, 'Nov 29, 2018', 1, 0.85, 0.78],
-                movie_1: ['Aquaman', '2018', 'WDkg3h8PCVU', 0.37, 'Dec 24, 2018', 0, 0.73, 0.18],
-                movie_2: ['Batman', '1989', '9OufCgFZCyU', 0.52, 'Dec 28, 2018', 0, 0.76, 0.53],
-                movie_3: ['Scott Pilgrim vs. The World', '2010', '7wd5KEaOtm4', 0.92, 'Jan 10, 2019', 1, 0.93, 0.91],
-                movie_4: ['Ant-Man and the Wasp', '2018', 'UUkn-enk2RU', 0.71, 'Feb 2, 2019', 0, 0.61, 0.67],
-                movie_5: ['Incredibles 2', '2018', 'i5qOzqD9Rms', 0.67, 'Feb 4, 2019', 0, 0.81, 0.64],
-                movie_6: ['Call Me by Your Name', '2017', 'Z9AYPxH5NTM', 0.90, 'Feb 5, 2019', 1, 0.81, 0.93],
-                movie_7: ['The Life Aquatic with Steve Zissou', '2004', 'JyyosKJWXkE', 0.68, 'Feb 5, 2019', 0, 0.80, 0.52],
-                movie_8: ['Indiana Jones and the Temple of Doom', '1984', 'elehy4EIBjc', 0.73, 'Feb 6, 2019', 0, 0.76, 0.61],
-                movie_9: ['They Shall Not Grow Old', '2018', 'IrabKK9Bhds', 0.71, 'Feb 7, 2019', 0, 0.70, 0.81],
-                movie_10: ['The Dark Knight', '2008', '49AYdFmRN3A', 0.92, 'Feb 7, 2019', 1, 0.90, 0.94],
-                movie_11: ['American Psycho', '2000', 'RjKNbfA64EE', 0.67, 'Feb 8, 2019', 0, 0.81, 0.67],
-                movie_12: ['Django Unchained', '2012', 'uhmW3yGgG4w', 0.78, 'Feb 9, 2019', 1, 0.88, 0.81],
+                movie_0: ['Call Me by Your Name', '2017', 'Z9AYPxH5NTM', 0.90, 'Feb 2, 2019', 1, 0.81, 0.93],
+                movie_1: ['They Shall Not Grow Old', '2018', 'IrabKK9Bhds', 0.65, 'Feb 7, 2019', 0, 0.70, 0.61],
+                movie_2: ['Casino Royale', '2006', 'A1AMUmkj-ck', 0.85, 'Feb 9, 2019', 1, 0.86, 0.84],
+                movie_3: ['Blade Runner 2049', '2017', 'dZOaI_Fn5o4', 0.74, 'Feb 19, 2019', 0, 0.76, 0.72],
+                movie_4: ['Aliens', '1986', 'XOwTCvn0UIg', 0.91, 'Feb 20, 2019', 1, 0.86, 0.92],
+                movie_5: ['The Lego Movie 2: The Second Part', '2019', 'cksYkEzUa7k', 0.80, 'Feb 23, 2019', 0, 0.76, 0.82],
+                movie_6: ['The Fly', '1986', 'cWwqwSO119U', 0.88, 'Feb 27, 2019', 1, 0.86, 0.90],
+                movie_7: ['The Dark Knight', '2008', 'k_B_n-Rbros', 0.92, 'Mar 4, 2019', 1, 0.90, 0.94],
+                movie_8: ['Captain Marvel', '2019', '9pQNYeOEFJc', 0.75, 'Mar 8, 2019', 0, 0.74, 0.66],
+                movie_9: ['Raging Bull', '1980', 'Tx-kB1KKLJ0', 0.88, 'Mar 23, 2019', 0, 0.84, 0.91],
+                movie_10: ['Gone with the Wind', '1939', 'lrhNPS4nbmQ', 0.92, 'Mar 28, 2019', 0, 0.90, 0.94],
+                movie_11: ['The Good, the Bad and the Ugly', '1966', 'vg0jjjfKvtM', 0.94, 'Mar 31, 2019', 1, 0.96, 0.94],
             };
 
+            function movieMarkup(movies) {
             var i;
             var ret = [];
 
@@ -333,7 +354,12 @@
                 }
 
                 // 3.2) Rotten Tomatoes Image
-                var ratingParsed = parseFloat((mret[k][0].Ratings[1].Value));
+                if (mret[k][0].Ratings.length != 0) {
+                    var ratingParsed = parseFloat((mret[k][0].Ratings[1].Value));
+                }
+                else {
+                    var ratingParsed = "N/A";
+                }
 
                 var stylebarpercent = mret[k][1][6] * 100;
                 if (stylebarpercent > 75) {
@@ -371,7 +397,6 @@
                 }
                 var substancebar = substancebarpercent + "%";
 
-                
 
                 if (ratingParsed < 70) {
                     var tomatoe = `
@@ -387,6 +412,13 @@
                                 </svg>
                             </div>
                             <p class="preview__excerpt" itemprop="description">${mret[k][0].Ratings[1].Value}</p>
+                        </div>
+                        `;
+                }
+                else if (ratingParsed == "N/A") {
+                    var tomatoe = `
+                        <div id="tomatoeIcon"> 
+                            <p class="preview__excerpt" itemprop="description">${ratingParsed}</p>
                         </div>
                         `;
                 }
@@ -418,7 +450,7 @@
                         </h2>
 
                         <div class="iframe">
-                            <iframe src="https://www.youtube.com/embed/${mret[k][1][2]}?&theme=dark&color=white&autohide=1&modestbranding=1&showinfo=0&rel=0&controls=0" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/${mret[k][1][2]}?&theme=dark&color=white&autohide=1&modestbranding=1&showinfo=0&rel=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         
                         <div class="preview__excerpt" itemprop="description" style="padding-bottom:10px;">
@@ -483,22 +515,28 @@
                         <div class="w3-grey w3-small w3-round-xlarge" style="width:55%">
                             <div class="w3-container w3-${substancecolor} w3-round-xlarge" style="width:${substancebar}">${substancebar}</div>
                         </div>
+
                         <div id="datePos"> 
                             <m class="mpreview__date" itemprop="datePublished" datetime="2018-12-28T00:00:00+00:00">${mret[k][1][4]}</m>
                         </div>
+
                     </a>
                 </li>
                 `;
             }
-            document.getElementById("movies").innerHTML = out;
 
-            // 4) Adding Ratings to stars
+            return out
+        }
+            
+            document.getElementById("movies").innerHTML = movieMarkup(movies);
+
             for (var movie in movies) {
                 var starPercentage = movies[movie][3] * 100;
                 var starPercentageRounded = starPercentage + "%";
                 document.querySelector("." + movie + " .stars-inner").style.width = starPercentageRounded;
             }
         </script>
+
 
     </body>
 </html>
