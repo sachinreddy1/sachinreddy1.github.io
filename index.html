@@ -57,18 +57,71 @@
         <link rel="canonical" href="sachinreddy.com/">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
         <script>
             $(document).ready(function () {
                 size_li = $("#myList li").size();
-                x=5;
+                x=3;
+
                 $('#myList li:lt('+x+')').show();
+
+                if(x == size_li){
+                    $('#loadMore').hide();
+                }
+                else {
+                    $('#loadMore').show();
+                }
+                if(x <= 3){
+                    $('#loadLess').hide();
+                }
+                else {
+                    $('#loadLess').show();
+                }
+                
                 $('#loadMore').click(function () {
+
                     x= (x+3 <= size_li) ? x+3 : size_li;
                     $('#myList li:lt('+x+')').show();
+                    $('#myList li:lt('+(x-3)+')').hide();
+
                     if(x == size_li){
                         $('#loadMore').hide();
                     }
+                    else {
+                        $('#loadMore').show();
+                    }
+
+                    if(x <= 3){
+                        $('#loadLess').hide();
+                    }
+                    else {
+                        $('#loadLess').show();
+                    }
+
                 });
+
+                $('#loadLess').click(function () {
+                    
+                    x = (x-3 > 3) ? x-3 : 3;
+                    $('#myList li:gt('+(x-1)+')').hide();
+                    $('#myList li:lt('+x+')').show();
+                    $('#myList li:lt('+(x-3)+')').hide();
+
+                    if(x == size_li){
+                        $('#loadMore').hide();
+                    }
+                    else {
+                        $('#loadMore').show();
+                    }
+
+                    if(x <= 3){
+                        $('#loadLess').hide();
+                    }
+                    else {
+                        $('#loadLess').show();
+                    }
+                });
+
             });
         </script>
                 
@@ -242,7 +295,9 @@
                                 </div>
                             </ul>
                         </ul>
-                        <a id="loadMore">More</a>
+                        <a id="loadLess">Back</a>
+                        <a id="loadMore">Next</a>
+                        <p></p>
                     </div>
 
                 </div>
@@ -314,7 +369,9 @@
                 movie_8: ['Captain Marvel', '2019', '9pQNYeOEFJc', 0.75, 'Mar 8, 2019', 0, 0.74, 0.66],
                 movie_9: ['Raging Bull', '1980', 'Tx-kB1KKLJ0', 0.88, 'Mar 23, 2019', 0, 0.84, 0.91],
                 movie_10: ['Gone with the Wind', '1939', 'lrhNPS4nbmQ', 0.92, 'Mar 28, 2019', 0, 0.90, 0.94],
-                movie_11: ['The Good, the Bad and the Ugly', '1966', 'vg0jjjfKvtM', 0.94, 'Mar 31, 2019', 1, 0.96, 0.94],
+                movie_11: ['The Good, the Bad and the Ugly', '1966', 'vg0jjjfKvtM', 0.92, 'Mar 31, 2019', 1, 0.90, 0.94],
+                movie_12: ['The Empire Strikes Back', '1980', 'R4wOzbqgfIY', 0.95, 'April 5, 2019', 1, 0.96, 0.94],
+                movie_13: ['Shazam!', '2019', 'Xoi5hA86BmA', 0.79, 'April 7, 2019', 0, 0.77, 0.81],
             };
 
             function movieMarkup(movies) {

@@ -384,9 +384,9 @@ section {
       display: inline-block;
       padding: 0.5em;
       font-family: "Staatliches", serif;
-      color: #877565;
-      border: 3px solid #877565;
-      box-shadow: inset 0 0 0 0 #877565;
+      color: #495961;
+      border: 3px solid #495961;
+      box-shadow: inset 0 0 0 0 #495961;
       transition: all 0.4s ease-in-out; }
 
 /* --------------------------------------------- */
@@ -563,7 +563,7 @@ section {
     .card__link:hover:after {
       opacity: 1; }
     .card__link:hover .card__more {
-      box-shadow: inset 175px 0 0 0 #877565;
+      box-shadow: inset 175px 0 0 0 #495961;
       color: #fff; }
 
 .card__img {
@@ -575,7 +575,7 @@ section {
   padding: 2em 1em; }
 
 .card__header {
-  color: #877565; }
+  color: #495961; }
 
 .card__count {
   color: #0a0a0a; }
@@ -584,9 +584,9 @@ section {
   display: inline-block;
   padding: 0.25em;
   font-family: "Staatliches", serif;
-  color: #877565;
-  border: 3px solid #877565;
-  box-shadow: inset 0 0 0 0 #877565;
+  color: #495961;
+  border: 3px solid #495961;
+  box-shadow: inset 0 0 0 0 #495961;
   transition: all 0.4s ease-in-out; }
 
 /**
@@ -606,7 +606,7 @@ section {
     transition: background-color 0.4s ease-in-out; }
     .pagination > *:hover {
       color: #fff;
-      background-color: #877565; }
+      background-color: #495961; }
 
 /* --------------------------------------------- */
 
@@ -634,7 +634,7 @@ section {
       bottom: 0;
       left: 0;
       width: 0%;
-      border-bottom: 3px solid #877565;
+      border-bottom: 3px solid #495961;
       transition: width 0.4s ease-in-out; }
 
     .footer__archive:hover:after {
@@ -834,7 +834,7 @@ section {
   padding: 1em;
   text-align: center; }
   .archives__header span {
-    border-bottom: 3px solid #877565; }
+    border-bottom: 3px solid #495961; }
 
 .archives__container {
   display: flex;
@@ -1923,6 +1923,29 @@ table td {
   border-radius: 12px;
 }
 #loadMore:hover {
+  transition: all 0.4s ease-in-out;
+  opacity: 1
+}
+
+#loadLess {
+  background-color: #495961;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+
+  font-family: "Staatliches", serif;
+
+  opacity: 0.6;
+  font-weight: bold;
+  border-radius: 12px;
+}
+#loadLess:hover {
   transition: all 0.4s ease-in-out;
   opacity: 1
 }
