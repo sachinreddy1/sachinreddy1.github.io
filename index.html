@@ -51,6 +51,7 @@
         
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/4f6a4b08efdad6bb29f9cc801f5c07e263b39907/devicon.min.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 
         
         <link rel="alternate" type="application/rss+xml" title="Sachin Reddy" href="sachinreddy.com/feed.xml">
@@ -63,7 +64,7 @@
                 size_li = $("#myList li").size();
                 x=3;
 
-                $('#myList li:lt('+x+')').show();
+                $('#myList li:lt('+x+')').fadeIn("slow");
 
                 if(x == size_li){
                     $('#loadMore').hide();
@@ -81,8 +82,8 @@
                 $('#loadMore').click(function () {
 
                     x= (x+3 <= size_li) ? x+3 : size_li;
-                    $('#myList li:lt('+x+')').show();
-                    $('#myList li:lt('+(x-3)+')').hide();
+                    $('#myList li:lt('+x+')').fadeIn("slow");
+                    
 
                     if(x == size_li){
                         $('#loadMore').hide();
@@ -97,6 +98,8 @@
                     else {
                         $('#loadLess').show();
                     }
+
+                    $('#myList li:lt('+(x-3)+')').hide();
 
                 });
 
@@ -104,8 +107,8 @@
                     
                     x = (x-3 > 3) ? x-3 : 3;
                     $('#myList li:gt('+(x-1)+')').hide();
-                    $('#myList li:lt('+x+')').show();
-                    $('#myList li:lt('+(x-3)+')').hide();
+                    
+                    
 
                     if(x == size_li){
                         $('#loadMore').hide();
@@ -114,12 +117,15 @@
                         $('#loadMore').show();
                     }
 
+                    $('#myList li:lt('+x+')').fadeIn("slow");
+
                     if(x <= 3){
                         $('#loadLess').hide();
                     }
                     else {
                         $('#loadLess').show();
                     }
+                    $('#myList li:lt('+(x-3)+')').hide();
                 });
 
             });
@@ -241,6 +247,30 @@
                     <!--Programming Tab-->
                     <div class="tab">
                         <ul itemscope itemtype="http://schema.org/Blog">
+
+                            <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+                                <!-- href="https://github.com/sachinreddy1/Altercation.git" -->
+                                <a class="preview__link"  target="_blank" itemprop="url">
+                                    <span class="preview__date" itemprop="datePublished" datetime="2019-04-10T00:00:00+00:00">Apr 10, 2019</span>
+                                    
+                                    <h2 class="preview__header" itemprop="name">Altercation</h2>
+                                    <div>
+                                    <i class="devicon-swift-plain colored"></i>
+                                    <i class="devicon-github-plain colored"></i>
+                                    </div>
+                                    <div class="post-image-wrapper">
+                                        <picture class="post-image">
+                                        <source srcset="https://s3.amazonaws.com/sachinreddy.com/assets/image/webp/altercation_appicon.webp" type="image/webp">
+                                        <img class="post-image" src="https://s3.amazonaws.com/sachinreddy.com/assets/image/Altercation/altercation_appicon.png">
+                                        </picture>
+                                    </div>
+                                    <div class="w3-text-deep-orange"><strong>Under Construction:</strong></div> 
+                                    <p class="preview__excerpt" itemprop="description"><strong>iOS game w/ SceneKit</strong></p>
+                                    
+                                    <span class="preview__more">More</span>
+                                </a>
+                            </li>
+
                             <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                                 <a class="preview__link" href="https://github.com/sachinreddy1/PersonalWebsite.git" target="_blank" itemprop="url">
                                     <span class="preview__date" itemprop="datePublished" datetime="2019-01-20T00:00:00+00:00">Jan 20, 2019</span>
@@ -252,7 +282,7 @@
                                         <i class="devicon-javascript-plain colored"></i>
                                         <i class="devicon-gulp-plain colored"></i>
                                         <i class="devicon-nodejs-plain colored"></i>
-                                        <i class="devicon-github-plain-wordmark colored"></i>
+                                        <i class="devicon-github-plain colored"></i>
                                     </div>
                                     <div class="post-image-wrapper">
                                         <picture class="post-image">
@@ -272,7 +302,7 @@
                                     <h2 class="preview__header" itemprop="name">Task Tracker</h2>
                                     <div>
                                     <i class="devicon-python-plain-wordmark colored"></i>
-                                    <i class="devicon-github-plain-wordmark colored"></i>
+                                    <i class="devicon-github-plain colored"></i>
                                     </div>
                                     <div class="post-image-wrapper">
                                         <picture class="post-image">
@@ -297,7 +327,10 @@
                         </ul>
                         <a id="loadLess">Back</a>
                         <a id="loadMore">Next</a>
-                        <p></p>
+                        <p>
+                            
+                            
+                        </p>
                     </div>
 
                 </div>
@@ -346,7 +379,7 @@
 
         <!-- Random Quotes Generator -->
         <script>
-            var quotes_names = [["\"Ain't no thing like me, except me.\"", "~ Rocket Raccoon | Guardians of the Galaxy"], ["\"Personally, I prefer the air.\"", "~ Falco Lombardi | Star Fox"], ["\"This aggression will not stand, man.\"", "~ The Dude | The Big Lebowski"], ["\"Strikes and gutters, ups and downs.\"", "~ The Dude | The Big Lebowski"], ["\"This is not ‘Nam. This is bowling. There are rules.\"", "Walter Sobchak | The Big Lebowski"], ["\"Yeah, well, you know, that’s just, like, your opinion, man.\"", "The Dude | The Big Lebowski"], ["\"I ain't got time to bleed.\"", "Blain | Predator"] ];
+            var quotes_names = [["\"Personally, I prefer the air.\"", "~ Falco Lombardi | Star Fox"], ["\"Strikes and gutters, ups and downs.\"", "~ The Dude | The Big Lebowski"], ["\"I ain't got time to bleed.\"", "Blain | Predator"]];
             
             var v = Math.floor(Math.random() * quotes_names.length)
             q = quotes_names[v][0]
