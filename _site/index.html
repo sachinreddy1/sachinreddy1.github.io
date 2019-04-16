@@ -405,6 +405,7 @@
                 movie_11: ['The Good, the Bad and the Ugly', '1966', 'vg0jjjfKvtM', 0.92, 'Mar 31, 2019', 1, 0.90, 0.94],
                 movie_12: ['The Empire Strikes Back', '1980', 'R4wOzbqgfIY', 0.95, 'April 5, 2019', 1, 0.96, 0.94],
                 movie_13: ['Shazam!', '2019', 'Xoi5hA86BmA', 0.79, 'April 7, 2019', 0, 0.77, 0.81],
+                movie_14: ['Star Wars: Episode II – Attack of the Clones', '2002', 'nq3Wlk2w-Zw', 0.54, 'April 14, 2019', 0, 0.69, 0.43],
             };
 
             function movieMarkup(movies) {
@@ -444,7 +445,7 @@
                 }
 
                 // 3.2) Rotten Tomatoes Image
-                if (mret[k][0].Ratings.length != 0) {
+                if (mret[k][0].Ratings.length > 1) {
                     var ratingParsed = parseFloat((mret[k][0].Ratings[1].Value));
                 }
                 else {

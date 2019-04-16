@@ -1648,6 +1648,7 @@ span.gha-time {
     top: 25%;
     width: 32.5%;
     right: 1.25em;
+    max-height: 45%;
 }
 .iframe iframe
 {
