@@ -60,16 +60,16 @@ h1{
     font-size: 3em; } }
 @media (min-width: 76.5em) {
   h1 {
-    font-size: 3.5em; } }
+    font-size: 3.3em; } }
 
 h2 {
   margin: 0;
-  font-size: 22px;
+  font-size: 20px;
   font-family: "Staatliches", serif; }
 
 @media (min-width: 54em) {
   h2 {
-    font-size: 18px; } }
+    font-size: 21px; } }
 @media (min-width: 76.5em) {
   h2 {
     font-size: 22px; } }
