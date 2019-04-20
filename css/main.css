@@ -1706,11 +1706,12 @@ span.gha-time {
     position: absolute;
     overflow: hidden;
 
-    bottom: 25%;
-    top: 25%;
-    width: 32.5%;
+    bottom: 27.5%;
+    top: 27.5%;
+    width: 36.2%;
     right: 1.25em;
-    max-height: 45%;
+    height: 45%;
+    /* max-height: 9em; */
 }
 .iframe iframe
 {
@@ -1772,11 +1773,11 @@ span.gha-time {
 /* ------------------------------------------- */
 
 .titleWrapper {
-  max-width: 65%;
+  max-width: 62%;
 }
 
 .directorWrapper {
-  max-width: 67%;
+  max-width: 62%;
 }
 
 .demo-1 {
@@ -1787,7 +1788,7 @@ span.gha-time {
 }
 
 .blankspace {
-  height: 1em;
+  height: 1.65em;
 }
 
 /* ------------------------------------------- */
@@ -1815,7 +1816,8 @@ table td {
 }
 
 .stars-outer::before {
-  content: "\f006 \f006 \f006 \f006 \f006";
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: w3-grey;
 }
 
 .stars-inner {
@@ -1969,12 +1971,58 @@ table td {
 .w3-left, .w3-right, .w3-badge {cursor:pointer}
 .w3-badge {height:13px;width:13px;padding:0}
 
+
+.nav-container {
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 2%;
+  /* flex-direction: row;
+  justify-content: center; */
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+@media (min-width: 30em) {
+  .nav-container {
+    -ms-flex-direction: row;
+        flex-direction: row; } }
+
+.nav-container > ul {
+  width: 100%;
+  margin: 10px;
+  text-align: center;
+  /* line-height: 75px;
+  font-size: 100%; */
+}
+
+.nav-container > *:not(:last-child) {
+  position: absolute;
+  bottom: 2%;
+  left: 5%;
+}
+
+.nav-container > *:not(:first-child) {
+  position: absolute;
+  bottom: 2%;
+  right: 0.5%;
+
+}
+
 #myList li { 
   display: none;  
 }
 
 #loadMore {
   background-color: #495961;
+
+  position: relative;
+  left: 2%;
+  /* bottom: 2%;
+  padding-bottom: 2%; */
+
   border: none;
   color: white;
   padding: 10px 20px;
@@ -1982,7 +2030,8 @@ table td {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 0px 2%;
+  margin: 1% 0px 0px 0px;
+
   cursor: pointer;
 
   font-family: "Staatliches", serif;
@@ -1998,6 +2047,12 @@ table td {
 
 #loadLess {
   background-color: #495961;
+
+  position: relative;
+  left: 2%;
+  /* bottom: 2%;
+  padding-bottom: 2%; */
+
   border: none;
   color: white;
   padding: 10px 20px;
@@ -2005,7 +2060,7 @@ table td {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 0px 2%;
+  margin: 1% 0px 0px 0px;
   cursor: pointer;
 
   font-family: "Staatliches", serif;

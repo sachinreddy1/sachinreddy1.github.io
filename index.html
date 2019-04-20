@@ -64,7 +64,8 @@
                 size_li = $("#myList li").size();
                 x=3;
 
-                $('#myList li:lt('+x+')').fadeIn("slow");
+                $('#myList li:lt('+x+')').show() //fadeIn("slow");
+
 
                 if(x == size_li){
                     $('#loadMore').hide();
@@ -82,7 +83,7 @@
                 $('#loadMore').click(function () {
 
                     x= (x+3 <= size_li) ? x+3 : size_li;
-                    $('#myList li:lt('+x+')').fadeIn("slow");
+                    $('#myList li:lt('+x+')').show() //fadeIn("slow");
                     
 
                     if(x == size_li){
@@ -117,7 +118,7 @@
                         $('#loadMore').show();
                     }
 
-                    $('#myList li:lt('+x+')').fadeIn("slow");
+                    $('#myList li:lt('+x+')').show()
 
                     if(x <= 3){
                         $('#loadLess').hide();
@@ -325,8 +326,10 @@
                                 </div>
                             </ul>
                         </ul>
-                        <a id="loadLess">Back</a>
-                        <a id="loadMore"">Next</a>
+                        <!-- <ul class="nav-container"> -->
+                            <a id="loadLess">Back</a>
+                            <a id="loadMore"">Next</a>
+                        <!-- </ul> -->
                         <div class = "blankspace"></div>
                     </div>
 
@@ -402,7 +405,8 @@
                 movie_11: ['The Good, the Bad and the Ugly', '1966', 'vg0jjjfKvtM', 0.92, 'Mar 31, 2019', 1, 0.90, 0.94],
                 movie_12: ['The Empire Strikes Back', '1980', 'R4wOzbqgfIY', 0.95, 'April 5, 2019', 1, 0.96, 0.94],
                 movie_13: ['Shazam!', '2019', 'Xoi5hA86BmA', 0.79, 'April 7, 2019', 0, 0.77, 0.81],
-                movie_14: ['Star Wars: Episode II – Attack of the Clones', '2002', 'nq3Wlk2w-Zw', 0.54, 'April 14, 2019', 0, 0.69, 0.43],
+                movie_14: ['Star Wars: Episode II – Attack of the Clones', '2002', 'nq3Wlk2w-Zw?list=PL56E3EB1DFD4B64A2', 0.54, 'April 14, 2019', 0, 0.65, 0.43],
+                movie_15: ['Star Wars: Episode III – Revenge of the Sith', '2005', 'bYWAHuFbLoc', 0.44, 'April 17, 2019', 0, 0.53, 0.35],
             };
 
             function movieMarkup(movies) {
@@ -537,8 +541,8 @@
                             </div>
                         </h2>
 
-                        <div class="iframe">
-                            <iframe src="https://www.youtube.com/embed/${mret[k][1][2]}?&theme=dark&color=white&autohide=1&modestbranding=1&showinfo=0&rel=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="iframe">   
+                            <iframe src="https://www.youtube.com/embed/${mret[k][1][2]}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         
                         <div class="preview__excerpt" itemprop="description" style="padding-bottom:10px;">
