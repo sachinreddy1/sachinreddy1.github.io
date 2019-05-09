@@ -325,6 +325,10 @@ section {
     .preview__header {
       color: #495961; }
     .preview__excerpt {
+      /* max-width: 75%; */
+      color: #0a0a0a; }
+    .small_preview__excerpt {
+      max-width: 75%;
       color: #0a0a0a; }
     .preview__more {
       display: inline-block;
@@ -1727,7 +1731,7 @@ span.gha-time {
 }
 
 .blankspace {
-  height: 1.65em;
+  height: 1.45em;
 }
 
 /* ------------------------------------------- */
@@ -1756,7 +1760,7 @@ table td {
 
 .stars-outer::before {
   content: "\f005 \f005 \f005 \f005 \f005";
-  color: w3-grey;
+  color: #9E9E9E;
 }
 
 .stars-inner {
@@ -1770,7 +1774,8 @@ table td {
 
 .stars-inner::before {
   content: "\f005 \f005 \f005 \f005 \f005";
-  color: #ffd82a;
+  /* color: #ffd82a; */
+  color: #FFD700;
 }
 
 
@@ -1912,7 +1917,7 @@ table td {
 
 .nav-container {
   display: flex;
-  bottom: 2%;
+
   /* flex-direction: row;
   justify-content: center; */
   flex-direction: column;

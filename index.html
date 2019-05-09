@@ -42,6 +42,7 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Lora|Space+Mono:700">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
         <link rel="stylesheet" href="assets/stateface.css">
 
@@ -101,6 +102,7 @@
                     }
 
                     $('#myList li:lt('+(x-3)+')').hide();
+                    $('html, body').animate({scrollTop:$(document).height()}, 0);
 
                 });
 
@@ -127,6 +129,7 @@
                         $('#loadLess').show();
                     }
                     $('#myList li:lt('+(x-3)+')').hide();
+                    $('html, body').animate({scrollTop:$(document).height()}, 0);
                 });
 
             });
@@ -252,7 +255,7 @@
                             <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                                 <!-- href="https://github.com/sachinreddy1/Altercation.git" -->
                                 <a class="preview__link"  target="_blank" itemprop="url">
-                                    <span class="preview__date" itemprop="datePublished" datetime="2019-04-10T00:00:00+00:00">Apr 10, 2019</span>
+                                    <!-- <span class="preview__date" itemprop="datePublished" datetime="2019-04-10T00:00:00+00:00">--- --, 2019</span> -->
                                     
                                     <h2 class="preview__header" itemprop="name">Altercation</h2>
                                     <div>
@@ -311,7 +314,7 @@
                                         <img class="post-image" src="https://s3.amazonaws.com/sachinreddy.com/assets/image/TodoistScheduler/Todoist.jpg">
                                         </picture>
                                     </div>
-                                    <p class="preview__excerpt" itemprop="description"><strong>University of Illinois at Urbana–Champaign</strong></p>
+                                    <p class="small_preview__excerpt" itemprop="description"><strong>University of Illinois at Urbana–Champaign</strong></p>
                                     <span class="preview__more">More</span>
                                 </a>
                             </li>        
@@ -326,9 +329,11 @@
                                 </div>
                             </ul>
                         </ul>
-                        <!-- <ul class="nav-container"> -->
-                            <a id="loadLess">Back</a>
-                            <a id="loadMore"">Next</a>
+                             
+                        <a id="loadLess">Back</a>
+                        <a id="loadMore"">Next</a>
+                            
+                            
                         <!-- </ul> -->
                         <div class = "blankspace"></div>
                     </div>
@@ -407,6 +412,11 @@
                 movie_13: ['Shazam!', '2019', 'Xoi5hA86BmA', 0.79, 'April 7, 2019', 0, 0.77, 0.81],
                 movie_14: ['Star Wars: Episode II – Attack of the Clones', '2002', 'nq3Wlk2w-Zw?list=PL56E3EB1DFD4B64A2', 0.54, 'April 14, 2019', 0, 0.65, 0.43],
                 movie_15: ['Star Wars: Episode III – Revenge of the Sith', '2005', 'bYWAHuFbLoc', 0.44, 'April 17, 2019', 0, 0.53, 0.35],
+                movie_16: ['BlacKkKlansman', '2018', 'videoseries?list=PLnW6ymmyq4VFnAJlNzruSW8rFMCuLI9nZ', 0.88, 'April 21, 2019', 0, 0.86, 0.90],
+                movie_17: ['Avengers: Endgame', '2019', 'videoseries?list=PLnW6ymmyq4VFF-IsU_nI21RFuKEHdKy9P', 0.85, 'April 25, 2019', 0, 0.88, 0.83],
+                movie_18: ['The Big Lebowski', '1998', 'videoseries?list=PLnW6ymmyq4VHU52cpPryBGPc3LyCmCzls', 0.85, 'April 29, 2019', 1, 0.85, 0.85],
+                movie_19: ['American Psycho', '2000', 'videoseries?list=PLnW6ymmyq4VHinRgeLP5FilkKOZUtLEOZ', 0.85, 'May 4, 2019', 1, 0.88, 0.83],
+                movie_20: ['Star Wars: Episode I – The Phantom Menace', '1999', 'videoseries?list=PL5919C8DE6F720A2D', 0.28, 'May 8, 2019', 2, 0.27, 0.30],
             };
 
             function movieMarkup(movies) {
@@ -440,6 +450,9 @@
                 // 3.1) Adding Favorites
                 if (mret[k][1][5] == 1) {
                     var favorite = `<i class="fa fa-heart" style="font-size:24px;color:#df4e4e;padding-left:10px;"></i>`;
+                }
+                else if (mret[k][1][5] == 2) {
+                    var favorite = `<i class="fas fa-poop" style="font-size:24px;color:#8e6344;padding-left:10px;"></i>`;
                 }
                 else {
                     var favorite = ``;
