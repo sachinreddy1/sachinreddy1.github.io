@@ -2,7 +2,6 @@
   font-family: 'StateFaceRegular';
   src: url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.eot');
   src: url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.woff2') format('woff2'), /* */
         url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.woff') format('woff'),
         url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.ttf') format('truetype'),
         url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.svg#StateFaceRegular') format('svg');

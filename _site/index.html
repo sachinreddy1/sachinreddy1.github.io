@@ -41,10 +41,10 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Lora|Space+Mono:700">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-        <link rel="stylesheet" href="assets/stateface.css">
+        <link rel="stylesheet" href="https://s3.amazonaws.com/sachinreddy.com/assets/stateface.css">
 
         <!-- CSS -->
         <link rel="stylesheet" href="css/main.css">
@@ -176,6 +176,7 @@
                         </ul>
 
                         <ul class="footer__social">
+                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
                             <li><a class="icon fa fa-lg fa-envelope-o" href="mailto:reddysachin2014@gmail.com"></a></li>
                             <li><a class="icon fa fa-lg fa-github" href="https://github.com/sachinreddy1" target="_blank"></a></li>
                             <li><a class="icon fa fa-lg fa-linkedin" href="https://www.linkedin.com/in/ssreddy2" target="_blank"></a></li>
@@ -183,8 +184,8 @@
                         </ul>
 
                         <ul class="flex-container">
-                            <qi><a class="stateface stateface-replace stateface-ga" href="https://georgia.gov" target="_blank"></a></qi>
-                            <qi><a class="stateface stateface-replace stateface-il" href="https://ece.illinois.edu" target="_blank"></a></qi>
+                            <qi> <a class="stateface stateface-replace stateface-ga" href="https://georgia.gov" target="_blank"></a> </qi>
+                            <qi> <a class="stateface stateface-replace stateface-il" href="https://ece.illinois.edu" target="_blank"></a> </qi>
                         </ul>
 
                     </div>
@@ -195,7 +196,7 @@
                     <header>
                         <ul class="tabs">
                             <li class="tabs__item">About</li>
-                            <li class="tabs__item">Programming</li>
+                            <li class="tabs__item">Programming</i></li>
                             <li class="tabs__item">Movies</li>
                         </ul>
                     </header>
@@ -226,20 +227,21 @@
                             <div class="w3-display-container mySlides">
                                 <img src="https://s3.amazonaws.com/sachinreddy.com/assets/image/gallery/image_me.png" style="width:100%">
                                 <div class="w3-display-bottomright w3-medium w3-container w3-padding-16" style="font-family: Roboto;font-weight: bold;color: white;border-top-left-radius:25px;background-color:black;">
-                                    Me =^)
+                                    Me :)
                                 </div>
                             </div>
                                 
                             <div class="w3-display-container mySlides">
                                 <img src="https://s3.amazonaws.com/sachinreddy.com/assets/image/gallery/image9.jpg" style="width:100%">
                                 <div class="w3-display-bottomright w3-medium w3-container w3-padding-16" style="font-family: Roboto;font-weight: bold;color: white;border-top-left-radius:25px;background-color:black;">
-                                    Pattadakal, Karnataka
+                                    Pattadakal, Karnataka, India
                                 </div>
                             </div>
                             
                             <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-topmiddle" style="width:100%">
                                 <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
                                 <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+
                                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
                                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
                                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
@@ -341,7 +343,18 @@
                 </div>
             </section>
         </main>
-    
+
+        <!-- Github Activity -->
+        <div id="gh-wrapper">
+            <div id="feed"></div>
+            <div id="gh-button">Github Activity</div>
+        </div>
+        
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js'></script>
+        <script type='text/javascript' src='https://s3.amazonaws.com/sachinreddy.com/assets/js/github-activity.js'></script>
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js'></script>
+        <script type='text/javascript' src='https://s3.amazonaws.com/sachinreddy.com/assets/js/bundles.js'></script>
+        
         <!-- Photo Gallery -->
         <script>
             var slideIndex = 1;
@@ -360,31 +373,19 @@
                 if (n > x.length) {slideIndex = 1}
                 if (n < 1) {slideIndex = x.length}
                 for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
+                    x[i].style.display = "none";  
                 }
                 for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" w3-white", "");
+                    dots[i].className = dots[i].className.replace(" w3-white", "");
                 }
-                x[slideIndex-1].style.display = "block";  
-                dots[slideIndex-1].className += " w3-white"; }
+                x[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " w3-white"; 
+            }
         </script>
-
-        <!-- Github Activity -->
-        <div id="gh-wrapper">
-            <div id="feed"></div>
-            <div id="gh-button">Github Activity</div>
-        </div>
-        
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-        <script type='text/javascript' src='https://s3.amazonaws.com/sachinreddy.com/assets/js/github-activity.js'></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-        <script type='text/javascript' src='https://s3.amazonaws.com/sachinreddy.com/assets/js/bundles.js'></script>
-
-        
 
         <!-- Random Quotes Generator -->
         <script>
-            var quotes_names = [["\"Personally, I prefer the air.\"", "~ Falco Lombardi | Star Fox"], ["\"Strikes and gutters, ups and downs.\"", "~ The Dude | The Big Lebowski"], ["\"I ain't got time to bleed.\"", "Blain | Predator"]];
+            var quotes_names = [["\"Strikes and gutters, ups and downs.\"", "~ The Dude | The Big Lebowski"]];
             
             var v = Math.floor(Math.random() * quotes_names.length)
             q = quotes_names[v][0]
@@ -410,13 +411,14 @@
                 movie_11: ['The Good, the Bad and the Ugly', '1966', 'vg0jjjfKvtM', 0.92, 'Mar 31, 2019', 1, 0.90, 0.94],
                 movie_12: ['The Empire Strikes Back', '1980', 'R4wOzbqgfIY', 0.95, 'April 5, 2019', 1, 0.96, 0.94],
                 movie_13: ['Shazam!', '2019', 'Xoi5hA86BmA', 0.79, 'April 7, 2019', 0, 0.77, 0.81],
-                movie_14: ['Star Wars: Episode II – Attack of the Clones', '2002', 'nq3Wlk2w-Zw?list=PL56E3EB1DFD4B64A2', 0.54, 'April 14, 2019', 0, 0.65, 0.43],
-                movie_15: ['Star Wars: Episode III – Revenge of the Sith', '2005', 'bYWAHuFbLoc', 0.44, 'April 17, 2019', 0, 0.53, 0.35],
+                movie_14: ['Star Wars: Episode II – Attack of the Clones', '2002', 'nq3Wlk2w-Zw?list=PL56E3EB1DFD4B64A2', 0.54, 'April 14, 2019', 2, 0.65, 0.43],
+                movie_15: ['Star Wars: Episode III – Revenge of the Sith', '2005', 'bYWAHuFbLoc', 0.44, 'April 17, 2019', 2, 0.53, 0.35],
                 movie_16: ['BlacKkKlansman', '2018', 'videoseries?list=PLnW6ymmyq4VFnAJlNzruSW8rFMCuLI9nZ', 0.88, 'April 21, 2019', 0, 0.86, 0.90],
                 movie_17: ['Avengers: Endgame', '2019', 'videoseries?list=PLnW6ymmyq4VFF-IsU_nI21RFuKEHdKy9P', 0.85, 'April 25, 2019', 0, 0.88, 0.83],
                 movie_18: ['The Big Lebowski', '1998', 'videoseries?list=PLnW6ymmyq4VHU52cpPryBGPc3LyCmCzls', 0.85, 'April 29, 2019', 1, 0.85, 0.85],
                 movie_19: ['American Psycho', '2000', 'videoseries?list=PLnW6ymmyq4VHinRgeLP5FilkKOZUtLEOZ', 0.85, 'May 4, 2019', 1, 0.88, 0.83],
-                movie_20: ['Star Wars: Episode I – The Phantom Menace', '1999', 'videoseries?list=PL5919C8DE6F720A2D', 0.28, 'May 8, 2019', 2, 0.27, 0.30],
+                movie_20: ['Star Wars: Episode I – The Phantom Menace', '1999', 'ZG1AWVLnl48?list=PL5919C8DE6F720A2D', 0.36, 'May 8, 2019', 2, 0.37, 0.35],
+                movie_21: ['John Wick: Chapter 3 – Parabellum', '2019', '0c-CumupSqY', 0.80, 'May 15, 2019', 0, 0.91, 0.80],
             };
 
             function movieMarkup(movies) {
@@ -432,7 +434,7 @@
                         ret.push([JSON.parse(this.response), movies[movie], movie]);
                     }
                 } 
-                xhttp.open("GET", url, false);
+                xhttp.open('GET', url, 0);
                 xhttp.send();    
             }
             
@@ -448,22 +450,26 @@
             var k;
             for (k=0; k < mret.length; k++) {
                 // 3.1) Adding Favorites
-                if (mret[k][1][5] == 1) {
-                    var favorite = `<i class="fa fa-heart" style="font-size:24px;color:#df4e4e;padding-left:10px;"></i>`;
-                }
-                else if (mret[k][1][5] == 2) {
-                    var favorite = `<i class="fas fa-poop" style="font-size:24px;color:#8e6344;padding-left:10px;"></i>`;
+                if (Number.isInteger(mret[k][1][5])) {
+                    if (mret[k][1][5] == 1) {
+                        var favorite = `<i class="fa fa-heart" style="font-size:24px;color:#df4e4e;padding-left:10px;"></i>`;
+                    }
+                    else if (mret[k][1][5] == 2) {
+                        var favorite = `<i class="fas fa-poop" style="font-size:24px;color:#8e6344;padding-left:10px;"></i>`;
+                    }
+                    else {
+                        var favorite = ``;
+                    }
                 }
                 else {
-                    var favorite = ``;
+                    var favorite = `<a style="font-size:26px;padding-left:8px;">` + mret[k][1][5] + `</a>`;
                 }
 
                 // 3.2) Rotten Tomatoes Image
-                if (mret[k][0].Ratings.length > 1) {
+
+                var ratingParsed = "&nbsp"; 
+                if (mret[k][0].Ratings.length > 1 && mret[k][0].Ratings[1].Source == "Rotten Tomatoes") {
                     var ratingParsed = parseFloat((mret[k][0].Ratings[1].Value));
-                }
-                else {
-                    var ratingParsed = "N/A";
                 }
 
                 var stylebarpercent = mret[k][1][6] * 100;
@@ -520,7 +526,7 @@
                         </div>
                         `;
                 }
-                else if (ratingParsed == "N/A") {
+                else if (ratingParsed == "&nbsp") {
                     var tomatoe = `
                         <div id="tomatoeIcon"> 
                             <p class="preview__excerpt" itemprop="description">${ratingParsed}</p>

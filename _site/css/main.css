@@ -4,7 +4,6 @@
   font-family: 'StateFaceRegular';
   src: url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.eot');
   src: url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.woff2') format('woff2'), /* */
         url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.woff') format('woff'),
         url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.ttf') format('truetype'),
         url('https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.svg#StateFaceRegular') format('svg');
@@ -349,7 +348,7 @@ section {
     .mpreview:hover {
       background-color: rgba(135, 117, 101, 0.05); }
       .mpreview:hover .mpreview__more {
-        box-shadow: inset 175px 0 0 0 #495961;
+        box-shadow: inset 175px 0 0 0 #000000;
         color: #fff; }
     .mpreview__img {
       will-change: opacity;
