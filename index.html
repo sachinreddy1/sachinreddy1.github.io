@@ -218,6 +218,12 @@
                         <div class="w3-content w3-display-container">
 
                             <div class="w3-display-container mySlides">
+                                <img src="/assets/image/gallery/image_0.gif" style="width:100%">
+                                <div class="w3-display-bottomright w3-medium w3-container w3-padding-16" style="font-family: Roboto;font-weight: bold;color: white;border-top-left-radius:25px;background-color:black;">
+                                </div>
+                            </div>
+
+                            <div class="w3-display-container mySlides">
                                 <img src="https://s3.amazonaws.com/sachinreddy.com/assets/image/gallery/image7.png" style="width:100%">
                                 <div class="w3-display-bottomright w3-medium w3-container w3-padding-16" style="font-family: Roboto;font-weight: bold;color: white;border-top-left-radius:25px;background-color:black;">
                                     Stone Mountain, Georgia
@@ -245,6 +251,7 @@
                                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
                                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
                                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
                             </div>
 
                         </div>
@@ -508,6 +515,8 @@
                 }
                 var substancebar = substancebarpercent + "%";
 
+                
+
 
                 if (ratingParsed < 70) {
                     var tomatoe = `
@@ -555,6 +564,11 @@
                             <div class="titleWrapper">
                                 <div class="demo-1">
                                     ${mret[k][0].Title} (${mret[k][0].Year})
+                                </div>
+                                <div id="ratedIcon">
+                                    <p class="preview__excerpt" itemprop="description" style="border-style: solid;">
+                                        &nbsp&nbsp${mret[k][0].Rated}&nbsp&nbsp
+                                    </p>
                                 </div>
                                 ${tomatoe}
                             </div>

@@ -1816,6 +1816,13 @@ table td {
   /* padding-bottom: 0em; */
   padding-left: 32px; }
 
+#ratedIcon {
+  position: absolute;
+  bottom: 0.5%;
+  right: 30%;
+  
+  }
+
 #datePos {
   position: absolute;
   bottom: 5%;
