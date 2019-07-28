@@ -116,7 +116,10 @@ qi {
     font-size: 50px;
     color: #ffffff;
      }
- 
+@media (max-width: 54em) {
+  qi {
+    padding-bottom: 3%;
+    font-size: 45px; } }
 
 g {
   display: block;
@@ -247,21 +250,35 @@ section {
 
 .previews > *:first-child {
   position: relative;
-  height: 30em;
+  height: 29em;
   background-color: #0a0a0a; }
+  /*  */
+  @media (min-width: 40em) {
+    .previews > *:first-child {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 45%; } }
+      /*  */
   @media (min-width: 54em) {
     .previews > *:first-child {
       position: fixed;
       top: 0;
       left: 0;
       height: 100%;
-      width: 42%; } }
+      width: 45%; } }
 
 .previews > *:last-child {
   min-height: 100vh; }
+  /*  */
+  @media (min-width: 40em) {
+    .previews > *:last-child {
+      margin-left: 45%; } }
+      /*  */
   @media (min-width: 54em) {
     .previews > *:last-child {
-      margin-left: 42%; } }
+      margin-left: 45%; } }
 
 /* --------------------------------------------- */
 
@@ -310,8 +327,12 @@ section {
               animation: fade-in 1s both; }
     .preview__link {
       display: block;
-      padding: 2em calc(2em + 6.5em) 2em 5%;
+      /* padding: 2em calc(2em + 6.5em) 2em 5%; */
+      padding: 2em calc(2em + 4em) 2em 5%;
       position: relative; }
+      @media (min-width: 44em) {
+        .preview__link {
+          padding: 2.5em calc(3em + 4em) 2.5em 7%; } }
       @media (min-width: 54em) {
         .preview__link {
           padding: 2.5em calc(3em + 7em) 2.5em 7%; } }
@@ -799,6 +820,13 @@ section {
     color: #fff; }
     .nav--white:hover, .nav--white:active, .nav--white:focus {
       color: #fff; }
+
+/**
+   * Game Card
+   */
+   #gameContainer canvas {
+    position: relative;
+  }
 
 /**
    * Profile Card
@@ -1647,6 +1675,46 @@ span.gha-time {
 .bullet-desc {
   font-size: 1.3em; }
 
+/* ------------------------------------- */
+.border-container {
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 0%;
+  flex-direction: row;
+  justify-content: center;
+
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+@media (min-width: 30em) {
+  .border-container {
+    -ms-flex-direction: row;
+        flex-direction: row; } }
+
+.border-container > ul {
+  width: 100%;
+  margin: 0px;
+  text-align: center;
+  line-height: 0px;
+  font-size: 100%;
+}
+
+.border-container > *:first-child {
+  width: 12.5%;
+  padding-left: 0%;
+}
+
+.border-container > *:last-child {
+  width: 12.5%;
+  padding-right: 0%;
+
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+/* ------------------------------------- */
+
 #about {
   text-align: center;
   padding: 14px;
@@ -1879,8 +1947,9 @@ table td {
 
 #ratedIcon {
   position: absolute;
-  bottom: 0.5%;
-  right: 30%;
+  
+  bottom: 5%;
+  right: 26%;
   
   }
 
