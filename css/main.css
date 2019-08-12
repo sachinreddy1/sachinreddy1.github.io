@@ -1728,6 +1728,7 @@ span.gha-time {
   border-radius: 25px;
   bottom: 25%;
   width: 32.5%;
+  /* max-width: 1em; */
   position: absolute;
   right: 1.25em;
   top: 25%;
@@ -1782,13 +1783,89 @@ span.gha-time {
     width: 36.2%;
     right: 1.25em;
     height: 45%;
-    /* max-height: 9em; */
+    max-width: 15em;
+
+    /* max-height: 10em; */
+
+    z-index: 5;
 }
 .iframe iframe
 {
     width: 100%;
     height: 100%;
 }
+
+/* ------------------------------------------- */
+
+.button {
+  background-color: #495961; 
+  border: none;
+  color: rgba(255, 255, 255, 0);
+  /*  */
+  padding: 0px 8px;
+  /*  */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  /*  */
+  font-size: 15px;
+  margin: 3.5px 2px;
+  /*  */
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  outline: none;
+}
+
+.button1 {
+  background-color: rgba(255, 255, 255, 0); 
+  color: black; 
+  border: 2px solid #495961; 
+  border-radius: 12px;
+}
+
+.button1:hover {
+  background-color: #495961; 
+  color: white;
+}
+
+/*  */
+
+.container {
+  overflow:hidden;
+  position:relative;
+}
+
+
+.slider {
+overflow-y: scroll;
+  /* only transition on transform properties which are hardware accelerated = way better performances */
+-webkit-transition:-webkit-transform .5s ease;
+     -moz-transition:   -moz-transform .5s ease;
+      -ms-transition:    -ms-transform .5s ease;
+          transition:        transform .5s ease;
+}
+
+.slider.opened { 
+  /* visible */
+  height:100%;
+  padding: 4px 0px 4px 0px;
+
+  -webkit-transform: translate(0, 0%);
+     -moz-transform: translate(0, 0%);
+      -ms-transform: translate(0, 0%);
+          transform: translate(0, 0%);
+}
+.slider.closed { 
+  /* completely offscreen */
+  height:0px;
+
+  -webkit-transform: translate(0, -100%);
+     -moz-transform: translate(0, -100%);
+      -ms-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+}
+
 
 /* ------------------------------------------- */
 
@@ -1917,7 +1994,9 @@ table td {
 #moviesvg {
   position: absolute;
   top: 0px;
-  left: 0px; } 
+  left: 0px;
+  /* max-width: 55%; */
+} 
 
 #illini_img {
   position: relative;
@@ -1931,7 +2010,9 @@ table td {
 #profileIcon {
   position: relative;
   padding-bottom: 5px;
-  padding-left: 42px; }
+  padding-left: 42px;
+  /* max-width: 55%; */
+}
 
 #tomatoesvg {
   position: absolute;
@@ -2096,15 +2177,16 @@ table td {
 }
 
 #loadMore {
-  background-color: #495961;
+  background-color: rgba(255, 255, 255, 0); 
+
+  color: black; 
 
   position: relative;
   left: 2%;
+  border: 3px solid #495961; 
   /* bottom: 2%;
   padding-bottom: 2%; */
 
-  border: none;
-  color: white;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -2116,40 +2198,51 @@ table td {
 
   font-family: "Staatliches", serif;
 
-  opacity: 0.6;
+  opacity: 1;
   font-weight: bold;
   border-radius: 12px;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 #loadMore:hover {
-  transition: all 0.4s ease-in-out;
-  opacity: 1
+  background-color: #495961; 
+  color: white;
 }
 
+
 #loadLess {
-  background-color: #495961;
+  background-color: rgba(255, 255, 255, 0); 
+
+  color: black; 
 
   position: relative;
   left: 2%;
+  border: 3px solid #495961; 
   /* bottom: 2%;
   padding-bottom: 2%; */
 
-  border: none;
-  color: white;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 1% 0px 0px 0px;
+
   cursor: pointer;
 
   font-family: "Staatliches", serif;
 
-  opacity: 0.6;
+  opacity: 1;
   font-weight: bold;
   border-radius: 12px;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 #loadLess:hover {
-  transition: all 0.4s ease-in-out;
-  opacity: 1
+  background-color: #495961; 
+  color: white;
 }

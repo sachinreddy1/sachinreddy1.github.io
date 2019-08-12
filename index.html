@@ -214,14 +214,6 @@
                     <!--About Tab-->
                     <div class="tab">
                         <!-- QUOTES -->
-                        <!-- <p id="about">
-                            <r id="quote"></r>
-                            <ul class="border-container">
-                                <li><img src="/assets/image/cornerBorder.png"></li>
-                                <li><r id="name"></r></li>
-                                <li><img src="/assets/image/cornerBorder.png"></li>
-                            </ul> -->
-                        
                         <p id="about">
                             <r id="quote"></r></p>
                         <p id="about">
@@ -234,13 +226,13 @@
                                 
                                 <!-- VIDEO: YOUTUBE -->
                                 <!-- <div style="position:relative;padding-top:100%;">
-                                    <iframe src="https://www.youtube.com/embed/98wVFsIt-MQ?loop=1" frameborder="0" allowfullscreen
+                                    <iframe src="https://www.youtube.com/embed/33AFCyblVzk?loop=1" frameborder="0" allowfullscreen
                                       style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                                 </div> -->
 
                                 <!-- VIDEO: MP4 -->
                                 <div style="position:relative;padding-top:100%;background-color:black;">
-                                    <video style="position:absolute;top:0;left:0;width:100%;height:100%;" poster="/assets/image/gallery/image_0_placeholder.png" controls>
+                                    <video style="position:absolute;top:0;left:0;width:100%;height:100%;" poster="/assets/image/gallery/image7.png" controls>
                                         <source src="https://s3.amazonaws.com/sachinreddy.com/assets/image/gallery/image_0.mp4" type="video/mp4">
                                         <source src="https://s3.amazonaws.com/sachinreddy.com/assets/image/gallery/image_0.ogg" type="video/ogg">
                                     </video>
@@ -251,17 +243,17 @@
                                 
                                 <!-- DESCRIPTION -->
                                 <!-- <div class="w3-display-bottomright w3-medium w3-container w3-padding-16" style="font-family: Roboto;font-weight: bold;color: white;border-top-left-radius:25px;background-color:black;">
-                                    Something.
+                                    🙂
                                 </div> -->
 
                             </div>
 
-                            <div class="w3-display-container mySlides">
+                            <!-- <div class="w3-display-container mySlides">
                                 <img src="https://s3.amazonaws.com/sachinreddy.com/assets/image/gallery/image7.png" style="width:100%">
                                 <div class="w3-display-bottomright w3-medium w3-container w3-padding-16" style="font-family: Roboto;font-weight: bold;color: white;border-top-left-radius:25px;background-color:black;">
                                     Stone Mountain, Georgia
                                 </div>
-                            </div>
+                            </div> -->
                                 
                             <div class="w3-display-container mySlides">
                                 <img src="https://s3.amazonaws.com/sachinreddy.com/assets/image/gallery/image_me.png" style="width:100%">
@@ -341,7 +333,7 @@
                                         <img class="post-image" src="https://s3.amazonaws.com/sachinreddy.com/assets/image/CubicTrooper/CubicTrooper.png">
                                         </picture>
                                     </div>
-                                    <div class="w3-text-blue"><strong>v0.1</strong></div> 
+                                    <div class="w3-text-blue"><strong>v0.3</strong></div> 
                                     <p class="small_preview__excerpt" itemprop="description"><strong>A 2D, third-person shooter made using Unity</strong></p>
                                     
                                     <span class="preview__more">Play</span>
@@ -463,9 +455,8 @@
         <!-- Random Quotes Generator -->
         <script>
             var quotes_names = [
-            ["\"Strikes and gutters, ups and downs.\"", "~ The Dude | The Big Lebowski"], 
-            //["\"I'm trash.\"", "~ Forky | Toy Story"], 
-            // ["\"Sometimes, you have to mess up to figure things out.\"", "~ Steve Harrington | Stranger Things"],
+            // ["\"Strikes and gutters, ups and downs.\"", "~ The Dude | The Big Lebowski"], 
+            ["\"Do or do not. There is no try.\"", "~ Yoda | Star Wars"],
             ];
             
             var v = Math.floor(Math.random() * quotes_names.length)
@@ -478,38 +469,26 @@
         <!-- MovieDB and Markup -->
         <script>
             const movies = {
-                movie_0: ['Call Me by Your Name', '2017', 'Z9AYPxH5NTM', 0.90, 'Feb 2, 2019', 1, 0.81, 0.93],
-                movie_1: ['They Shall Not Grow Old', '2018', 'IrabKK9Bhds', 0.65, 'Feb 7, 2019', 0, 0.70, 0.61],
-                movie_2: ['Casino Royale', '2006', 'A1AMUmkj-ck', 0.85, 'Feb 9, 2019', 1, 0.86, 0.84],
-                movie_3: ['Blade Runner 2049', '2017', 'dZOaI_Fn5o4', 0.74, 'Feb 19, 2019', 0, 0.76, 0.72],
-                movie_4: ['Aliens', '1986', 'XOwTCvn0UIg', 0.91, 'Feb 20, 2019', 1, 0.86, 0.92],
-                movie_5: ['The Lego Movie 2: The Second Part', '2019', 'cksYkEzUa7k', 0.80, 'Feb 23, 2019', 0, 0.76, 0.82],
-                movie_6: ['The Fly', '1986', 'cWwqwSO119U', 0.88, 'Feb 27, 2019', 1, 0.86, 0.90],
-                movie_7: ['The Dark Knight', '2008', 'k_B_n-Rbros', 0.92, 'Mar 4, 2019', 1, 0.90, 0.94],
-                movie_8: ['Captain Marvel', '2019', '9pQNYeOEFJc', 0.75, 'Mar 8, 2019', 0, 0.74, 0.66],
-                movie_9: ['Raging Bull', '1980', 'Tx-kB1KKLJ0', 0.88, 'Mar 23, 2019', 0, 0.84, 0.91],
-                movie_10: ['Gone with the Wind', '1939', 'lrhNPS4nbmQ', 0.92, 'Mar 28, 2019', 0, 0.90, 0.94],
-                movie_11: ['The Good, the Bad and the Ugly', '1966', 'vg0jjjfKvtM', 0.92, 'Mar 31, 2019', 1, 0.90, 0.94],
-                movie_12: ['The Empire Strikes Back', '1980', 'R4wOzbqgfIY', 0.95, 'Apr 5, 2019', 1, 0.96, 0.94],
-                movie_13: ['Shazam!', '2019', 'Xoi5hA86BmA', 0.79, 'Apr 7, 2019', 0, 0.77, 0.81],
-                movie_14: ['Star Wars: Episode II – Attack of the Clones', '2002', 'nq3Wlk2w-Zw?list=PL56E3EB1DFD4B64A2', 0.54, 'Apr 14, 2019', 2, 0.65, 0.43],
-                movie_15: ['Star Wars: Episode III – Revenge of the Sith', '2005', 'bYWAHuFbLoc', 0.44, 'Apr 17, 2019', 2, 0.53, 0.35],
-                movie_16: ['BlacKkKlansman', '2018', 'videoseries?list=PLnW6ymmyq4VFnAJlNzruSW8rFMCuLI9nZ', 0.88, 'Apr 21, 2019', 0, 0.86, 0.90],
-                movie_17: ['Avengers: Endgame', '2019', 'videoseries?list=PLnW6ymmyq4VFF-IsU_nI21RFuKEHdKy9P', 0.85, 'Apr 25, 2019', 0, 0.88, 0.83],
-                movie_18: ['The Big Lebowski', '1998', 'videoseries?list=PLnW6ymmyq4VHU52cpPryBGPc3LyCmCzls', 0.85, 'Apr 29, 2019', 1, 0.85, 0.85],
-                movie_19: ['American Psycho', '2000', 'videoseries?list=PLnW6ymmyq4VHinRgeLP5FilkKOZUtLEOZ', 0.85, 'May 4, 2019', 1, 0.88, 0.83],
-                movie_20: ['Star Wars: Episode I – The Phantom Menace', '1999', 'ZG1AWVLnl48?list=PL5919C8DE6F720A2D', 0.36, 'May 8, 2019', 2, 0.37, 0.35],
-                movie_21: ['John Wick: Chapter 3 – Parabellum', '2019', '0c-CumupSqY', 0.80, 'May 15, 2019', 0, 0.91, 0.80],
-                movie_22: ['Won\'t You Be My Neighbor?', '2018', 'videoseries?list=PLnW6ymmyq4VE51m_d-JtiorTIFYzBzPw0', 0.90, 'May 21, 2019', '🥰', 0.85, 0.95],
-                movie_23: ['Aladdin', '2019', 'cKoqXHpPsqA', 0.50, 'May 23, 2019', '💸', 0.56, 0.62],
-                movie_24: ['Rocketman', '2019', 'm-NikZp8uKA', 0.95, 'May 31, 2019', 1, 0.93, 0.96],
-                movie_25: ['Always Be My Maybe', '2019', 'iHBcWHY9lN4', 0.85, 'June 2, 2019', '🙂', 0.83, 0.88],
-                movie_26: ['Dark Phoenix', '2019', 'Uu9JFs-Dmb0', 0.35, 'June 7, 2019', 2, 0.37, 0.32],
-                movie_27: ['Toy Story 4', '2019', 'R1txITApUfQ', 0.96, 'June 20, 2019', 0, 0.98, 0.94],
-                movie_28: ['Spider-Man 2', '2004', 'Tnyipx01osQ', 0.95, '', 1, 0.92, 0.97],
-                movie_29: ['Spider-Man: Far From Home', '2019', 'x39cwWNKmTo', 0.84, 'July 2, 2019', '🕷', 0.85, 0.83],
-                movie_30: ['Once Upon a Time In Hollywood', '2019', 'Cl7WqBCUbMo', 0.78, 'July 25, 2019', '📽', 0.83, 0.72],
+                movie_0: ['Avengers: Endgame', '2019', 'videoseries?list=PLnW6ymmyq4VFF-IsU_nI21RFuKEHdKy9P', 'Apr 25, 2019', 0, [7, 8, 7, 6], [8, 8, 9, 9]],
+                movie_1: ['The Big Lebowski', '1998', 'videoseries?list=PLnW6ymmyq4VHU52cpPryBGPc3LyCmCzls', 'Apr 29, 2019', 1, [7, 8, 8, 7], [10, 6, 10, 9]],
+                movie_2: ['American Psycho', '2000', 'videoseries?list=PLnW6ymmyq4VHinRgeLP5FilkKOZUtLEOZ', 'May 4, 2019', 1, [9, 8, 8, 5], [5, 10, 8, 8]],
+                movie_3: ['Star Wars: Episode I – The Phantom Menace', '1999', 'ZG1AWVLnl48?list=PL5919C8DE6F720A2D', 'May 8, 2019', 2, [4, 4, 5, 7], [4, 2, 2, 1]],
+                movie_4: ['John Wick: Chapter 3 – Parabellum', '2019', '0c-CumupSqY', 'May 15, 2019', 0, [8, 8, 9, 5], [7, 6, 8, 7]],
+                movie_5: ['Won\'t You Be My Neighbor?', '2018', 'videoseries?list=PLnW6ymmyq4VE51m_d-JtiorTIFYzBzPw0', 'May 21, 2019', '🥰', [8, 8, 9, 8], [9, 10, 10, 10]],
+                movie_6: ['Aladdin', '2019', 'cKoqXHpPsqA', 'May 23, 2019', '💸', [5, 4, 4, 6], [9, 9, 9, 8]],
+                movie_7: ['Rocketman', '2019', 'm-NikZp8uKA', 'May 31, 2019', 1, [9, 9, 9, 10], [8, 8, 9, 9]],
+                movie_8: ['Always Be My Maybe', '2019', 'iHBcWHY9lN4', 'June 2, 2019', '🙂', [7, 6, 6, 7], [7, 9, 9, 9]],
+                movie_9: ['Dark Phoenix', '2019', 'Uu9JFs-Dmb0', 'June 7, 2019', 2, [7, 8, 6, 7], [4, 3, 2, 2]],
+                movie_10: ['Toy Story 4', '2019', 'R1txITApUfQ', 'June 20, 2019', 0, [9, 9, 9, 8], [8, 9, 10, 9]],
+                movie_11: ['Spider-Man 2', '2004', 'Tnyipx01osQ', '', 1, [8, 8, 8, 10], [10, 10, 10, 9]],
+                movie_12: ['Spider-Man: Far From Home', '2019', 'x39cwWNKmTo', 'July 2, 2019', '🕷', [7, 8, 7, 5], [8, 8, 9, 8]],
+                movie_13: ['Once Upon a Time In Hollywood', '2019', 'Cl7WqBCUbMo', 'July 25, 2019', '📽', [9, 10, 9, 7], [6, 4, 7, 6]],
+                movie_14: ['Hobbs & Shaw', '2019', 'HZ7PAyCDwEg', 'Aug 2, 2019', '💪🏽', [7, 9, 8, 7], [4, 4, 3, 3]],
+                movie_15: ['Hercules', '1997', 'Tl0DMTlwLw4', 'Aug 6, 2019', 1, [8, 7, 5, 9], [7, 8, 9, 9]],
+                movie_16: ['Spirited Away', '2001', 'ByXuk9QqQkk', 'Aug 8, 2019', '🐲', [10, 8, 7, 10], [7, 10, 9, 7]],
             };
+            // Visual design, cinematography, editing, sound design
+            // Plot, themes, characters, dialogue
             
             function movieMarkup(movies) {
             var i;
@@ -540,11 +519,11 @@
             var k;
             for (k=0; k < mret.length; k++) {
                 // 3.1) Adding Favorites
-                if (Number.isInteger(mret[k][1][5])) {
-                    if (mret[k][1][5] == 1) {
+                if (Number.isInteger(mret[k][1][4])) {
+                    if (mret[k][1][4] == 1) {
                         var favorite = `<i class="fa fa-heart" style="font-size:23px;color:#df4e4e;padding-left:10px;"></i>`;
                     }
-                    else if (mret[k][1][5] == 2) {
+                    else if (mret[k][1][4] == 2) {
                         var favorite = `<i class="fas fa-poop" style="font-size:23px;color:#8e6344;padding-left:10px;"></i>`;
                     }
                     else {
@@ -552,7 +531,7 @@
                     }
                 }
                 else {
-                    var favorite = `<a style="font-size:23px;padding-left:8px;">` + mret[k][1][5] + `</a>`;
+                    var favorite = `<a style="font-size:23px;padding-left:8px;">` + mret[k][1][4] + `</a>`;
                 }
 
                 // 3.2) Rotten Tomatoes Image
@@ -562,44 +541,52 @@
                     var ratingParsed = parseFloat((mret[k][0].Ratings[1].Value));
                 }
 
-                var stylebarpercent = Math.round(mret[k][1][6] * 100);
-                if (stylebarpercent > 75) {
-                    var stylebarcolor = 'green';
-                }
-                else if (stylebarpercent > 50) {
-                    var stylebarcolor = 'yellow';
-                }
-                else if (stylebarpercent > 30) {
-                    var stylebarcolor = 'orange';
-                }
-                else if (stylebarpercent > 20) {
-                    var stylebarcolor = 'deep-orange';
-                }
-                else {
-                    var stylebarcolor = 'red';
-                }
+                // 
+
+                var visualDesign_percent = Math.round(mret[k][1][5][0] * 10);
+                var visualDesign_bar = visualDesign_percent + "%";
+                var visualDesign_color = getColor(visualDesign_percent);
+
+                var cinematography_percent = Math.round(mret[k][1][5][1] * 10);
+                var cinematography_bar = cinematography_percent + "%";
+                var cinematography_color = getColor(cinematography_percent);
+
+                var editing_percent = Math.round(mret[k][1][5][2] * 10);
+                var editing_bar = editing_percent + "%";
+                var editing_color = getColor(editing_percent);
+
+                var soundDesign_percent = Math.round(mret[k][1][5][3] * 10);
+                var soundDesign_bar = soundDesign_percent + "%";
+                var soundDesign_color = getColor(soundDesign_percent);
+
+                // 
+
+                var plot_percent = Math.round(mret[k][1][6][0] * 10);
+                var plot_bar = plot_percent + "%";
+                var plot_color = getColor(plot_percent);
+
+                var themes_percent = Math.round(mret[k][1][6][1] * 10);
+                var themes_bar = themes_percent + "%";
+                var themes_color = getColor(themes_percent);
+
+                var characters_percent = Math.round(mret[k][1][6][2] * 10);
+                var characters_bar = characters_percent + "%";
+                var characters_color = getColor(characters_percent);
+
+                var dialogue_percent = Math.round(mret[k][1][6][3] * 10);
+                var dialogue_bar = dialogue_percent + "%";
+                var dialogue_color = getColor(dialogue_percent);
+
+                // 
+                var stylebarpercent = (visualDesign_percent + cinematography_percent + editing_percent + soundDesign_percent)/4;
                 var stylebar = stylebarpercent + "%";
-                
-                var substancebarpercent = Math.round(mret[k][1][7] * 100);
-                if (substancebarpercent > 75) {
-                    var substancecolor = 'green';
-                }
-                else if (substancebarpercent > 50) {
-                    var substancecolor = 'yellow';
-                }
-                else if (substancebarpercent > 30) {
-                    var substancecolor = 'orange';
-                }
-                else if (substancebarpercent > 20) {
-                    var substancecolor = 'deep-orange';
-                }
-                else {
-                    var substancecolor = 'red';
-                }
+                var stylebarcolor = getColor(stylebarpercent);
+
+                var substancebarpercent = (plot_percent + themes_percent + characters_percent + dialogue_percent)/4;
                 var substancebar = substancebarpercent + "%";
+                var substancecolor = getColor(substancebarpercent);
 
-                
-
+                //
 
                 if (ratingParsed < 70) {
                     var tomatoe = `
@@ -716,18 +703,68 @@
                             </table>
                         </div>
 
-                        <m><strong>Style:</strong></m>
-                        <div class="w3-grey w3-small w3-round-xlarge" style="width:55%">
+                        <m><strong>Style:</strong> <button id="${mret[k][2]}.toggle1" class="button button1" onclick="toggleSlider('${mret[k][2]}', '1')">+</button> </m> 
+
+                        <div class="w3-grey w3-small w3-round-xlarge" style="width:55%; max-width: 20em;">
                             <div class="w3-container w3-${stylebarcolor} w3-round-xlarge" style="width:${stylebar}">${stylebar}</div>
                         </div>
 
-                        <m><strong>Substance:</strong></m>
-                        <div class="w3-grey w3-small w3-round-xlarge" style="width:55%">
+                        <div class="container">
+                            <div id="${mret[k][2]}.slider1" class="slider closed">
+                                    <m style="font-size:13.5px">Visual design:</m>
+                                    <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
+                                        <div class="w3-container w3-${visualDesign_color} w3-round-xlarge" style="width:${visualDesign_bar}">${visualDesign_bar}</div>
+                                    </div>
+
+                                    <m style="font-size:13.5px">Cinematography:</m>
+                                    <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
+                                        <div class="w3-container w3-${cinematography_color} w3-round-xlarge" style="width:${cinematography_bar}">${cinematography_bar}</div>
+                                    </div>
+
+                                    <m style="font-size:13.5px">Editing:</m>
+                                    <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
+                                        <div class="w3-container w3-${editing_color} w3-round-xlarge" style="width:${editing_bar}">${editing_bar}</div>
+                                    </div>
+
+                                    <m style="font-size:13.5px">Sound design:</m>
+                                    <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
+                                        <div class="w3-container w3-${soundDesign_color} w3-round-xlarge" style="width:${soundDesign_bar}">${soundDesign_bar}</div>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <m><strong>Substance:</strong> <button id="${mret[k][2]}.toggle2" class="button button1" onclick="toggleSlider('${mret[k][2]}', '2')">+</button> </m>
+
+                        <div class="w3-grey w3-small w3-round-xlarge" style="width:55%; max-width: 20em;">
                             <div class="w3-container w3-${substancecolor} w3-round-xlarge" style="width:${substancebar}">${substancebar}</div>
                         </div>
 
+                        <div class="container">
+                            <div id="${mret[k][2]}.slider2" class="slider closed">
+                                <m style="font-size:13.5px">Plot:</m>
+                                <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
+                                    <div class="w3-container w3-${plot_color} w3-round-xlarge" style="width:${plot_bar}">${plot_bar}</div>
+                                </div>
+
+                                <m style="font-size:13.5px">Themes:</m>
+                                <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
+                                    <div class="w3-container w3-${themes_color} w3-round-xlarge" style="width:${themes_bar}">${themes_bar}</div>
+                                </div>
+
+                                <m style="font-size:13.5px">Characters:</m>
+                                <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
+                                    <div class="w3-container w3-${characters_color} w3-round-xlarge" style="width:${characters_bar}">${characters_bar}</div>
+                                </div>
+
+                                <m style="font-size:13.5px">Dialogue:</m>
+                                <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
+                                    <div class="w3-container w3-${dialogue_color} w3-round-xlarge" style="width:${dialogue_bar}">${dialogue_bar}</div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div id="datePos"> 
-                            <m class="mpreview__date" itemprop="datePublished" datetime="2018-12-28T00:00:00+00:00">${mret[k][1][4]}</m>
+                            <m class="mpreview__date" itemprop="datePublished" datetime="2018-12-28T00:00:00+00:00">${mret[k][1][3]}</m>
                         </div>
 
                     </a>
@@ -741,12 +778,71 @@
             document.getElementById("movies").innerHTML = movieMarkup(movies);
 
             for (var movie in movies) {
-                var starPercentage = movies[movie][3] * 100;
+                var starPercentage1 = ((movies[movie][5][0] + movies[movie][5][1] + movies[movie][5][2] + movies[movie][5][3]) / 4) * 10;
+                var starPercentage2 = ((movies[movie][6][0] + movies[movie][6][1] + movies[movie][6][2] + movies[movie][6][3]) / 4) * 10;
+                var starPercentage = (starPercentage1 + starPercentage2) / 2;
                 var starPercentageRounded = starPercentage + "%";
                 document.querySelector("." + movie + " .stars-inner").style.width = starPercentageRounded;
             }
-        </script>
 
+            // ----------------------------- //
+
+            function toggleSlider (m, i) {
+                var toggle = document.getElementById(m + ".toggle" + i);
+                var slider = document.getElementById(m + ".slider" + i);
+
+                if (i == '1') {
+                    var toggleOther = document.getElementById(m + ".toggle" + "2");
+                    var sliderOther = document.getElementById(m + ".slider" + "2");
+                    if (sliderOther.classList.contains('opened')) {
+                        sliderOther.classList.remove('opened');
+                        sliderOther.classList.add('closed')
+                        toggleOther.innerHTML = "+";
+                    }
+                } else {
+                    var toggleOther = document.getElementById(m + ".toggle" + "1");
+                    var sliderOther = document.getElementById(m + ".slider" + "1");
+                    if (sliderOther.classList.contains('opened')) {
+                        sliderOther.classList.remove('opened');
+                        sliderOther.classList.add('closed')
+                        toggleOther.innerHTML = "+";
+                    }
+                }
+
+                if (slider.classList.contains('opened')) {
+                    slider.classList.remove('opened');
+                    slider.classList.add('closed')
+                    toggle.innerHTML = "+";
+                } else {
+                    slider.classList.remove('closed');
+                    slider.classList.add('opened');
+                    toggle.innerHTML = "-";
+                }
+            }
+            
+            function roundValue(v) {
+                return Math.round(v * 100) + "%";
+            }
+
+            function getColor(v) {
+                if (v > 75) {
+                    return 'green';
+                }
+                else if (v > 50) {
+                    return 'yellow';
+                }
+                else if (v > 30) {
+                    return 'orange';
+                }
+                else if (v > 20) {
+                    return 'deep-orange';
+                }
+                else {
+                    return 'red';
+                }
+            }
+                
+        </script>
 
     </body>
 </html>
