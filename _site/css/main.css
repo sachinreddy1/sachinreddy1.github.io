@@ -1753,7 +1753,7 @@ span.gha-time {
 
 .button1 {
   background-color: rgba(255, 255, 255, 0); 
-  color: black; 
+  color: #495961; 
   border: 2px solid #495961; 
   border-radius: 12px;
 }
@@ -1768,27 +1768,38 @@ span.gha-time {
 .container {
   overflow:hidden;
   position:relative;
+  color: rgba(255, 255, 255, 0);
 }
 
 
 .slider {
-overflow-y: scroll;
-  /* only transition on transform properties which are hardware accelerated = way better performances */
-transition:        -webkit-transform .5s ease;
-transition:        transform .5s ease;
-transition:        transform .5s ease, -webkit-transform .5s ease;
+overflow-y: hidden;
+
+/* only transition on transform properties which are hardware accelerated = way better performances */
+transition:        all .5s ease-in-out;
+
 }
 
 .slider.opened { 
-  /* visible */
-  height:100%;
+  height:175px;
   padding: 4px 0px 4px 0px;
 
   -webkit-transform: translate(0, 0%);
           transform: translate(0, 0%);
 }
+@media (min-width: 30em) {
+  .slider.opened {
+    height:185px; } }
+
+@media (min-width: 40em) {
+  .slider.opened {
+    height:190px; } }
+
+@media (min-width: 65em) {
+  .slider.opened {
+    height:195px; } }
+
 .slider.closed { 
-  /* completely offscreen */
   height:0px;
 
   -webkit-transform: translate(0, -100%);
@@ -2101,7 +2112,7 @@ table td {
 #loadMore {
   background-color: rgba(255, 255, 255, 0); 
 
-  color: black; 
+  color: #495961; 
 
   position: relative;
   left: 2%;
@@ -2125,6 +2136,13 @@ table td {
   border-radius: 12px;
   transition-duration: 0.4s;
   cursor: pointer;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 #loadMore:hover {
   background-color: #495961; 
@@ -2135,7 +2153,7 @@ table td {
 #loadLess {
   background-color: rgba(255, 255, 255, 0); 
 
-  color: black; 
+  color: #495961; 
 
   position: relative;
   left: 2%;
@@ -2159,6 +2177,13 @@ table td {
   border-radius: 12px;
   transition-duration: 0.4s;
   cursor: pointer;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 #loadLess:hover {
   background-color: #495961; 

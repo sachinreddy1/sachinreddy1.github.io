@@ -468,6 +468,9 @@
 
         <!-- MovieDB and Markup -->
         <script>
+            // Visual design, cinematography, editing, sound design
+            // Plot, themes, characters, dialogue
+
             const movies = {
                 movie_0: ['Avengers: Endgame', '2019', 'videoseries?list=PLnW6ymmyq4VFF-IsU_nI21RFuKEHdKy9P', 'Apr 25, 2019', 0, [7, 8, 7, 6], [8, 8, 9, 9]],
                 movie_1: ['The Big Lebowski', '1998', 'videoseries?list=PLnW6ymmyq4VHU52cpPryBGPc3LyCmCzls', 'Apr 29, 2019', 1, [7, 8, 8, 7], [10, 6, 10, 9]],
@@ -478,17 +481,15 @@
                 movie_6: ['Aladdin', '2019', 'cKoqXHpPsqA', 'May 23, 2019', '💸', [5, 4, 4, 6], [9, 9, 9, 8]],
                 movie_7: ['Rocketman', '2019', 'm-NikZp8uKA', 'May 31, 2019', 1, [9, 9, 9, 10], [8, 8, 9, 9]],
                 movie_8: ['Always Be My Maybe', '2019', 'iHBcWHY9lN4', 'June 2, 2019', '🙂', [7, 6, 6, 7], [7, 9, 9, 9]],
-                movie_9: ['Dark Phoenix', '2019', 'Uu9JFs-Dmb0', 'June 7, 2019', 2, [7, 8, 6, 7], [4, 3, 2, 2]],
+                movie_9: ['Dark Phoenix', '2019', 'Uu9JFs-Dmb0', 'June 7, 2019', 2, [5, 7, 6, 6], [4, 3, 2, 2]],
                 movie_10: ['Toy Story 4', '2019', 'R1txITApUfQ', 'June 20, 2019', 0, [9, 9, 9, 8], [8, 9, 10, 9]],
                 movie_11: ['Spider-Man 2', '2004', 'Tnyipx01osQ', '', 1, [8, 8, 8, 10], [10, 10, 10, 9]],
-                movie_12: ['Spider-Man: Far From Home', '2019', 'x39cwWNKmTo', 'July 2, 2019', '🕷', [7, 8, 7, 5], [8, 8, 9, 8]],
-                movie_13: ['Once Upon a Time In Hollywood', '2019', 'Cl7WqBCUbMo', 'July 25, 2019', '📽', [9, 10, 9, 7], [6, 4, 7, 6]],
-                movie_14: ['Hobbs & Shaw', '2019', 'HZ7PAyCDwEg', 'Aug 2, 2019', '💪🏽', [7, 9, 8, 7], [4, 4, 3, 3]],
-                movie_15: ['Hercules', '1997', 'Tl0DMTlwLw4', 'Aug 6, 2019', 1, [8, 7, 5, 9], [7, 8, 9, 9]],
-                movie_16: ['Spirited Away', '2001', 'ByXuk9QqQkk', 'Aug 8, 2019', '🐲', [10, 8, 7, 10], [7, 10, 9, 7]],
+                movie_12: ['Spider-Man: Far From Home', '2019', 'x39cwWNKmTo', 'July 2, 2019', '🕷', [7, 8, 7, 5], [7, 8, 9, 7]],
+                movie_13: ['Once Upon a Time In Hollywood', '2019', 'Cl7WqBCUbMo', 'July 25, 2019', '📽', [9, 10, 9, 7], [4, 4, 7, 8]],
+                movie_14: ['Hobbs & Shaw', '2019', 'HZ7PAyCDwEg', 'Aug 2, 2019', '💪🏽', [8, 9, 7, 7], [3, 3, 5, 5]],
+                movie_15: ['Hercules', '1997', 'Tl0DMTlwLw4', 'Aug 6, 2019', 1, [8, 8, 6, 9], [7, 8, 9, 9]],
+                movie_16: ['Spirited Away', '2001', 'ByXuk9QqQkk', 'Aug 8, 2019', '🐲', [10, 7, 7, 10], [6, 9, 9, 7]],
             };
-            // Visual design, cinematography, editing, sound design
-            // Plot, themes, characters, dialogue
             
             function movieMarkup(movies) {
             var i;
@@ -545,36 +546,44 @@
 
                 var visualDesign_percent = Math.round(mret[k][1][5][0] * 10);
                 var visualDesign_bar = visualDesign_percent + "%";
+                var visualDesign_bar_ = mret[k][1][5][0] + "/10";
                 var visualDesign_color = getColor(visualDesign_percent);
 
                 var cinematography_percent = Math.round(mret[k][1][5][1] * 10);
                 var cinematography_bar = cinematography_percent + "%";
+                var cinematography_bar_ = mret[k][1][5][1] + "/10";
                 var cinematography_color = getColor(cinematography_percent);
 
                 var editing_percent = Math.round(mret[k][1][5][2] * 10);
                 var editing_bar = editing_percent + "%";
+                var editing_bar_ = mret[k][1][5][2] + "/10";
                 var editing_color = getColor(editing_percent);
 
                 var soundDesign_percent = Math.round(mret[k][1][5][3] * 10);
                 var soundDesign_bar = soundDesign_percent + "%";
+                var soundDesign_bar_ = mret[k][1][5][3] + "/10";
                 var soundDesign_color = getColor(soundDesign_percent);
 
                 // 
 
                 var plot_percent = Math.round(mret[k][1][6][0] * 10);
                 var plot_bar = plot_percent + "%";
+                var plot_bar_ = mret[k][1][6][0] + "/10";
                 var plot_color = getColor(plot_percent);
 
                 var themes_percent = Math.round(mret[k][1][6][1] * 10);
                 var themes_bar = themes_percent + "%";
+                var themes_bar_ = mret[k][1][6][1] + "/10";
                 var themes_color = getColor(themes_percent);
 
                 var characters_percent = Math.round(mret[k][1][6][2] * 10);
                 var characters_bar = characters_percent + "%";
+                var characters_bar_ = mret[k][1][6][2] + "/10";
                 var characters_color = getColor(characters_percent);
 
                 var dialogue_percent = Math.round(mret[k][1][6][3] * 10);
                 var dialogue_bar = dialogue_percent + "%";
+                var dialogue_bar_ = mret[k][1][6][3] + "/10";
                 var dialogue_color = getColor(dialogue_percent);
 
                 // 
@@ -713,22 +722,22 @@
                             <div id="${mret[k][2]}.slider1" class="slider closed">
                                     <m style="font-size:13.5px">Visual design:</m>
                                     <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
-                                        <div class="w3-container w3-${visualDesign_color} w3-round-xlarge" style="width:${visualDesign_bar}">${visualDesign_bar}</div>
+                                        <div class="w3-container w3-${visualDesign_color} w3-round-xlarge" style="width:${visualDesign_bar}">${visualDesign_bar_}</div>
                                     </div>
 
                                     <m style="font-size:13.5px">Cinematography:</m>
                                     <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
-                                        <div class="w3-container w3-${cinematography_color} w3-round-xlarge" style="width:${cinematography_bar}">${cinematography_bar}</div>
+                                        <div class="w3-container w3-${cinematography_color} w3-round-xlarge" style="width:${cinematography_bar}">${cinematography_bar_}</div>
                                     </div>
 
                                     <m style="font-size:13.5px">Editing:</m>
                                     <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
-                                        <div class="w3-container w3-${editing_color} w3-round-xlarge" style="width:${editing_bar}">${editing_bar}</div>
+                                        <div class="w3-container w3-${editing_color} w3-round-xlarge" style="width:${editing_bar}">${editing_bar_}</div>
                                     </div>
 
                                     <m style="font-size:13.5px">Sound design:</m>
                                     <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
-                                        <div class="w3-container w3-${soundDesign_color} w3-round-xlarge" style="width:${soundDesign_bar}">${soundDesign_bar}</div>
+                                        <div class="w3-container w3-${soundDesign_color} w3-round-xlarge" style="width:${soundDesign_bar}">${soundDesign_bar_}</div>
                                     </div>
                             </div>
                         </div>
@@ -743,22 +752,22 @@
                             <div id="${mret[k][2]}.slider2" class="slider closed">
                                 <m style="font-size:13.5px">Plot:</m>
                                 <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
-                                    <div class="w3-container w3-${plot_color} w3-round-xlarge" style="width:${plot_bar}">${plot_bar}</div>
+                                    <div class="w3-container w3-${plot_color} w3-round-xlarge" style="width:${plot_bar}">${plot_bar_}</div>
                                 </div>
 
                                 <m style="font-size:13.5px">Themes:</m>
                                 <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
-                                    <div class="w3-container w3-${themes_color} w3-round-xlarge" style="width:${themes_bar}">${themes_bar}</div>
+                                    <div class="w3-container w3-${themes_color} w3-round-xlarge" style="width:${themes_bar}">${themes_bar_}</div>
                                 </div>
 
                                 <m style="font-size:13.5px">Characters:</m>
                                 <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
-                                    <div class="w3-container w3-${characters_color} w3-round-xlarge" style="width:${characters_bar}">${characters_bar}</div>
+                                    <div class="w3-container w3-${characters_color} w3-round-xlarge" style="width:${characters_bar}">${characters_bar_}</div>
                                 </div>
 
                                 <m style="font-size:13.5px">Dialogue:</m>
                                 <div class="w3-grey w3-tiny w3-round-xlarge" style="width:50%; max-width: 18em;">
-                                    <div class="w3-container w3-${dialogue_color} w3-round-xlarge" style="width:${dialogue_bar}">${dialogue_bar}</div>
+                                    <div class="w3-container w3-${dialogue_color} w3-round-xlarge" style="width:${dialogue_bar}">${dialogue_bar_}</div>
                                 </div>
                             </div>
                         </div>
@@ -784,8 +793,6 @@
                 var starPercentageRounded = starPercentage + "%";
                 document.querySelector("." + movie + " .stars-inner").style.width = starPercentageRounded;
             }
-
-            // ----------------------------- //
 
             function toggleSlider (m, i) {
                 var toggle = document.getElementById(m + ".toggle" + i);
