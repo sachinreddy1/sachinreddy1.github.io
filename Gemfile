@@ -6,4 +6,5 @@ group :jekyll_plugins do
   gem "github-pages"
   gem "jekyll-commonmark-ghpages"
   gem "jekyll-remote-theme"
+  gem "jekyll", ">= 3.6.3"
 end
