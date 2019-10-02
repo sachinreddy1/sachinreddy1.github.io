@@ -88,19 +88,19 @@ r {
 
 /* Profile Icon Animations */
 a {
-  color: #ffffff;
+  color: whitesmoke;
   text-decoration: none;
   transition: color 0.4s ease-in-out; }
   a:hover, a:active, a:focus {
-    color: #e6365c93; }
+    color: steelblue; }
 
 aq {
   font-family: 'StateFaceRegular';
-  color: #ffffff;
+  color: whitesmoke;
   text-decoration: none;
   transition: color 0.4s ease-in-out; }
   aq:hover, aq:active, aq:focus {
-    color: #e6365c93; }
+    color: steelblue; }
 
 figure {
   margin: 0; }
@@ -134,12 +134,12 @@ ol, ul {
  * Text Selection
  */
 ::-moz-selection {
-  color: #fff;
-  background-color: #e6365c93;
+  color: whitesmoke;
+  background-color: steelblue;
   text-shadow: none; }
 ::selection {
-  color: #fff;
-  background-color: #e6365c93;
+  color: whitesmoke;
+  background-color: steelblue;
   text-shadow: none; }
 
 /**
@@ -1936,7 +1936,6 @@ table td {
   position: absolute;
   top: 0px;
   left: 0px;
-  /* max-width: 55%; */
 } 
 
 #illini_img {
@@ -1952,7 +1951,6 @@ table td {
   position: relative;
   padding-bottom: 5px;
   padding-left: 42px;
-  /* max-width: 55%; */
 }
 
 #tomatoesvg {
@@ -2280,10 +2278,12 @@ table td {
 
 .youtube img {
   top: 50%;
-  left: 50%;
+  left: 50%; 
   transform: translate3d( -50%, -50%, 0 );
-  opacity: 0.75;
+  opacity: 0.85;
 }
+
+
 
 .youtube .play-button {
   width: 60px;
@@ -2339,6 +2339,21 @@ table td {
   width: 100%;
   top: 0;
   left: 0;
+}
+
+/* ------------------------------------------- */
+
+.emoji {
+  font-size: 23.5px;
+  padding-left: 12px;
+  position: absolute;
+  bottom: 3px;
+}
+
+@media only screen and (max-width : 640px) {
+  .emoji {
+    bottom: 2px;
+  }
 }
 
 /* ------------------------------------------- */

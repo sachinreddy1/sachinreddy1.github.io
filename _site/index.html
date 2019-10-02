@@ -59,6 +59,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+
         <script>
             $(document).ready(function () {
                 size_li = $("#myList li").size();
@@ -188,6 +189,7 @@
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
                             <li><a class="icon fa fa-lg fa-envelope-o" href="mailto:reddysachin2014@gmail.com"></a></li>
                             <li><a class="icon fa fa-lg fa-github" href="https://github.com/sachinreddy1" target="_blank"></a></li>
+                            <li><a class="fab fa-hackerrank" href="https://www.hackerrank.com/sachinreddy1" target="_blank"></a></li>
                             <li><a class="icon fa fa-lg fa-linkedin" href="https://www.linkedin.com/in/ssreddy2" target="_blank"></a></li>
                             <li><a class="icon fa fa-lg fa-file-text-o" href="/SachinReddyResume.pdf" target="_blank"></a></li> 
                         </ul>
@@ -484,7 +486,6 @@
                     x[i].style.display = "none";  
                 }
                 x[slideIndex-1].style.display = "block";
-
                 // updateDots();
             }
 
@@ -496,6 +497,17 @@
                 }
                 dots[slideIndex-1].className += " w3-white"; 
             }
+
+            // $(function(){
+            //     $( ".mySlides" ).on( "swipeleft", swipeleftHandler );
+            //     $( ".mySlides" ).on( "swiperight", swiperightHandler);
+            //     function swipeleftHandler( ){
+            //         plusDivs(1);
+            //     }
+            //     function swiperightHandler( ){
+            //         plusDivs(-1);
+            //     }
+            // });
 
         </script>
 
@@ -582,7 +594,7 @@
                     }
                 }
                 else {
-                    var favorite = `<a style="font-size:23px;padding-left:8px;">` + mret[k][1][4] + `</a>`;
+                    var favorite = `<a class="emoji">` + mret[k][1][4] + `</a>`;
                 }
 
                 // 3.2) Rotten Tomatoes Image
