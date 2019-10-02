@@ -1742,77 +1742,6 @@ span.gha-time {
   margin-left: .5em;
   font-size: 0.7em; }
 
-.post-video-wrapper iframe{
-  border-radius: 25px;
-  bottom: 25%;
-  width: 32.5%;
-  /* max-width: 1em; */
-  position: absolute;
-  right: 1.25em;
-  top: 25%;
-  
-  /* -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-  overflow: hidden;  */
-}
-  @media (min-width: 35em) {
-    .post-video-wrapper iframe{
-      width: 30%;
-      } 
-    }
-
-  @media (min-width: 40em) {
-    .post-video-wrapper iframe{
-      width: 30%;
-      } 
-    }
-
-  @media (min-width: 52em) {
-    .post-video-wrapper iframe {
-      width: 30%;
-      } 
-    }
-
-  @media (min-width: 64em) {
-    .post-video-wrapper iframe{
-      right: 1.25em; 
-    } 
-  }
-
-  @media (min-width: 76.5em) {
-    .post-video-wrapper iframe{
-      right: 1.25em; 
-    } 
-  }      
-
-/* ------------------------------------------- */
-
-.iframe 
-{
-    /* border: 4px solid black; */
-    border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -o-border-radius: 25px;
-    position: absolute;
-    overflow: hidden;
-
-    bottom: 27.5%;
-    top: 27.5%;
-    width: 36.2%;
-    right: 1.25em;
-    height: 45%;
-    max-width: 15em;
-
-    /* max-height: 10em; */
-
-    z-index: 5;
-}
-.iframe iframe
-{
-    width: 100%;
-    height: 100%;
-}
-
 /* ------------------------------------------- */
 .button {
   background-color: #495961; 
@@ -2343,3 +2272,157 @@ table td {
 @media only screen and (max-width: 300px) {
   .prevArrow, .nextArrow {font-size: 11px}
 }
+
+/* ------------------------------------------- */
+
+.wrapper {
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -o-border-radius: 25px;
+  position: absolute;
+  overflow: hidden;
+
+  bottom: 27.5%;
+  top: 27.5%;
+  width: 36.2%;
+  right: 1.25em;
+  height: 45%;
+  max-width: 15em;
+  z-index: 5;
+}
+
+.youtube {
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 100%;
+  margin: 0 auto; 
+}
+
+.youtube img {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d( -50%, -50%, 0 );
+          transform: translate3d( -50%, -50%, 0 );
+  opacity: 0.75;
+}
+
+.youtube .play-button {
+  width: 60px;
+  height: 50px;
+  background-color: #333;
+  box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
+  z-index: 1;
+  opacity: 0.8;
+  border-radius: 15%;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.youtube .play-button:before {
+  content: "";
+  border-style: solid;
+  border-width: 12px 0 12px 20.0px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.youtube .play-button:hover {
+  opacity: 1.0;
+  background-color: #c4302b;
+}
+
+.youtube:hover .play-button {
+  opacity: 1.0;
+  background-color: #c4302b;
+}
+
+.youtube img,
+.youtube .play-button {
+  cursor: pointer;
+}
+
+.youtube img,
+.youtube iframe,
+.youtube .play-button,
+.youtube .play-button:before {
+  position: absolute;
+}
+
+.youtube .play-button,
+.youtube .play-button:before {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d( -50%, -50%, 0 );
+          transform: translate3d( -50%, -50%, 0 );
+}
+
+.youtube iframe {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* ------------------------------------------- */
+
+/* .post-video-wrapper iframe{
+  border-radius: 25px;
+  bottom: 25%;
+  width: 32.5%;
+  position: absolute;
+  right: 1.25em;
+  top: 25%;
+}
+  @media (min-width: 35em) {
+    .post-video-wrapper iframe{
+      width: 30%;
+      } 
+    }
+
+  @media (min-width: 40em) {
+    .post-video-wrapper iframe{
+      width: 30%;
+      } 
+    }
+
+  @media (min-width: 52em) {
+    .post-video-wrapper iframe {
+      width: 30%;
+      } 
+    }
+
+  @media (min-width: 64em) {
+    .post-video-wrapper iframe{
+      right: 1.25em; 
+    } 
+  }
+
+  @media (min-width: 76.5em) {
+    .post-video-wrapper iframe{
+      right: 1.25em; 
+    } 
+  }      
+
+.iframe 
+{
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -o-border-radius: 25px;
+    position: absolute;
+    overflow: hidden;
+
+    bottom: 27.5%;
+    top: 27.5%;
+    width: 36.2%;
+    right: 1.25em;
+    height: 45%;
+    max-width: 15em;
+    z-index: 5;
+}
+.iframe iframe
+{
+    width: 100%;
+    height: 100%;
+} */

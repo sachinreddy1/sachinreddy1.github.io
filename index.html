@@ -518,34 +518,27 @@
             // Visual design, cinematography, editing, sound design
             // Plot, themes, characters, dialogue
             const movies = {
-                movie_0: ['Avengers: Endgame', '2019', 'videoseries?list=PLnW6ymmyq4VFF-IsU_nI21RFuKEHdKy9P', 'Apr 25, 2019', 0, [7, 8, 7, 6], [8, 8, 9, 9]],
-                movie_1: ['The Big Lebowski', '1998', 'videoseries?list=PLnW6ymmyq4VHU52cpPryBGPc3LyCmCzls', 'Apr 29, 2019', 1, [8, 8, 8, 7], [6, 10, 10, 10]],
-                movie_2: ['American Psycho', '2000', 'videoseries?list=PLnW6ymmyq4VHinRgeLP5FilkKOZUtLEOZ', 'May 4, 2019', 1, [9, 8, 8, 6], [5, 10, 9, 8]],
-                movie_3: ['Star Wars: Episode I – The Phantom Menace', '1999', 'ZG1AWVLnl48?list=PL5919C8DE6F720A2D', 'May 8, 2019', 2, [4, 4, 5, 7], [4, 2, 2, 1]],
-                movie_4: ['John Wick: Chapter 3 – Parabellum', '2019', '0c-CumupSqY', 'May 15, 2019', 0, [8, 8, 9, 5], [7, 6, 8, 7]],
-                movie_5: ['Won\'t You Be My Neighbor?', '2018', 'videoseries?list=PLnW6ymmyq4VE51m_d-JtiorTIFYzBzPw0', 'May 21, 2019', '🥰', [8, 8, 9, 8], [9, 10, 10, 10]],
-                movie_6: ['Aladdin', '2019', 'cKoqXHpPsqA', 'May 23, 2019', '💸', [5, 4, 4, 6], [9, 9, 9, 8]],
-                movie_7: ['Rocketman', '2019', 'm-NikZp8uKA', 'May 31, 2019', 1, [9, 9, 9, 10], [8, 8, 9, 9]],
-                movie_8: ['Always Be My Maybe', '2019', 'iHBcWHY9lN4', 'June 2, 2019', '🙂', [7, 6, 6, 7], [7, 9, 9, 9]],
-                movie_9: ['Dark Phoenix', '2019', 'Uu9JFs-Dmb0', 'June 7, 2019', 2, [5, 7, 6, 6], [4, 3, 2, 2]],
-                movie_10: ['Toy Story 4', '2019', 'R1txITApUfQ', 'June 20, 2019', 0, [9, 9, 9, 8], [8, 9, 10, 9]],
-                movie_11: ['Spider-Man 2', '2004', 'Tnyipx01osQ', '', 1, [8, 8, 8, 10], [10, 10, 10, 9]],
-                movie_12: ['Spider-Man: Far From Home', '2019', 'x39cwWNKmTo', 'July 2, 2019', '🕷', [7, 8, 7, 5], [7, 8, 9, 7]],
-                movie_13: ['Once Upon a Time In Hollywood', '2019', 'Cl7WqBCUbMo', 'July 25, 2019', '📽', [9, 10, 9, 7], [4, 4, 7, 8]],
-                movie_14: ['Hobbs & Shaw', '2019', 'HZ7PAyCDwEg', 'Aug 2, 2019', '💪🏽', [8, 9, 7, 7], [3, 3, 5, 5]],
-                movie_15: ['Hercules', '1997', 'Tl0DMTlwLw4', 'Aug 6, 2019', 1, [8, 8, 6, 9], [7, 8, 9, 9]],
-                movie_16: ['Spirited Away', '2001', 'ByXuk9QqQkk', 'Aug 8, 2019', '🐲', [10, 9, 7, 10], [6, 9, 9, 7]],
-                movie_17: ['The Devil Wears Prada', '2006', '2PjZAeiU7uM', 'Aug 14, 2019', '👠', [9, 8.5, 6, 7], [5, 5, 6.5, 8.5]],
-                movie_18: ['The Princess Bride', '1987', 'rMz7JBRbmNo', 'Aug 17, 2019', 1, [8.5, 7.5, 7.5, 6], [8.5, 9, 9.5, 10]],
-                movie_19: ['Scary Stories to Tell in the Dark', '2019', 'Vlya92LZqZw', 'Aug 18, 2019', '🎃', [8.5, 8.5, 7.5, 8.5], [7.5, 5, 6.5, 6.5]],
-                movie_20: ['It', '2017', '0iID-OpwZ4E', 'Aug 30, 2019', 0, [8, 9, 7, 6.5], [7.5, 7, 7.5, 6.5]],
-                movie_21: ['Love, Simon', '2018', 'ykHeGtN4m94', 'Aug 31, 2019', 1, [9.5, 7.5, 7.5, 9.5], [8, 10, 10, 9.5]],
-                movie_22: ['Molly\'s Game', '2017', '9v-pw0ZQRLY', 'Sept 4, 2019', 0, [8, 7, 8.5, 7], [9, 7.5, 7.5, 7.5]],
-                movie_23: ['IT Chapter Two', '2019', 'xIxCrkR5FPQ', 'Sept 5, 2019', 0, [8, 9, 5.5, 6], [6, 7, 7.75, 6.5]],
-                movie_24: ['Donnie Darko', '2001', 'xksMpeMHbTE', 'Sept 22, 2019', 1, [8.75, 8.5, 7.75, 7.25], [8, 7, 9, 7.5]],
-                movie_25: ['Memories of Murder', '2003', 'o0DotIqOD-E', 'Sept 26, 2019', '😞', [8.5, 8.5, 7, 9.25], [8, 7, 8, 7.5]],
-                // movie_26: ['Battle Royale', '2000', '7JPe8bFN5ys', 'Sept 29, 2019', 0, [7.75, 8, 7, 8.25], [8.75, 7, 8.5, 7]],
-                movie_26: ['Groundhog Day', '1993', 'GncQtURdcE4', 'Sept 29, 2019', 1, [9.5, 9, 9, 8], [10, 10, 10, 10]],
+                movie_0: ['Aladdin', '2019', 'cKoqXHpPsqA', 'May 23, 2019', '💸', [5, 4, 4, 6], [9, 9, 9, 8]],
+                movie_1: ['Rocketman', '2019', 'm-NikZp8uKA', 'May 31, 2019', 1, [9, 9, 9, 10], [8, 8, 9, 9]],
+                movie_2: ['Always Be My Maybe', '2019', 'iHBcWHY9lN4', 'June 2, 2019', '🙂', [7, 6, 6, 7], [7, 9, 9, 9]],
+                movie_3: ['Dark Phoenix', '2019', 'Uu9JFs-Dmb0', 'June 7, 2019', 2, [5, 7, 6, 6], [4, 3, 2, 2]],
+                movie_4: ['Toy Story 4', '2019', 'R1txITApUfQ', 'June 20, 2019', 0, [9, 9, 9, 8], [8, 9, 10, 9]],
+                movie_5: ['Spider-Man 2', '2004', 'Tnyipx01osQ', '', 1, [8, 8, 8, 10], [10, 10, 10, 9]],
+                movie_6: ['Spider-Man: Far From Home', '2019', 'x39cwWNKmTo', 'July 2, 2019', '🕷', [7, 8, 7, 5], [7, 8, 9, 7]],
+                movie_7: ['Once Upon a Time In Hollywood', '2019', 'Cl7WqBCUbMo', 'July 25, 2019', '📽', [9, 10, 9, 7], [4, 4, 7, 8]],
+                movie_8: ['Hobbs & Shaw', '2019', 'HZ7PAyCDwEg', 'Aug 2, 2019', '💪🏽', [8, 9, 7, 7], [3, 3, 5, 5]],
+                movie_9: ['Hercules', '1997', 'Tl0DMTlwLw4', 'Aug 6, 2019', 1, [8, 8, 6, 9], [7, 8, 9, 9]],
+                movie_10: ['Spirited Away', '2001', 'ByXuk9QqQkk', 'Aug 8, 2019', '🐲', [10, 9, 7, 10], [6, 9, 9, 7]],
+                movie_11: ['The Devil Wears Prada', '2006', '2PjZAeiU7uM', 'Aug 14, 2019', '👠', [9, 8.5, 6, 7], [5, 5, 6.5, 8.5]],
+                movie_12: ['The Princess Bride', '1987', 'rMz7JBRbmNo', 'Aug 17, 2019', 1, [8.5, 7.5, 7.5, 6], [8.5, 9, 9.5, 10]],
+                movie_13: ['Scary Stories to Tell in the Dark', '2019', 'Vlya92LZqZw', 'Aug 18, 2019', '🎃', [8.5, 8.5, 7.5, 8.5], [7.5, 5, 6.5, 6.5]],
+                movie_14: ['It', '2017', '0iID-OpwZ4E', 'Aug 30, 2019', 0, [8, 9, 7, 6.5], [7.5, 7, 7.5, 6.5]],
+                movie_15: ['Love, Simon', '2018', 'ykHeGtN4m94', 'Aug 31, 2019', 1, [9.5, 7.5, 7.5, 9.5], [8, 10, 10, 9.5]],
+                movie_16: ['Molly\'s Game', '2017', '9v-pw0ZQRLY', 'Sept 4, 2019', 0, [8, 7, 8.5, 7], [9, 7.5, 7.5, 7.5]],
+                movie_17: ['IT Chapter Two', '2019', 'xIxCrkR5FPQ', 'Sept 5, 2019', 0, [8, 9, 5.5, 6], [6, 7, 7.75, 6.5]],
+                movie_18: ['Donnie Darko', '2001', 'xksMpeMHbTE', 'Sept 22, 2019', 1, [8.75, 8.5, 7.75, 7.25], [8, 7, 9, 7.5]],
+                movie_19: ['Memories of Murder', '2003', 'o0DotIqOD-E', 'Sept 26, 2019', '😞', [8.5, 8.5, 7, 9.25], [8, 7, 8, 7.5]],
+                movie_20: ['Groundhog Day', '1993', 'HtQZ-ecqYVs', 'Sept 29, 2019', 1, [9.5, 9.5, 9.5, 8.75], [10, 10, 10, 10]],
             };
             
             function movieMarkup(movies) {
@@ -721,8 +714,10 @@
                             </div>
                         </h2>
 
-                        <div class="iframe">   
-                            <iframe src="https://www.youtube.com/embed/${mret[k][1][2]}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="wrapper">
+                            <div class="youtube" data-embed="${mret[k][1][2]}">
+                                <div class="play-button"></div>
+                            </div>
                         </div>
                         
                         <div class="preview__excerpt" itemprop="description" style="padding-bottom:10px;">
@@ -916,9 +911,30 @@
                     return 'red';
                 }
             }
-                
-        </script>
+            
+            (function() {
+                var youtube = document.querySelectorAll( ".youtube" );
+                for (var i = 0; i < youtube.length; i++) {
+                    var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
+        
+                    var image = new Image();
+                    image.src = source;
+                    image.addEventListener("load", function() {
+                        youtube[i].appendChild(image);
+                    }(i));
+        
+                    youtube[i].addEventListener( "click", function() {
+                    var iframe = document.createElement( "iframe" );
+                        iframe.setAttribute( "frameborder", "0" );
+                        iframe.setAttribute( "allowfullscreen", "" );
+                        iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?autoplay=1&mute=0" );
+                        this.innerHTML = "";
+                        this.appendChild( iframe );
+                    });    
+                };
+            })();
 
+        </script>
     </body>
 </html>
 
