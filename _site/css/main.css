@@ -128,7 +128,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: steelblue;
+  color: #ff3333;
 }
 
 aq {
@@ -141,7 +141,7 @@ aq {
 aq:hover,
 aq:active,
 aq:focus {
-  color: steelblue;
+  color: #ff3333;
 }
 
 figure {
@@ -184,12 +184,12 @@ ul {
  */
 ::-moz-selection {
   color: whitesmoke;
-  background-color: steelblue;
+  background-color: #ff3333;
   text-shadow: none;
 }
 ::selection {
   color: whitesmoke;
-  background-color: steelblue;
+  background-color: #ff3333;
   text-shadow: none;
 }
 

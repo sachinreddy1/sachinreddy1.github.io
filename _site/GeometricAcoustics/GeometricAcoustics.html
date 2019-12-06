@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Background | PersonalWebsite</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Background" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A personal website." />
+<meta property="og:description" content="A personal website." />
+<link rel="canonical" href="http://localhost:4000/GeometricAcoustics/GeometricAcoustics.html" />
+<meta property="og:url" content="http://localhost:4000/GeometricAcoustics/GeometricAcoustics.html" />
+<meta property="og:site_name" content="PersonalWebsite" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/GeometricAcoustics/GeometricAcoustics.html","description":"A personal website.","headline":"Background","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=1d20ad7808fa709766e0d0c6989ccc77019afb11">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="http://localhost:4000/">PersonalWebsite</a></h1>
+      
+
+      <h2 id="background">Background</h2>
+<p>After reading through <a href="https://www.ideals.illinois.edu/bitstream/handle/2142/50364/Zuofu_Cheng.pdf?sequence=1">Zuofu Cheng’s Dissertation</a> on Real-Time Geometric Acoustics in Interactive Applications, I was inspired to apply some of his concepts into a Minecraft Mod. Seeing that Zuofu has had incredible success in implementing Geometric Acoustics into <a href="https://www.youtube.com/watch?v=TXUTgEmnD6U">Quake 3</a>, I felt Minecraft would be a great application to apply these sound concepts to.</p>
+
+<h2 id="goalsfunctionalities">Goals/Functionalities</h2>
+<ul>
+  <li>Simple Reverberation</li>
+  <li>Raytracing Environment</li>
+  <li>Real-time Reverberation</li>
+  <li>Real-time Occlusion</li>
+  <li>Visualizing Raytraces in GUI</li>
+</ul>
+
+<h3 id="simple-reverberation">Simple Reverberation</h3>
+<p>To begin, I needed to access Minecraft’s OpenAL sound engine and add filters to all the sound sources to give a reverberation effect. I used OpenAL’s <a href="https://kcat.strangesoft.net/misc-downloads/Effects%20Extension%20Guide.pdf">Effects Extension Guide</a>, which served in-valuable in implementing the various featured needed in the mod.</p>
+
+<p>The first major step was to create auxiliary effect slots which are  containers for DSP Effects. Four effect slots are created with the following:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Creating Effect Slot</span>
+<span class="kt">int</span> <span class="n">auxFXSlot0</span> <span class="o">=</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">alGenAuxiliaryEffectSlots</span><span class="o">();</span>
+<span class="n">EFX10</span><span class="o">.</span><span class="na">alAuxiliaryEffectSloti</span><span class="o">(</span><span class="n">auxFXSlot0</span><span class="o">,</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">AL_EFFECTSLOT_AUXILIARY_SEND_AUTO</span><span class="o">,</span> <span class="n">AL10</span><span class="o">.</span><span class="na">AL_TRUE</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>After this, effect objects need to be created in order to bind to these effect slots. This is done with the following:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Creating Effect Object</span>
+<span class="kt">int</span> <span class="n">reverb0</span> <span class="o">=</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">alGenEffects</span><span class="o">();</span>
+<span class="n">EFX10</span><span class="o">.</span><span class="na">alEffecti</span><span class="o">(</span><span class="n">reverb0</span><span class="o">,</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">AL_EFFECT_TYPE</span><span class="o">,</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">AL_EFFECT_EAXREVERB</span><span class="o">);</span>
+</code></pre></div></div>
+<p>There are two reverb effect types in this SDK: AL_EFFECT_REVERB and AL_EFFECT_EAXREVERB. I decided to use AL_EFFECT_EAXREVERB since it has a more advanced parameter set.</p>
+
+<p>After adding the code, the next step was to create filters</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Creating Filter</span>
+<span class="kt">int</span> <span class="n">sendFilter0</span> <span class="o">=</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">alGenFilters</span><span class="o">();</span>
+<span class="n">EFX10</span><span class="o">.</span><span class="na">alFilteri</span><span class="o">(</span><span class="n">sendFilter0</span><span class="o">,</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">AL_FILTER_TYPE</span><span class="o">,</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">AL_FILTER_LOWPASS</span><span class="o">);</span>
+</code></pre></div></div>
+<p>After generating a Filter object the application can set the values for each of the parameters using the alFilter(i,iv,f,fv) function call, which will be used when calculating the environment.</p>
+
+<p>To then set the reverberation parameters, I can simply do:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Set reverberation parameters</span>
+<span class="n">EFX10</span><span class="o">.</span><span class="na">alEffectf</span><span class="o">(</span><span class="n">reverbSlot</span><span class="o">,</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">AL_EAXREVERB_DENSITY</span><span class="o">,</span> <span class="n">r</span><span class="o">.</span><span class="na">density</span><span class="o">);</span>		
+<span class="n">EFX10</span><span class="o">.</span><span class="na">alEffectf</span><span class="o">(</span><span class="n">reverbSlot</span><span class="o">,</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">AL_EAXREVERB_DIFFUSION</span><span class="o">,</span> <span class="n">r</span><span class="o">.</span><span class="na">diffusion</span><span class="o">);</span>
+<span class="n">EFX10</span><span class="o">.</span><span class="na">alEffectf</span><span class="o">(</span><span class="n">reverbSlot</span><span class="o">,</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">AL_EAXREVERB_GAIN</span><span class="o">,</span> <span class="n">r</span><span class="o">.</span><span class="na">gain</span><span class="o">);</span>
+<span class="n">EFX10</span><span class="o">.</span><span class="na">alEffectf</span><span class="o">(</span><span class="n">reverbSlot</span><span class="o">,</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">AL_EAXREVERB_GAINHF</span><span class="o">,</span> <span class="n">r</span><span class="o">.</span><span class="na">gainHF</span><span class="o">);</span>
+<span class="o">...</span>
+</code></pre></div></div>
+<p>I created a reverberation class to easily add these values for density, diffusion, etc. Each of which ranges from 0 to 10.</p>
+
+<p>And lastly, I had to configure the filter for each slot that was created with:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">EFX10</span><span class="o">.</span><span class="na">alFilterf</span><span class="o">(</span><span class="n">sendFilter0</span><span class="o">,</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">AL_LOWPASS_GAIN</span><span class="o">,</span> <span class="n">sendGain0</span><span class="o">);</span>
+<span class="n">EFX10</span><span class="o">.</span><span class="na">alFilterf</span><span class="o">(</span><span class="n">sendFilter0</span><span class="o">,</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">AL_LOWPASS_GAINHF</span><span class="o">,</span> <span class="n">sendCutoff0</span><span class="o">);</span>
+<span class="n">AL11</span><span class="o">.</span><span class="na">alSource3i</span><span class="o">(</span><span class="n">sourceID</span><span class="o">,</span> <span class="n">EFX10</span><span class="o">.</span><span class="na">AL_AUXILIARY_SEND_FILTER</span><span class="o">,</span> <span class="n">auxFXSlot0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">sendFilter0</span><span class="o">);</span>
+</code></pre></div></div>
+<p>To test the reverberation, I simply set sendGain0 to 0.0 and sendCutoff0 to 1.0. This gave a large and pronounced reverberation for each sound source in the game.</p>
+
+<h3 id="raytracing-environment">Raytracing Environment</h3>
+
+<p>The next hard step was to use raytracing to calculate the environment, so that accurate values could be used for the Gain and Cutoff values. This would allow for more accurate reverberation. For example, if a player is in an open field, they should not hear large reverberation due to a lack of reflected sound waves. On the other hand, if a player is in a cave, reverberation should be pronounced considering the possibility of echoing.</p>
+
+<p>To keep things simple in the explanation, the way this is done is by having a set number of rays that are shot out of each sound source at various angles. These rays are then checked to see if they hit any blocks. If so, a secondary bounce is calculated at the normal angle the ray hit the initial block. This can then be used to calculate the total distance the ray traveled, and different blocks the ray hit along it path. To give a better idea, here is simplied version of the code:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Getting player and sound positions</span>
+<span class="n">Vec3d</span> <span class="n">soundPos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vec3d</span><span class="o">(</span><span class="n">posX</span><span class="o">,</span> <span class="n">posY</span><span class="o">,</span> <span class="n">posZ</span><span class="o">);</span>
+<span class="n">Vec3d</span> <span class="n">playerPos</span> <span class="o">=</span> <span class="n">minecraft</span><span class="o">.</span><span class="na">thePlayer</span><span class="o">.</span><span class="na">getPositionVector</span><span class="o">();</span>
+
+<span class="kd">final</span> <span class="kt">float</span> <span class="n">phi</span> <span class="o">=</span> <span class="mf">1.618033988f</span><span class="o">;</span>
+<span class="kd">final</span> <span class="kt">float</span> <span class="n">gAngle</span> <span class="o">=</span> <span class="n">phi</span> <span class="o">*</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span><span class="n">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="mf">2.0f</span><span class="o">;</span>
+<span class="kd">final</span> <span class="kt">float</span> <span class="n">maxDistance</span> <span class="o">=</span> <span class="mf">256.0f</span><span class="o">;</span>
+
+<span class="kd">final</span> <span class="kt">int</span> <span class="n">numRays</span> <span class="o">=</span> <span class="mi">30</span><span class="o">;</span>
+<span class="kd">final</span> <span class="kt">int</span> <span class="n">rayBounces</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numRays</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+<span class="o">{</span>
+	<span class="kt">float</span> <span class="n">fi</span> <span class="o">=</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span><span class="n">i</span><span class="o">;</span>
+	<span class="kt">float</span> <span class="n">fiN</span> <span class="o">=</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span><span class="n">fi</span> <span class="o">/</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span><span class="n">numRays</span><span class="o">;</span>
+	<span class="kt">float</span> <span class="n">longitude</span> <span class="o">=</span> <span class="n">gAngle</span> <span class="o">*</span> <span class="n">fi</span> <span class="o">*</span> <span class="mf">1.0f</span><span class="o">;</span>
+	<span class="kt">float</span> <span class="n">latitude</span> <span class="o">=</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span><span class="n">Math</span><span class="o">.</span><span class="na">asin</span><span class="o">(</span><span class="n">fiN</span> <span class="o">*</span> <span class="mf">2.0f</span> <span class="o">-</span> <span class="mf">1.0f</span><span class="o">);</span>
+	
+	<span class="n">Vec3d</span> <span class="n">rayDir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vec3d</span><span class="o">(</span><span class="mf">0.0</span><span class="o">,</span> <span class="mf">0.0</span><span class="o">,</span> <span class="mf">0.0</span><span class="o">);</span>
+	<span class="o">{</span>
+		<span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">cos</span><span class="o">(</span><span class="n">latitude</span><span class="o">)</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">cos</span><span class="o">(</span><span class="n">longitude</span><span class="o">);</span>
+		<span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">cos</span><span class="o">(</span><span class="n">latitude</span><span class="o">)</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span><span class="n">longitude</span><span class="o">);</span>
+		<span class="kt">double</span> <span class="n">z</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span><span class="n">latitude</span><span class="o">);</span>
+		<span class="n">rayDir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vec3d</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">z</span><span class="o">);</span>
+	<span class="o">}</span>
+	
+	<span class="n">Vec3d</span> <span class="n">rayStart</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vec3d</span><span class="o">(</span><span class="n">soundPos</span><span class="o">.</span><span class="na">xCoord</span><span class="o">,</span> <span class="n">soundPos</span><span class="o">.</span><span class="na">yCoord</span><span class="o">,</span> <span class="n">soundPos</span><span class="o">.</span><span class="na">zCoord</span><span class="o">);</span>
+	<span class="n">Vec3d</span> <span class="n">rayEnd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vec3d</span><span class="o">(</span><span class="n">rayStart</span><span class="o">.</span><span class="na">xCoord</span> <span class="o">+</span> <span class="n">rayDir</span><span class="o">.</span><span class="na">xCoord</span> <span class="o">*</span> <span class="n">maxDistance</span><span class="o">,</span> <span class="n">rayStart</span><span class="o">.</span><span class="na">yCoord</span> <span class="o">+</span> <span class="n">rayDir</span><span class="o">.</span><span class="na">yCoord</span> <span class="o">*</span> <span class="n">maxDistance</span><span class="o">,</span> <span class="n">rayStart</span><span class="o">.</span><span class="na">zCoord</span> <span class="o">+</span> <span class="n">rayDir</span><span class="o">.</span><span class="na">zCoord</span> <span class="o">*</span> <span class="n">maxDistance</span><span class="o">);</span>
+	<span class="n">RayTraceResult</span> <span class="n">rayHit</span> <span class="o">=</span> <span class="n">minecraft</span><span class="o">.</span><span class="na">theWorld</span><span class="o">.</span><span class="na">rayTraceBlocks</span><span class="o">(</span><span class="n">rayStart</span><span class="o">,</span> <span class="n">rayEnd</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+	
+	<span class="k">if</span> <span class="o">(</span><span class="n">rayHit</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+	<span class="o">{</span>
+	    <span class="kt">double</span> <span class="n">rayLength</span> <span class="o">=</span> <span class="n">soundPos</span><span class="o">.</span><span class="na">distanceTo</span><span class="o">(</span><span class="n">rayHit</span><span class="o">.</span><span class="na">hitVec</span><span class="o">);</span>
+				
+		<span class="c1">// Additional bounces</span>
+		<span class="n">Int3</span> <span class="n">lastHitBlock</span> <span class="o">=</span> <span class="n">Int3</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">rayHit</span><span class="o">.</span><span class="na">getBlockPos</span><span class="o">().</span><span class="na">getX</span><span class="o">(),</span> <span class="n">rayHit</span><span class="o">.</span><span class="na">getBlockPos</span><span class="o">().</span><span class="na">getY</span><span class="o">(),</span> <span class="n">rayHit</span><span class="o">.</span><span class="na">getBlockPos</span><span class="o">().</span><span class="na">getZ</span><span class="o">());</span>
+		<span class="n">Vec3d</span> <span class="n">lastHitPos</span> <span class="o">=</span> <span class="n">rayHit</span><span class="o">.</span><span class="na">hitVec</span><span class="o">;</span>
+		<span class="c1">// For reflecting</span>
+		<span class="n">Vec3d</span> <span class="n">lastHitNormal</span> <span class="o">=</span> <span class="n">getNormalFromFacing</span><span class="o">(</span><span class="n">rayHit</span><span class="o">.</span><span class="na">sideHit</span><span class="o">);</span>
+		<span class="n">Vec3d</span> <span class="n">lastRayDir</span> <span class="o">=</span> <span class="n">rayDir</span><span class="o">;</span>
+				
+		<span class="kt">float</span> <span class="n">totalRayDistance</span> <span class="o">=</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span><span class="n">rayLength</span><span class="o">;</span>
+				
+		<span class="c1">//Secondary ray bounces</span>
+		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">rayBounces</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span>
+		<span class="o">{</span>
+			<span class="n">Vec3d</span> <span class="n">newRayDir</span> <span class="o">=</span> <span class="n">reflect</span><span class="o">(</span><span class="n">lastRayDir</span><span class="o">,</span> <span class="n">lastHitNormal</span><span class="o">);</span>
+			<span class="n">Vec3d</span> <span class="n">newRayStart</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vec3d</span><span class="o">(</span><span class="n">lastHitPos</span><span class="o">.</span><span class="na">xCoord</span> <span class="o">+</span> <span class="n">lastHitNormal</span><span class="o">.</span><span class="na">xCoord</span> <span class="o">*</span> <span class="mf">0.01</span><span class="o">,</span> <span class="n">lastHitPos</span><span class="o">.</span><span class="na">yCoord</span> <span class="o">+</span> <span class="n">lastHitNormal</span><span class="o">.</span><span class="na">yCoord</span> <span class="o">*</span> <span class="mf">0.01</span><span class="o">,</span> <span class="n">lastHitPos</span><span class="o">.</span><span class="na">zCoord</span> <span class="o">+</span> <span class="n">lastHitNormal</span><span class="o">.</span><span class="na">zCoord</span> <span class="o">*</span> <span class="mf">0.01</span><span class="o">);</span>
+			<span class="n">Vec3d</span> <span class="n">newRayEnd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vec3d</span><span class="o">(</span><span class="n">newRayStart</span><span class="o">.</span><span class="na">xCoord</span> <span class="o">+</span> <span class="n">newRayDir</span><span class="o">.</span><span class="na">xCoord</span> <span class="o">*</span> <span class="n">maxDistance</span><span class="o">,</span> <span class="n">newRayStart</span><span class="o">.</span><span class="na">yCoord</span> <span class="o">+</span> <span class="n">newRayDir</span><span class="o">.</span><span class="na">yCoord</span> <span class="o">*</span> <span class="n">maxDistance</span><span class="o">,</span> <span class="n">newRayStart</span><span class="o">.</span><span class="na">zCoord</span> <span class="o">+</span> <span class="n">newRayDir</span><span class="o">.</span><span class="na">zCoord</span> <span class="o">*</span> <span class="n">maxDistance</span><span class="o">);</span>					
+			<span class="n">RayTraceResult</span> <span class="n">newRayHit</span> <span class="o">=</span> <span class="n">minecraft</span><span class="o">.</span><span class="na">theWorld</span><span class="o">.</span><span class="na">rayTraceBlocks</span><span class="o">(</span><span class="n">newRayStart</span><span class="o">,</span> <span class="n">newRayEnd</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+												
+			<span class="k">if</span> <span class="o">(</span><span class="n">newRayHit</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+			<span class="o">{</span>	
+				<span class="kt">double</span> <span class="n">newRayLength</span> <span class="o">=</span> <span class="n">lastHitPos</span><span class="o">.</span><span class="na">distanceTo</span><span class="o">(</span><span class="n">newRayHit</span><span class="o">.</span><span class="na">hitVec</span><span class="o">);</span>
+				<span class="n">totalRayDistance</span> <span class="o">+=</span> <span class="n">newRayLength</span><span class="o">;</span>
+				
+				<span class="n">lastHitPos</span> <span class="o">=</span> <span class="n">newRayHit</span><span class="o">.</span><span class="na">hitVec</span><span class="o">;</span>
+				<span class="n">lastHitNormal</span> <span class="o">=</span> <span class="n">getNormalFromFacing</span><span class="o">(</span><span class="n">newRayHit</span><span class="o">.</span><span class="na">sideHit</span><span class="o">);</span>
+			<span class="o">}</span>
+			<span class="k">else</span>
+				<span class="n">totalRayDistance</span> <span class="o">+=</span> <span class="n">lastHitPos</span><span class="o">.</span><span class="na">distanceTo</span><span class="o">(</span><span class="n">playerPos</span><span class="o">);</span>
+					
+			<span class="k">if</span> <span class="o">(</span><span class="n">newRayHit</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+				<span class="k">break</span><span class="o">;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>And with this code, I can then add various calculations to modify the Gain and Cutoff values that will be used for modifying the filters!</p>
+
+<h3 id="real-time-reverberation">Real-time Reverberation</h3>
+<p>Now that I am able to calculate the environment using raytracing. I can then use the calculated values to modify the Gain and Cutoff values. With reverberation, I mainly need to modify the Gain.</p>
+
+<p>In the raytracing of the environement, I calculate the energy towards the player with the block reflectivity. Block reflectivity is a preset value that I estimated at the start. For example:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">soundType</span> <span class="o">==</span> <span class="n">SoundType</span><span class="o">.</span><span class="na">STONE</span><span class="o">)</span>
+	<span class="n">reflectivity</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">;</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">soundType</span> <span class="o">==</span> <span class="n">SoundType</span><span class="o">.</span><span class="na">WOOD</span><span class="o">)</span>
+	<span class="n">reflectivity</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">;</span>
+<span class="o">...</span>
+</code></pre></div></div>
+
+<p>Various calculation were added to ensure a good sound for reverberation. If you want to look into all the calculations done, check out the code on my <a href="https://github.com/sachinreddy1/Geometric_Acoustics/blob/master/src/main/java/com/sachinreddy/GeometricAcoustics/GeometricAcoustics.java">Github</a>.</p>
+
+<h3 id="visualizing-raytraces-in-gui">Visualizing Raytraces in GUI</h3>
+<p>Aside from getting good sounding reverberation in the mod. I felt it necessary to add an overlay GUI to the game so that users could visualize the sound source’s raytraces in their given environment.</p>
+
+<p>Simple rendering of textures was done by adding sprites to the resources folder and calling the following code:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ResourceLocation</span> <span class="n">histogramBlock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ResourceLocation</span><span class="o">(</span><span class="n">GeometricAcousticsCore</span><span class="o">.</span><span class="na">modid</span><span class="o">,</span> <span class="s">"textures/gui/histogram.png"</span><span class="o">);</span>
+
+<span class="n">GL11</span><span class="o">.</span><span class="na">glPushMatrix</span><span class="o">();</span>
+<span class="o">{</span>
+    <span class="n">GL11</span><span class="o">.</span><span class="na">glColor3f</span><span class="o">(</span><span class="n">r</span><span class="o">,</span> <span class="n">g</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+    <span class="n">mc</span><span class="o">.</span><span class="na">renderEngine</span><span class="o">.</span><span class="na">bindTexture</span><span class="o">(</span><span class="n">histogramBlock</span><span class="o">);</span>
+    <span class="n">drawTexturedModalRect</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">GL11</span><span class="o">.</span><span class="na">glPopMatrix</span><span class="o">();</span>
+</code></pre></div></div>
+<p>GL11 can be used to transform the texture in many different ways. In the above example, I am able to modify the color of the texture any given RGB value.</p>
+
+<p>Users will press F6 see the GUI. An example of the finished overlay is pictured here:</p>
+
+<p><img src="https://s3.amazonaws.com/sachinreddy.com/GeometricAcoustics/GuiOverlay.png" alt="GUI Overlay" title="GUI Overlay" /></p>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>Overall I really enjoyed this project, since it applied various mathematical modeling and game engine techniques to get everything to work. I plan on updating the code considering that new version of Minecraft continue to be released and my code only supports version 1.11.</p>
+
+<p><a href="/GeometricAcoustics/GeometricAcoustics-1.11.jar">Download (Version 1.11)</a>
+<a href="https://github.com/sachinreddy1/Geometric_Acoustics">Link to Github Repo</a></p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>

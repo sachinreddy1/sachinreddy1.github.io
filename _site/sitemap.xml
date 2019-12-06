@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/GeometricAcoustics/GeometricAcoustics.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/assets/image/stateface/bower.html</loc>
 </url>
 <url>
@@ -9,7 +12,7 @@
 </url>
 <url>
 <loc>http://localhost:4000/GeometricAcoustics/</loc>
-<lastmod>2019-10-16T10:31:32-05:00</lastmod>
+<lastmod>2019-12-06T01:21:22-06:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/Panzers/</loc>
@@ -17,7 +20,11 @@
 </url>
 <url>
 <loc>http://localhost:4000/SachinReddyResume.pdf</loc>
-<lastmod>2019-02-05T18:12:28-06:00</lastmod>
+<lastmod>2019-11-06T19:29:15-06:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/SolarPanelMonitor/</loc>
+<lastmod>2019-11-04T22:23:23-06:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/TowerDefense/</loc>
@@ -33,6 +40,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
-<lastmod>2019-10-20T17:50:40-05:00</lastmod>
+<lastmod>2019-11-28T02:23:54-06:00</lastmod>
 </url>
 </urlset>

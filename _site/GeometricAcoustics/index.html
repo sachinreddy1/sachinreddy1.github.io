@@ -1,112 +1,429 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!--Favicon set-->
-    <link rel="apple-touch-icon" sizes="144x144" href="https://s3.amazonaws.com/sachinreddy.com/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="https://s3.amazonaws.com/sachinreddy.com/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://s3.amazonaws.com/sachinreddy.com/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="https://s3.amazonaws.com/sachinreddy.com/manifest.json">
-    <link rel="mask-icon" href="https://s3.amazonaws.com/sachinreddy.com/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
-    
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="https://s3.amazonaws.com/sachinreddy.com/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://s3.amazonaws.com/sachinreddy.com/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://s3.amazonaws.com/sachinreddy.com/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="manifest"
+      href="https://s3.amazonaws.com/sachinreddy.com/manifest.json"
+    />
+    <link
+      rel="mask-icon"
+      href="https://s3.amazonaws.com/sachinreddy.com/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
     <!-- Title and Author -->
     <title>Sachin Reddy</title>
-    <meta name="author" content="Sachin Reddy">
-    <meta name="description" content="Software Engineer, Web Enthusiast, Movie Addict">
+    <meta name="author" content="Sachin Reddy" />
+    <meta
+      name="description"
+      content="Software Engineer, Web Enthusiast, Movie Addict"
+    />
 
     <!-- Social Graph Construction -->
-    <meta property="og:title" content="Sachin Reddy">
-    <meta property="og:url" content="sachinreddy.com/">
-    <meta property="og:site_name" content="Sachin Reddy">
-    <meta property="og:description" content="Software Engineer, Web Enthusiast, Movie Addict">
-    <meta property="og:image" content="https://s3.amazonaws.com/sachinreddy.com/assets/image/profile.webp">
-    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Sachin Reddy" />
+    <meta property="og:url" content="sachinreddy.com/" />
+    <meta property="og:site_name" content="Sachin Reddy" />
+    <meta
+      property="og:description"
+      content="Software Engineer, Web Enthusiast, Movie Addict"
+    />
+    <meta
+      property="og:image"
+      content="https://s3.amazonaws.com/sachinreddy.com/assets/image/profile.webp"
+    />
+    <meta property="og:type" content="blog" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:description" content="Software Engineer, Web Enthusiast, Movie Addict">
-    <meta name="twitter:title" content="Sachin Reddy">
-    <meta name="twitter:url" content="sachinreddy.com/">
-    <meta name="twitter:site" content="Sachin Reddy">
-    <meta name="twitter:creator" content="@https://twitter.com/sachinreddy9">
-    <meta name="twitter:domain" content="sachinreddy.com">
-    <meta property="twitter:image" content="https://s3.amazonaws.com/sachinreddy.com/assets/image/profile.webp">
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:description"
+      content="Software Engineer, Web Enthusiast, Movie Addict"
+    />
+    <meta name="twitter:title" content="Sachin Reddy" />
+    <meta name="twitter:url" content="sachinreddy.com/" />
+    <meta name="twitter:site" content="Sachin Reddy" />
+    <meta name="twitter:creator" content="@https://twitter.com/sachinreddy9" />
+    <meta name="twitter:domain" content="sachinreddy.com" />
+    <meta
+      property="twitter:image"
+      content="https://s3.amazonaws.com/sachinreddy.com/assets/image/profile.webp"
+    />
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Lora|Space+Mono:700">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-    <link rel="stylesheet" href="https://s3.amazonaws.com/sachinreddy.com/assets/stateface.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inconsolata|Lora|Space+Mono:700"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://s3.amazonaws.com/sachinreddy.com/assets/stateface.css"
+    />
 
     <!-- CSS -->
     <!-- <link rel="stylesheet" href="css/main.css"> -->
-    <link rel="stylesheet" href="https://s3.amazonaws.com/sachinreddy.com/css/main.css">
-    
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/4f6a4b08efdad6bb29f9cc801f5c07e263b39907/devicon.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link
+      rel="stylesheet"
+      href="https://s3.amazonaws.com/sachinreddy.com/css/main.css"
+    />
 
-    
-    <link rel="alternate" type="application/rss+xml" title="Sachin Reddy" href="sachinreddy.com/feed.xml">
-    <link rel="canonical" href="sachinreddy.com/GeometricAcoustics/">
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/konpa/devicon/4f6a4b08efdad6bb29f9cc801f5c07e263b39907/devicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
+    />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Sachin Reddy"
+      href="sachinreddy.com/feed.xml"
+    />
+    <link rel="canonical" href="sachinreddy.com/GeometricAcoustics/" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143028700-1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-143028700-1"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'UA-143028700-1');
+      gtag("config", "UA-143028700-1");
     </script>
   </head>
 
   <body>
-
     <main>
-    <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      <article
+        itemprop="blogPost"
+        itemscope
+        itemtype="http://schema.org/BlogPosting"
+      >
+        <header class="section-padding--lg mast">
+          <a class="nav nav--white" href="/">
+            <i class="fa fa-lg fa-arrow-left"></i>
+            <span>Back</span>
+          </a>
 
-    <header class="section-padding--lg mast">
-      <a class="nav nav--white" href="/">
-        <i class="fa fa-lg fa-arrow-left"></i>
-        <span>Back</span>
-      </a>
-      
-      <figure class="absolute-bg mast__img" style="background-image: url('https://s3.amazonaws.com/sachinreddy.com/assets/image/GeometricAcoustics/GeometricAcousticsCover.png');"></figure>
-      
-      <div class="mast__container">
-        <h1 itemprop="name headline">Geometric Acoustics</h1>
-      </div>
-    </header>
+          <figure
+            class="absolute-bg mast__img"
+            style="background-image: url('https://s3.amazonaws.com/sachinreddy.com/assets/image/GeometricAcoustics/GeometricAcousticsCover.png');"
+          ></figure>
 
-    <section class="section-padding post" itemprop="articleBody">
-        <div class="markdown-body">
-            <p><a href="GeometricAcoustics-1.11.jar">Download (Version 1.11)</a></p>
-            <p><a href="https://github.com/sachinreddy1/Geometric_Acoustics">Repo</a></p>
-        </div>
-    </section>
+          <div class="mast__container">
+            <h1 itemprop="name headline">Geometric Acoustics</h1>
+          </div>
+        </header>
 
-    </article>
+        <section class="section-padding post" itemprop="articleBody">
+          <div class="markdown-body">
+            <div style="position:relative;padding-top:40%;">
+              <iframe
+                src="https://www.youtube.com/embed/PAh2ihwuGjU"
+                frameborder="0"
+                allowfullscreen
+                style="position:absolute;top:0;left:0;width:100%;height:100%;""
+              ></iframe>
+            </div>
+            <h2 class="code-line" data-line-start=0 data-line-end=1 ><a id="Background_0"></a>Background</h2>
+<p class="has-line-data" data-line-start="1" data-line-end="2">After reading through Zuofu Cheng’s <a href="https://www.ideals.illinois.edu/bitstream/handle/2142/50364/Zuofu_Cheng.pdf?sequence=1">Dissertation</a> on Real-Time Geometric Acoustics in Interactive Applications, I was inspired to apply some of his concepts into my own Minecraft Mod. Seeing that Zuofu had incredible success in implementing Geometric Acoustics in <a href="https://www.youtube.com/watch?v=TXUTgEmnD6U">Quake 3</a>, I felt Minecraft would be a great application to apply these sound concepts to.</p>
+<p class="has-line-data" data-line-start="3" data-line-end="4">I planned to create a mod that would overhaul Minecraft’s sound engine, adding echoing in the form of real-time reverberation and occlusion.</p>
+<h3 class="code-line" data-line-start=5 data-line-end=6 ><a id="GoalsFunctionalities_5"></a>Goals/Functionalities</h3>
+<ul>
+<li class="has-line-data" data-line-start="6" data-line-end="7">Simple Reverberation</li>
+<li class="has-line-data" data-line-start="7" data-line-end="8">Raytracing Environment</li>
+<li class="has-line-data" data-line-start="8" data-line-end="9">Real-time Reverberation</li>
+<li class="has-line-data" data-line-start="9" data-line-end="10">Real-time Occlusion</li>
+<li class="has-line-data" data-line-start="10" data-line-end="12">Visualizing Raytraces in GUI</li>
+</ul>
+<h3 class="code-line" data-line-start=12 data-line-end=13 ><a id="Simple_Reverberation_12"></a>Simple Reverberation</h3>
+<p class="has-line-data" data-line-start="13" data-line-end="14">To begin, I needed to access Minecraft’s OpenAL sound engine and add filters to all the sound sources to give a reverberation effect. I used OpenAL’s <a href="https://kcat.strangesoft.net/misc-downloads/Effects%20Extension%20Guide.pdf">Effects Extension Guide</a>, which served in-valuable in implementing the various featured needed in the mod.</p>
+<p class="has-line-data" data-line-start="15" data-line-end="16">The first major step was to create auxiliary effect slots which are  containers for DSP Effects. Four effect slots are created with the following:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="17" data-line-end="21" class="language-java"><span class="hljs-comment">// Creating Effect Slot</span>
+<span class="hljs-keyword">int</span> auxFXSlot0 = EFX10.alGenAuxiliaryEffectSlots();
+EFX10.alAuxiliaryEffectSloti(auxFXSlot0, EFX10.AL_EFFECTSLOT_AUXILIARY_SEND_AUTO, AL10.AL_TRUE);
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="22" data-line-end="23">After this, effect objects need to be created in order to bind to these effect slots. This is done with the following:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="24" data-line-end="28" class="language-java"><span class="hljs-comment">// Creating Effect Object</span>
+<span class="hljs-keyword">int</span> reverb0 = EFX10.alGenEffects();
+EFX10.alEffecti(reverb0, EFX10.AL_EFFECT_TYPE, EFX10.AL_EFFECT_EAXREVERB);
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="28" data-line-end="29">There are two reverb effect types in this SDK: AL_EFFECT_REVERB and AL_EFFECT_EAXREVERB. I decided to use AL_EFFECT_EAXREVERB since it has a more advanced parameter set.</p>
+<p class="has-line-data" data-line-start="30" data-line-end="31">After adding the code, the next step was to create filters</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="32" data-line-end="36" class="language-java"><span class="hljs-comment">// Creating Filter</span>
+<span class="hljs-keyword">int</span> sendFilter0 = EFX10.alGenFilters();
+EFX10.alFilteri(sendFilter0, EFX10.AL_FILTER_TYPE, EFX10.AL_FILTER_LOWPASS);
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="36" data-line-end="37">After generating a Filter object, the application can set the values for each of the parameters using the alFilter(i,iv,f,fv) function call, which will be used when calculating the environment.</p>
+<p class="has-line-data" data-line-start="38" data-line-end="39">To then set the reverberation parameters, I can simply do:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="40" data-line-end="47" class="language-java"><span class="hljs-comment">// Set reverberation parameters</span>
+EFX10.alEffectf(reverbSlot, EFX10.AL_EAXREVERB_DENSITY, r.density);     
+EFX10.alEffectf(reverbSlot, EFX10.AL_EAXREVERB_DIFFUSION, r.diffusion);
+EFX10.alEffectf(reverbSlot, EFX10.AL_EAXREVERB_GAIN, r.gain);
+EFX10.alEffectf(reverbSlot, EFX10.AL_EAXREVERB_GAINHF, r.gainHF);
+...
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="47" data-line-end="48">I created a reverberation class to easily add these values for density, diffusion, etc. Each of which ranges from 0 to 10.</p>
+<p class="has-line-data" data-line-start="49" data-line-end="50">And lastly, I had to configure the filter for each slot that was created with:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="51" data-line-end="55" class="language-java">EFX10.alFilterf(sendFilter0, EFX10.AL_LOWPASS_GAIN, sendGain0);
+EFX10.alFilterf(sendFilter0, EFX10.AL_LOWPASS_GAINHF, sendCutoff0);
+AL11.alSource3i(sourceID, EFX10.AL_AUXILIARY_SEND_FILTER, auxFXSlot0, <span class="hljs-number">0</span>, sendFilter0);
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="55" data-line-end="56">To test the reverberation, I simply set the four gains to 1.0 and four cutOffs to 1.0. This gave a large and pronounced reverberation for each sound source in the game.</p>
+<h3 class="code-line" data-line-start=57 data-line-end=58 ><a id="Raytracing_Environment_57"></a>Raytracing Environment</h3>
+<p class="has-line-data" data-line-start="59" data-line-end="60">The next hard step was to use raytracing to calculate the environment, so that accurate values could be used for the Gain and Cutoff values. These values will allow for accurate reverberation. For example, if a player is in an open field, they should not hear large reverberation due to a lack of reflected sound waves. On the other hand, if a player is in a cave, reverberation should be pronounced considering the possibility of echoing.</p>
+<p class="has-line-data" data-line-start="61" data-line-end="62">With a given set of rays emitting from a sound source, each of which can bounce up to four times if the ray hits a block, the reflectance and ray distance are accumulated in an array indexed by the ray bounce. These ray bounces help to determine the size of the room a player is standing in. If no ray bounces are present for the entire set of rays, then we can assume the player is standing in an open field. Consider the image below:</p>
+<p class="has-line-data" data-line-start="63" data-line-end="64"><img src="https://s3.amazonaws.com/sachinreddy.com/GeometricAcoustics/EnvironmentEvaluation.png" style="display: block;margin: auto; width: 50%;" alt="Environment Evaluation" title="Environment Evaluation"></p>
+<p class="has-line-data" data-line-start="65" data-line-end="66">To give an even better idea, here is simplied version of the code:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="68" data-line-end="136" class="language-java"><span class="hljs-comment">// Getting player and sound positions</span>
+Vec3d soundPos = <span class="hljs-keyword">new</span> Vec3d(posX, posY, posZ);
+Vec3d playerPos = minecraft.thePlayer.getPositionVector();
+
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">float</span> phi = <span class="hljs-number">1.618033988f</span>;
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">float</span> gAngle = phi * (<span class="hljs-keyword">float</span>)Math.PI * <span class="hljs-number">2.0f</span>;
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">float</span> maxDistance = <span class="hljs-number">256.0f</span>;
+
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> numRays = <span class="hljs-number">30</span>;
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> rayBounces = <span class="hljs-number">4</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; numRays; i++)
+{
+    <span class="hljs-keyword">float</span> fi = (<span class="hljs-keyword">float</span>)i;
+    <span class="hljs-keyword">float</span> fiN = (<span class="hljs-keyword">float</span>)fi / (<span class="hljs-keyword">float</span>)numRays;
+    <span class="hljs-keyword">float</span> longitude = gAngle * fi * <span class="hljs-number">1.0f</span>;
+    <span class="hljs-keyword">float</span> latitude = (<span class="hljs-keyword">float</span>)Math.asin(fiN * <span class="hljs-number">2.0f</span> - <span class="hljs-number">1.0f</span>);
+    
+    Vec3d rayDir = <span class="hljs-keyword">new</span> Vec3d(<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>);
+    {
+        <span class="hljs-keyword">double</span> x = Math.cos(latitude) * Math.cos(longitude);
+        <span class="hljs-keyword">double</span> y = Math.cos(latitude) * Math.sin(longitude);
+        <span class="hljs-keyword">double</span> z = Math.sin(latitude);
+        rayDir = <span class="hljs-keyword">new</span> Vec3d(x, y, z);
+    }
+    
+    Vec3d rayStart = <span class="hljs-keyword">new</span> Vec3d(soundPos.xCoord, soundPos.yCoord, soundPos.zCoord);
+    Vec3d rayEnd = <span class="hljs-keyword">new</span> Vec3d(rayStart.xCoord + rayDir.xCoord * maxDistance, rayStart.yCoord + rayDir.yCoord * maxDistance, rayStart.zCoord + rayDir.zCoord * maxDistance);
+    RayTraceResult rayHit = minecraft.theWorld.rayTraceBlocks(rayStart, rayEnd, <span class="hljs-keyword">true</span>);
+    
+    <span class="hljs-keyword">if</span> (rayHit != <span class="hljs-keyword">null</span>)
+    {
+        <span class="hljs-keyword">double</span> rayLength = soundPos.distanceTo(rayHit.hitVec);
+                
+        <span class="hljs-comment">// Additional bounces</span>
+        Int3 lastHitBlock = Int3.create(rayHit.getBlockPos().getX(), rayHit.getBlockPos().getY(), rayHit.getBlockPos().getZ());
+        Vec3d lastHitPos = rayHit.hitVec;
+        <span class="hljs-comment">// For reflecting</span>
+        Vec3d lastHitNormal = getNormalFromFacing(rayHit.sideHit);
+        Vec3d lastRayDir = rayDir;
+                
+        <span class="hljs-keyword">float</span> totalRayDistance = (<span class="hljs-keyword">float</span>)rayLength;
+                
+        <span class="hljs-comment">//Secondary ray bounces</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; rayBounces; j++)
+        {
+            Vec3d newRayDir = reflect(lastRayDir, lastHitNormal);
+            Vec3d newRayStart = <span class="hljs-keyword">new</span> Vec3d(lastHitPos.xCoord + lastHitNormal.xCoord * <span class="hljs-number">0.01</span>, lastHitPos.yCoord + lastHitNormal.yCoord * <span class="hljs-number">0.01</span>, lastHitPos.zCoord + lastHitNormal.zCoord * <span class="hljs-number">0.01</span>);
+            Vec3d newRayEnd = <span class="hljs-keyword">new</span> Vec3d(newRayStart.xCoord + newRayDir.xCoord * maxDistance, newRayStart.yCoord + newRayDir.yCoord * maxDistance, newRayStart.zCoord + newRayDir.zCoord * maxDistance);                 
+            RayTraceResult newRayHit = minecraft.theWorld.rayTraceBlocks(newRayStart, newRayEnd, <span class="hljs-keyword">true</span>);
+                                                
+            <span class="hljs-keyword">if</span> (newRayHit != <span class="hljs-keyword">null</span>)
+            {   
+                <span class="hljs-keyword">double</span> newRayLength = lastHitPos.distanceTo(newRayHit.hitVec);
+                totalRayDistance += newRayLength;
+                
+                lastHitPos = newRayHit.hitVec;
+                lastHitNormal = getNormalFromFacing(newRayHit.sideHit);
+            }
+            <span class="hljs-keyword">else</span>
+                totalRayDistance += lastHitPos.distanceTo(playerPos);
+                    
+            <span class="hljs-keyword">if</span> (newRayHit == <span class="hljs-keyword">null</span>)
+                <span class="hljs-keyword">break</span>;
+        }
+    }
+}
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="137" data-line-end="138">And with this, I can then add various calculations to modify the Gain and Cutoff values that will be used for modifying the filters!</p>
+<h3 class="code-line" data-line-start=139 data-line-end=140 ><a id="Realtime_Reverberation_139"></a>Real-time Reverberation</h3>
+<p class="has-line-data" data-line-start="140" data-line-end="141">Now that I am able to calculate the environment using raytracing. I can then use the calculated values to modify the Gain and Cutoff values. With reverberation, I mainly need to modify the Gain.</p>
+<p class="has-line-data" data-line-start="142" data-line-end="143">In the raytracing of the environement, I calculate the energy towards the player with the block reflectivity. Block reflectivity is a preset value that I estimated at the start. For example:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="145" data-line-end="151" class="language-java"><span class="hljs-keyword">if</span> (soundType == SoundType.STONE)
+    reflectivity = <span class="hljs-number">1.0</span>;
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (soundType == SoundType.WOOD)
+    reflectivity = <span class="hljs-number">0.5</span>;
+...
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="152" data-line-end="153">Various calculation were added to ensure a good sound for reverberation. If you want to look into all the calculations done, check out the code on my <a href="https://github.com/sachinreddy1/Geometric_Acoustics/blob/master/src/main/java/com/sachinreddy/GeometricAcoustics/GeometricAcoustics.java">Github</a>.</p>
+<h3 class="code-line" data-line-start=154 data-line-end=155 ><a id="Realtime_Occlusion_154"></a>Real-time Occlusion</h3>
+<p class="has-line-data" data-line-start="156" data-line-end="157"><img src="https://s3.amazonaws.com/sachinreddy.com/GeometricAcoustics/Occlusion.png" style="display: block;margin: auto; width: 50%;" alt="Occlusion" title="Occlusion"></p>
+<p class="has-line-data" data-line-start="158" data-line-end="159">Consider the image above. Any sounds that pass from source to listener must pass through the wall, which muffles the sounds. This is called occlusion.</p>
+<p class="has-line-data" data-line-start="160" data-line-end="161">To implement occlusion, I had to accumulate the amount of obstruction between the player and the sound source. This was done by drawing a ray from the sound’s position to the player’s position. If the ray happened to hit a block along its path, an occlusion accumulation value was summed along with a block occlusion value.</p>
+<p class="has-line-data" data-line-start="162" data-line-end="163">By using:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="164" data-line-end="166" class="language-java"><span class="hljs-keyword">if</span> (!blockHit.isOpaqueCube(blockHit.getDefaultState()))
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="166" data-line-end="167">I was able check if the block hit was opaque. If not, my block occlusion value would be decreased.</p>
+<p class="has-line-data" data-line-start="168" data-line-end="169">The full occlusion code is given here:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="170" data-line-end="197" class="language-java">soundPos = offsetSoundByName(soundPos, playerPos, lastSoundName, lastSoundCategory.getName());
+Vec3d toPlayerVector = playerPos.subtract(soundPos).normalize();
+
+<span class="hljs-comment">// Offset the ray start position towards the player by the diagonal half length of a cube</span>
+Vec3d rayOrigin = <span class="hljs-keyword">new</span> Vec3d(soundPos.xCoord, soundPos.yCoord, soundPos.zCoord);
+<span class="hljs-keyword">if</span> (lastSoundName.matches(<span class="hljs-string">".*block.*"</span>))
+    rayOrigin = rayOrigin.add(toPlayerVector.scale(<span class="hljs-number">0.867</span>));
+
+<span class="hljs-keyword">float</span> occlusionAccumulation = <span class="hljs-number">0.0f</span>;     
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+    RayTraceResult rayHit = minecraft.theWorld.rayTraceBlocks(rayOrigin, playerPos, <span class="hljs-keyword">true</span>);
+    
+    <span class="hljs-keyword">if</span> (rayHit != <span class="hljs-keyword">null</span>) {
+        Block blockHit = minecraft.theWorld.getBlockState(rayHit.getBlockPos()).getBlock();
+        <span class="hljs-keyword">float</span> blockOcclusion = <span class="hljs-number">1.0f</span>;
+        
+        <span class="hljs-keyword">if</span> (!blockHit.isOpaqueCube(blockHit.getDefaultState()))
+            blockOcclusion *= <span class="hljs-number">0.15f</span>;
+        
+        occlusionAccumulation += blockOcclusion;
+        
+        rayOrigin = <span class="hljs-keyword">new</span> Vec3d(rayHit.hitVec.xCoord + toPlayerVector.xCoord * <span class="hljs-number">0.1</span>, rayHit.hitVec.yCoord + toPlayerVector.yCoord * <span class="hljs-number">0.1</span>, rayHit.hitVec.zCoord + toPlayerVector.zCoord * <span class="hljs-number">0.1</span>);
+    }
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-keyword">break</span>;
+}
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="197" data-line-end="198">With this, real-time occlusion was implemented by using the occlusion accumulation along with setting Gain and Cutoff values.</p>
+<h3 class="code-line" data-line-start=199 data-line-end=200 ><a id="Visualizing_Raytraces_in_GUI_199"></a>Visualizing Raytraces in GUI</h3>
+<p class="has-line-data" data-line-start="200" data-line-end="201">Aside from getting good sounding reverberation in the mod. I felt it necessary to add an overlay GUI to the game so that users could visualize the sound source’s raytraces in their given environment.</p>
+<p class="has-line-data" data-line-start="202" data-line-end="203">Simple rendering of textures was done by adding sprites to the resources folder and calling the following code:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="205" data-line-end="215" class="language-java">ResourceLocation histogramBlock = <span class="hljs-keyword">new</span> ResourceLocation(GeometricAcousticsCore.modid, <span class="hljs-string">"textures/gui/histogram.png"</span>);
+
+GL11.glPushMatrix();
+{
+    GL11.glColor3f(r, g, b);
+    mc.renderEngine.bindTexture(histogramBlock);
+    drawTexturedModalRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>);
+}
+GL11.glPopMatrix();
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="215" data-line-end="216">OpenGL (GL11) can be used to transform the texture in many different ways. In the above example, I am able to modify the color of the texture to any given RGB value.</p>
+<p class="has-line-data" data-line-start="217" data-line-end="218">Players will <strong>press F6</strong> to see the GUI. An example of the finished overlay is pictured here:</p>
+<p class="has-line-data" data-line-start="219" data-line-end="220"><img src="https://s3.amazonaws.com/sachinreddy.com/GeometricAcoustics/GuiOverlay.png" alt="GUI Overlay" title="GUI Overlay"></p>
+<h3 class="code-line" data-line-start=221 data-line-end=222 ><a id="Conclusion_221"></a>Conclusion</h3>
+<p class="has-line-data" data-line-start="222" data-line-end="223">Overall I really enjoyed this project, since it applied game engine techniques including raytracing and OpenAL modifications. I plan on updating the code considering that new versions of Minecraft continue to be released and my code only supports version 1.11.</p>
+<p class="has-line-data" data-line-start="224" data-line-end="226"><a href="GeometricAcoustics-1.11.jar">Download (Version 1.11)</a><br>
+<a href="https://github.com/sachinreddy1/Geometric_Acoustics">Link to Github Repo</a></p>
+          </div>
+        </section>
+      </article>
     </main>
-      
+
     <!-- Github Activity -->
     <div id="gh-wrapper">
-        <div id="feed"></div>
-        <div id="gh-button">Github Activity</div>
+      <div id="feed"></div>
+      <div id="gh-button">Github Activity</div>
     </div>
-    
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js'></script>
-    <script type='text/javascript' src='https://s3.amazonaws.com/sachinreddy.com/assets/js/github-activity.js'></script>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js'></script>
-    <script type='text/javascript' src='https://s3.amazonaws.com/sachinreddy.com/assets/js/bundles.js'></script>
 
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://s3.amazonaws.com/sachinreddy.com/assets/js/github-activity.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://s3.amazonaws.com/sachinreddy.com/assets/js/bundles.js"
+    ></script>
   </body>
 </html>
-

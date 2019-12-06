@@ -19,7 +19,7 @@
   "author": "Shane Osbourne",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.7",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "1.0.0",
     "gulp-gh-pages": "^0.5.4",
@@ -35,13 +35,14 @@
   },
   "homepage": "https://github.com/shakyShane/jekyll-gulp-sass-browser-sync",
   "dependencies": {
+    "axios": ">=0.18.1",
     "del": "^3.0.0",
+    "fstream": ">=1.0.12",
     "gulp-uglifycss": "^1.1.0",
-    "run-sequence": "^2.2.1",
     "lodash": ">=4.17.13",
     "lodash.template": ">=4.5.0",
-    "fstream": ">=1.0.12",
-    "axios": ">=0.18.1",
+    "marked": "^0.7.0",
+    "run-sequence": "^2.2.1",
     "tar": ">=2.2.2"
   }
 }
