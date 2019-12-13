@@ -220,11 +220,13 @@ EFX10.alFilteri(sendFilter0, EFX10.AL_FILTER_TYPE, EFX10.AL_FILTER_LOWPASS);
     <pre
       class="highlight"
     ><code class="has-line-data" data-line-start="40" data-line-end="47" class="language-java"><span class="hljs-comment">// Set reverberation parameters</span>
-EFX10.alEffectf(reverbSlot, EFX10.AL_EAXREVERB_DENSITY, r.density);     
-EFX10.alEffectf(reverbSlot, EFX10.AL_EAXREVERB_DIFFUSION, r.diffusion);
-EFX10.alEffectf(reverbSlot, EFX10.AL_EAXREVERB_GAIN, r.gain);
-EFX10.alEffectf(reverbSlot, EFX10.AL_EAXREVERB_GAINHF, r.gainHF);
+EFX10.alEffectf(reverb0, EFX10.AL_EAXREVERB_DENSITY, r.density);     
+EFX10.alEffectf(reverb0, EFX10.AL_EAXREVERB_DIFFUSION, r.diffusion);
+EFX10.alEffectf(reverb0, EFX10.AL_EAXREVERB_GAIN, r.gain);
+EFX10.alEffectf(reverb0, EFX10.AL_EAXREVERB_GAINHF, r.gainHF);
 ...
+<span class="hljs-comment">//Attach updated effect object</span>
+EFX10.alAuxiliaryEffectSloti(auxFXSlot0, EFX10.AL_EFFECTSLOT_EFFECT, reverb0);
 </code></pre></div></div>
 <p class="has-line-data" data-line-start="47" data-line-end="48">I created a reverberation class to easily add these values for density, diffusion, etc. Each of which ranges from 0 to 10.</p>
 <p class="has-line-data" data-line-start="49" data-line-end="50">And lastly, I had to configure the filter for each slot that was created with:</p>

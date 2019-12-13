@@ -325,7 +325,7 @@ section {
   background-color: #0a0a0a;
 }
 /*  */
-@media (min-width: 40em) {
+@media (min-width: 50em) {
   .previews > *:first-child {
     position: fixed;
     top: 0;
@@ -349,7 +349,7 @@ section {
   min-height: 100vh;
 }
 /*  */
-@media (min-width: 40em) {
+@media (min-width: 50em) {
   .previews > *:last-child {
     margin-left: 45%;
   }
@@ -446,6 +446,7 @@ section {
 .preview__date {
   font-family: "Staatliches", serif;
   color: #0a0a0a;
+  display: block;
 }
 .preview__header {
   color: #495961;
@@ -2899,6 +2900,30 @@ table td {
 }
 
 /* ------------------------------------------- */
+
+.award_container {
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  margin-bottom: 10px;
+}
+
+.ti_icon {
+  background: url("/assets/image/ti.ico") no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.award {
+  color: #000000;
+  display: inline-block;
+  padding-left: 8px;
+  font-size: 14.5px;
+  position: relative;
+  bottom: 5px;
+}
 
 /* .post-video-wrapper iframe{
   border-radius: 25px;
