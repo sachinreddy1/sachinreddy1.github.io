@@ -323,7 +323,7 @@
                                 <a class="preview__link" href="/SolarPanelMonitor" itemprop="url">
                                     <span class="preview__date" itemprop="datePublished" datetime="2019-12-08T00:00:00+00:00">Dec 8, 2019</span>
                                     
-                                    <div class="award_container"><i class='ti_icon'></i> <div class="award"><strong>Best Project of 2019</strong></div></div>
+                                    <div class="award_container"><i class='ti_icon'></i> <p class="award"><strong>Best Project of 2019</strong></p></div>
                                     <h2 class="preview__header" itemprop="name">Solar Panel Monitor</h2>
                                     <div>
                                         <i class="devicon-cplusplus-plain colored"></i>
@@ -563,14 +563,18 @@
         <!-- Random Quotes Generator -->
         <script>
             var quotes_names = [
-                ["\"Is it better to speak or to die?\"", "~ Elio | Call Me By Your Name"],
+                // ["\"Is it better to speak or to die?\"", "~ Elio | Call Me By Your Name", 1],
+                ["\"Cogito, ergo sum\"", "~ René Descartes", 0],
             ];
             
             var v = Math.floor(Math.random() * quotes_names.length)
             q = quotes_names[v][0]
             n = quotes_names[v][1]
             document.getElementById("quote").innerHTML = q;
-            document.getElementById("name").innerHTML = n  + "TM".sup();
+            if (quotes_names[v][2])
+                document.getElementById("name").innerHTML = n  + "TM".sup();
+            else
+                document.getElementById("name").innerHTML = n;
         </script>
 
         <!-- MovieDB and Markup -->

@@ -2940,6 +2940,20 @@ table td {
   display: inline-block;
 }
 
+@media (max-width: 54em) {
+  .ti_icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 40em) {
+  .ti_icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 .award {
   color: #000000;
   display: inline-block;
@@ -2947,6 +2961,18 @@ table td {
   font-size: 14.5px;
   position: relative;
   bottom: 5px;
+}
+
+@media (max-width: 54em) {
+  .award {
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 40em) {
+  .award {
+    font-size: 12.5px;
+  }
 }
 
 /* .post-video-wrapper iframe{
