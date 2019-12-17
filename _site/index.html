@@ -218,7 +218,10 @@
                     <div class="tab">
                         <!-- QUOTES -->
                         <p id="about">
-                            <r id="quote"></r></p>
+                            <r id="quote"></r>
+                            <r class="element" id="noun"></r>
+                        .</p>
+
                         <p id="about">
                             <r id="name"></r></p>
                         
@@ -563,18 +566,16 @@
         <!-- Random Quotes Generator -->
         <script>
             var quotes_names = [
-                // ["\"Is it better to speak or to die?\"", "~ Elio | Call Me By Your Name", 1],
-                ["\"Cogito, ergo sum\"", "~ René Descartes", 0],
+                ["\"Suck my dick, ", "J.J. Abrams", "~ Sachin"],
             ];
             
             var v = Math.floor(Math.random() * quotes_names.length)
-            q = quotes_names[v][0]
-            n = quotes_names[v][1]
-            document.getElementById("quote").innerHTML = q;
-            if (quotes_names[v][2])
-                document.getElementById("name").innerHTML = n  + "TM".sup();
-            else
-                document.getElementById("name").innerHTML = n;
+            quote = quotes_names[v][0]
+            noun = quotes_names[v][1]
+            author = quotes_names[v][2]
+            document.getElementById("quote").innerHTML = quote;
+            document.getElementById("noun").innerHTML = noun;
+            document.getElementById("name").innerHTML = author;
         </script>
 
         <!-- MovieDB and Markup -->

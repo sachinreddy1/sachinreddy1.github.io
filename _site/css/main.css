@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto|Staatliches");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
 @font-face {
   font-family: "StateFaceRegular";
   src: url("https://s3.amazonaws.com/sachinreddy.com/assets/image/stateface/font/webfont/stateface-regular-webfont.eot");
@@ -2973,6 +2974,30 @@ table td {
   .award {
     font-size: 12.5px;
   }
+}
+
+.element {
+  position: relative;
+
+  background-size: 1px 1em;
+  box-shadow: inset 0 -0.09em white, inset 0 -0.2em #000;
+  display: inline;
+
+  font-family: "Indie Flower";
+}
+
+.element::after {
+  content: "(noun)";
+  font-family: Roboto;
+  font-size: 11px;
+
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  left: 0;
+  -webkit-transform: translateY(120%);
+          transform: translateY(120%);
 }
 
 /* .post-video-wrapper iframe{
