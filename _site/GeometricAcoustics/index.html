@@ -166,7 +166,7 @@
           <div class="markdown-body">
             <div style="position:relative;padding-top:40%;">
               <iframe
-                src="https://www.youtube.com/embed/PAh2ihwuGjU"
+                src="https://www.youtube.com/embed/K3n09A45o8Y"
                 frameborder="0"
                 allowfullscreen
                 style="position:absolute;top:0;left:0;width:100%;height:100%;""
@@ -182,6 +182,7 @@
 <li class="has-line-data" data-line-start="8" data-line-end="9">Real-time Reverberation</li>
 <li class="has-line-data" data-line-start="9" data-line-end="10">Real-time Occlusion</li>
 <li class="has-line-data" data-line-start="10" data-line-end="12">Visualizing Raytraces in GUI</li>
+<li class="has-line-data" data-line-start="10" data-line-end="12">Stereo Sound</li>
 </ul>
 <h3 class="code-line" data-line-start=12 data-line-end=13 ><a id="Simple_Reverberation_12"></a>Simple Reverberation</h3>
 <p class="has-line-data" data-line-start="13" data-line-end="14">To begin, I needed to access Minecraft’s OpenAL sound engine and add filters to all the sound sources to give a reverberation effect. I used OpenAL’s <a href="https://kcat.strangesoft.net/misc-downloads/Effects%20Extension%20Guide.pdf">Effects Extension Guide</a>, which served in-valuable in implementing the various featured needed in the mod.</p>
@@ -396,6 +397,15 @@ GL11.glPopMatrix();
 <p class="has-line-data" data-line-start="215" data-line-end="216">OpenGL (GL11) can be used to transform the texture in many different ways. In the above example, I am able to modify the color of the texture to any given RGB value.</p>
 <p class="has-line-data" data-line-start="217" data-line-end="218">Players will <strong>press F6</strong> to see the GUI. An example of the finished overlay is pictured here:</p>
 <p class="has-line-data" data-line-start="219" data-line-end="220"><img src="https://s3.amazonaws.com/sachinreddy.com/GeometricAcoustics/GuiOverlay.png" alt="GUI Overlay" title="GUI Overlay"></p>
+
+<h3 class="code-line" data-line-start=222 data-line-end=223 ><a id="Stereo_Sound_222"></a>Stereo Sound</h3>
+<p class="has-line-data" data-line-start="224" data-line-end="225">Currently Minecraft does not support multi-channel audio, so I decided to add stereo sound to all reverberation in the game. This way, the player will feel much more immersed.</p>
+<p class="has-line-data" data-line-start="226" data-line-end="227">To do this, I used the effects AL_EAXREVERB_LATE_REVERB_PAN and AL_EAXREVERB_REFLECTIONS_PAN. Inputting a vector such as [-1.0f, 0.0f, 0.0f] would give reverberation entirely in the left ear. Building on top of this, I implemented a dynamic way to set the pan’s position parameters.</p>
+<p class="has-line-data" data-line-start="228" data-line-end="229">For each bounce of the emitted ray trace, I accumulate the x-position in an array indexed by the ray bounce. See the figure:</p>
+<p class="has-line-data" data-line-start="230" data-line-end="231"><img src="https://s3.amazonaws.com/sachinreddy.com/GeometricAcoustics/StereoSound.png" style="display: block;margin: auto; width: 50%;" alt="Stereo Sound" title="Stereo Sound"></p>
+<p class="has-line-data" data-line-start="232" data-line-end="233">After these values are accumulated, they are then normalized, clamped between -1.0f and 1.0f, and attached to the effect object.</p>
+<p class="has-line-data" data-line-start="234" data-line-end="235">Although simple, this method allows for varying reverberation in each ear. Further implementation could be done to support surround sound.</p>
+
 <h3 class="code-line" data-line-start=221 data-line-end=222 ><a id="Conclusion_221"></a>Conclusion</h3>
 <p class="has-line-data" data-line-start="222" data-line-end="223">Overall I really enjoyed this project, since it applied game engine techniques including raytracing and OpenAL modifications. I plan on updating the code considering that new versions of Minecraft continue to be released and my code only supports version 1.11.</p>
 <p class="has-line-data" data-line-start="224" data-line-end="226"><a href="GeometricAcoustics-1.11.jar">Download (Version 1.11)</a><br>
