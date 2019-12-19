@@ -2972,8 +2972,64 @@ table td {
 
   position: absolute;
   left: 0;
-  transform: translateY(120%);
+  transform: translateY(110%);
 }
+
+/* ----------------------------- */
+
+.search-box {
+  position: relative;
+
+  background: #495961;
+  height: 40px;
+  border-radius: 40px;
+  /* padding: 10px; */
+
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.search-btn {
+  color: #495961;
+  float: right;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 5px;
+  margin-right: 5px;
+
+  transition: 0.4s;
+}
+
+.search-btn:hover {
+  transition: 0.4s;
+  background: #ff3333;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.search-text {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: whitesmoke;
+  font-size: 14px;
+
+  line-height: 40px;
+  padding-left: 15px;
+  width: 75%;
+
+  font-family: Roboto;
+}
+
+/* ----------------------------- */
 
 /* .post-video-wrapper iframe{
   border-radius: 25px;
