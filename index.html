@@ -1025,10 +1025,11 @@
                     if (query.length == 0) {
                         retMovies[movie] = movies[movie];
                     }
-
-                    if ((movies[movie][0].toUpperCase().search(query.toUpperCase()) != -1 || movies[movie][1].toUpperCase().search(query.toUpperCase()) != -1) && query.length != 0) {
+  
+                    var re = new RegExp(query.trim(), 'i');
+                    if ((movies[movie][0].search(re) != -1 || movies[movie][1].search(re) != -1) && query.length != 0) {
                         retMovies[movie] = movies[movie];
-                    }    
+                    }
                 }
 
                 document.getElementById("movies").innerHTML = movieMarkup(retMovies);
