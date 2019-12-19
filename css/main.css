@@ -2868,36 +2868,11 @@ table td {
 
 .emoji {
   font-size: 23.5px;
+  /* padding-left: 7px;
+  position: relative; */
   padding-left: 12px;
   position: absolute;
-  bottom: 4px;
-}
-
-@media only screen {
-  .emoji {
-    bottom: 2px;
-  }
-}
-
-/* Internet Explorer */
-@media screen and (-ms-high-contrast: active),
-  screen and (-ms-high-contrast: none) {
-  .emoji {
-    font-size: 23.5px;
-    padding-left: 12px;
-    position: relative;
-    bottom: 4px;
-  }
-}
-
-/* Firefix */
-@-moz-document url-prefix() {
-  .emoji {
-    font-size: 23.5px;
-    padding-left: 12px;
-    position: relative;
-    bottom: 4px;
-  }
+  bottom: 2px;
 }
 
 /* ------------------------------------------- */
@@ -3024,7 +2999,7 @@ table td {
 
   line-height: 40px;
   padding-left: 15px;
-  width: 75%;
+  width: calc(-35px + 100%);
 
   font-family: Roboto;
 }
