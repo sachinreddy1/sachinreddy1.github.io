@@ -2875,6 +2875,11 @@ table td {
   bottom: 2px;
 }
 
+.emoji-ie {
+  padding-left: 7px;
+  position: relative;
+}
+
 /* ------------------------------------------- */
 
 .award_container {

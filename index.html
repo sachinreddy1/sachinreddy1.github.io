@@ -656,6 +656,18 @@
                 }
                 else {
                     var favorite = `<a class="emoji">` + mret[k][1][4] + `</a>`;
+
+                    if (/MSIE 10/i.test(navigator.userAgent)) {
+                        favorite = `<a class="emoji-ie">` + mret[k][1][4] + `</a>`;
+                    }
+
+                    if (/MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent)) {
+                        favorite = `<a class="emoji-ie">` + mret[k][1][4] + `</a>`;
+                    }
+
+                    if (/Edge\/\d./i.test(navigator.userAgent)){
+                        favorite = `<a class="emoji-ie">` + mret[k][1][4] + `</a>`;
+                    }
                 }
 
                 // 3.2) Rotten Tomatoes Image
@@ -1014,31 +1026,7 @@
                 document.getElementById("searchButton").click();
             }
             });
-
-            if (/MSIE 10/i.test(navigator.userAgent)) {
-                var elements = document.getElementsByClassName("emoji");
-                for(var i=0; i<elements.length; i++) {
-                    elements[i].style.position = 'relative';
-                    elements[i].style.paddingLeft = '7px';
-                }
-            }
-
-            if (/MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent)) {
-                var elements = document.getElementsByClassName("emoji");
-                for(var i=0; i<elements.length; i++) {
-                    elements[i].style.position = 'relative';
-                    elements[i].style.paddingLeft = '7px';
-                }
-            }
-
-            if (/Edge\/\d./i.test(navigator.userAgent)){
-                var elements = document.getElementsByClassName("emoji");
-                for(var i=0; i<elements.length; i++) {
-                    elements[i].style.position = 'relative';
-                    elements[i].style.paddingLeft = '7px';
-                }
-            }
-
+            
             function movieSearch() {
                 var query = document.getElementById("movieText").value;
 
