@@ -501,12 +501,11 @@
                                 </div>
                             </ul>
                         </ul>
-                             
-                        <div id="loadLess">Back</div>
-                        <div id="loadMore">Next</div>                            
-                            
-                        <!-- </ul> -->
-                        <div class = "blankspace"></div>
+                        
+                        <div class="footer__container">
+                            <div id="loadLess">Back</div>
+                            <div id="loadMore">Next</div>  
+                        </div>
                     </div>
 
                 </div>
@@ -933,7 +932,7 @@
         }
             
             document.getElementById("movies").innerHTML = movieMarkup(movies);
-
+            
             for (var movie in movies) {
                 var starPercentage1 = ((movies[movie][5][0] + movies[movie][5][1] + movies[movie][5][2] + movies[movie][5][3]) / 4) * 10;
                 var starPercentage2 = ((movies[movie][6][0] + movies[movie][6][1] + movies[movie][6][2] + movies[movie][6][3]) / 4) * 10;

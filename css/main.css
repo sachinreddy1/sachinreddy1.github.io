@@ -2637,13 +2637,17 @@ table td {
   display: none;
 }
 
+.footer__container {
+  position: relative;
+}
+
 #loadMore {
   background-color: rgba(255, 255, 255, 0);
 
   color: #495961;
 
-  position: relative;
-  left: 2%;
+  position: absolute;
+  right: 15px;
   border: 3px solid #495961;
   /* bottom: 2%;
   padding-bottom: 2%; */
@@ -2651,9 +2655,9 @@ table td {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 16px;
-  margin: 1% 0px 0px 0px;
+  margin: 10px 0px 20px 0px;
 
   cursor: pointer;
 
@@ -2688,8 +2692,8 @@ table td {
 
   color: #495961;
 
-  position: relative;
-  left: 2%;
+  position: absolute;
+  left: 15px;
   border: 3px solid #495961;
   /* bottom: 2%;
   padding-bottom: 2%; */
@@ -2697,9 +2701,9 @@ table td {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 16px;
-  margin: 1% 0px 0px 0px;
+  margin: 10px 0px 20px 0px;
 
   cursor: pointer;
 
