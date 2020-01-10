@@ -2963,12 +2963,10 @@ table td {
 
 .search-box {
   position: relative;
-
   background: #495961;
-  height: 40px;
+  height: 35px;
   border-radius: 40px;
   /* padding: 10px; */
-
   margin-left: 25px;
   margin-right: 25px;
 }
@@ -2976,17 +2974,15 @@ table td {
 .search-btn {
   color: #495961;
   float: right;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background: whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-top: 5px;
   margin-right: 5px;
-
   transition: 0.4s;
 }
 
@@ -3005,11 +3001,9 @@ table td {
   padding: 0;
   color: whitesmoke;
   font-size: 14px;
-
-  line-height: 40px;
+  line-height: 35px;
   padding-left: 15px;
-  width: calc(-35px + 100%);
-
+  width: calc(-30px + 100%);
   font-family: Roboto;
 }
 
