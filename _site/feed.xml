@@ -5,8 +5,8 @@
     <description>A personal website.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Jan 2020 12:26:52 -0500</pubDate>
-    <lastBuildDate>Fri, 10 Jan 2020 12:26:52 -0500</lastBuildDate>
+    <pubDate>Fri, 10 Jan 2020 12:55:06 -0500</pubDate>
+    <lastBuildDate>Fri, 10 Jan 2020 12:55:06 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
   </channel>
