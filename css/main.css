@@ -36,6 +36,7 @@ body {
   font-feature-settings: "liga" 0;
   font-size: 100%;
   line-height: 1.7;
+  color: rgb(145, 145, 145);
 }
 /* Font size based on width */
 @media (min-width: 16em) {
@@ -397,6 +398,7 @@ section {
 
 .preview {
   transition: background-color 0.2s ease-in-out;
+
 }
 .preview:nth-child(even) {
   background-color: #1f1f1f;
@@ -407,6 +409,7 @@ section {
 .preview:hover {
   background-color: rgba(135, 117, 101, 0.05);
 }
+
 .preview:hover .preview__more {
   box-shadow: inset 175px 0 0 0 whitesmoke;
   color: #121212;
@@ -458,11 +461,11 @@ section {
 }
 .preview__excerpt {
   /* max-width: 75%; */
-  color: whitesmoke;
+  color: #dfdfdf;
 }
 .small_preview__excerpt {
   max-width: 75%;
-  color: whitesmoke;
+  color: #dfdfdf;
 }
 .preview__more {
   display: inline-block;
@@ -1404,7 +1407,7 @@ section {
 }
 
 .gha-feed small {
-  color: #666;
+  color: rgb(145, 145, 145);
   font-weight: normal;
   font-size: 13px;
 }
@@ -1517,7 +1520,7 @@ span.gha-time {
   display: inline;
   float: right;
   margin-right: 10px;
-  padding-right: 20px;
+  padding-right: 0px;
   max-width: 60px;
   height: 67px;
 }
@@ -2347,6 +2350,22 @@ span.gha-time {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+
+  /* -------------- */
+}
+/* 
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  -moz-transition: -moz-transform 0.4s ease-in-out;
+  -ms-transition: -ms-transform 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+} */
+
+.preview:hover .post-image {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
 }
 
 /* ------------------------------------------- */
@@ -2530,12 +2549,12 @@ table td {
   font-family: Helvetica;
   padding: 7px;
   border-radius: 10px;
-  color: whitesmoke;
+  color: #121212;
   position: absolute;
   top: 30%;
-  left: 17.15em;
+  left: 17.2em;
   width: 8.2em;
-  background: #272727;
+  background: whitesmoke;
   z-index: 5;
   cursor: e-resize;
 }
