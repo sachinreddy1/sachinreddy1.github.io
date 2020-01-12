@@ -129,7 +129,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #ff3333;
+  color: gold;
 }
 
 aq {
@@ -142,7 +142,7 @@ aq {
 aq:hover,
 aq:active,
 aq:focus {
-  color: #ff3333;
+  color: gold;
 }
 
 figure {
@@ -185,12 +185,12 @@ ul {
  */
 ::-moz-selection {
   color: whitesmoke;
-  background-color: #ff3333;
+  background-color: gold;
   text-shadow: none;
 }
 ::selection {
   color: whitesmoke;
-  background-color: #ff3333;
+  background-color: gold;
   text-shadow: none;
 }
 
@@ -249,7 +249,7 @@ ul {
  * Body
  */
 body {
-  background-color: #121212;
+  background-color: #1e1e1e;
 }
 
 /* --------------------------------------------- */
@@ -325,7 +325,7 @@ section {
 
 .previews > *:first-child {
   position: relative;
-  height: 29em;
+  height: 36em;
   background-color: #0a0a0a;
 }
 /*  */
@@ -417,8 +417,9 @@ section {
   box-shadow: -2px 0px 0px 0px #f5f5f5;
 }
 .preview:hover {
-  background-color: rgba(135, 117, 101, 0.05);
+  /* background-color: rgba(135, 117, 101, 0.05); */
   box-shadow: -6px 0px 0px 0px #f5f5f5;
+  background-color: #121212;
 }
 
 .preview:hover .preview__more {
@@ -1470,14 +1471,13 @@ span.gha-time {
   padding: 10px;
   height: 77px;
   /* border-bottom: 1px solid #000000; */
-  background: #000000;
   /* Old browsers */
   /* FF3.6+ */
   /* Chrome,Safari4+ */
   /* Chrome10+,Safari5.1+ */
   /* Opera 11.10+ */
   /* IE10+ */
-  background: #121212;
+  background: #f5f5f5;
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 );
   /* IE6-9 */
@@ -1505,6 +1505,7 @@ span.gha-time {
   color: whitesmoke;
   font-size: 13px;
   padding-left: 20px;
+  display: none;
 }
 
 .gha-footer a {
@@ -1526,10 +1527,10 @@ span.gha-time {
 .gha-github-icon {
   display: inline;
   float: left;
-  padding: 9px 0 0;
+  padding: 9px 12px 0;
   width: 35px;
   height: 35px;
-  color: whitesmoke;
+  color: #121212;
 }
 
 .gha-github-icon .octicon {
@@ -1546,10 +1547,8 @@ span.gha-time {
 }
 
 .gha-gravatar img {
-  padding: 3px;
   width: 100%;
-  border: 1px solid #000000;
-  box-shadow: 1px 1px 3px #000000;
+  border-radius: 50%;
 }
 
 .gha-activity {
@@ -1641,13 +1640,16 @@ span.gha-time {
   display: inline-block;
   float: left;
   margin: 0 auto;
-  padding: 8px 25px 5px;
-  color: #495961;
+  padding: 6px 5px 5px 43px;
+  text-align: center;
+  color: #121212;
   font-size: 20px;
 }
 
 .gha-user-info a {
-  color: whitesmoke;
+  color: #121212;
+  font-family: "Roboto", serif;
+  font-weight: bolder;
 }
 
 .gha-user-info p a {
@@ -1761,7 +1763,7 @@ span.gha-time {
   line-height: inherit;
 }
 .markdown-body a {
-  color: #0366d6;
+  color: #69b4ff;
   text-decoration: none;
 }
 .markdown-body a:hover {
@@ -3050,7 +3052,7 @@ table td {
 .search-btn:hover {
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  background: #ff3333;
+  background: gold;
   color: whitesmoke;
   cursor: pointer;
 }
