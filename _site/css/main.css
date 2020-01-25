@@ -435,28 +435,28 @@ section {
 }
 .preview__link {
   display: block;
-  /* padding: 2em calc(2em + 6.5em) 2em 5%; */
-  padding: 2em calc(2em + 4em) 2em 5%;
+  padding: 2em calc(2em + 6.5em) 2em 5%;
+  /* padding: 2em calc(2em + 4em) 2em 2em; */
   position: relative;
 }
 @media (min-width: 44em) {
   .preview__link {
-    padding: 2.5em calc(3em + 4em) 2.5em 7%;
+    padding: 2.5em calc(3em + 4em) 2.5em 5%;
   }
 }
 @media (min-width: 54em) {
   .preview__link {
-    padding: 2.5em calc(3em + 7em) 2.5em 7%;
+    padding: 2.5em calc(3em + 7em) 2.5em 5%;
   }
 }
 @media (min-width: 64em) {
   .preview__link {
-    padding: 2.5em calc(3em + 10em) 2.5em 6%;
+    padding: 2.5em calc(3em + 10em) 2.5em 5%;
   }
 }
 @media (min-width: 76.5em) {
   .preview__link {
-    padding: 2.5em calc(3em + 13em) 2.5em 3em;
+    padding: 2.5em calc(3em + 13em) 2.5em 5%;
   }
 }
 /* @media (min-width: 114em) {
@@ -1239,8 +1239,8 @@ section {
 
 .highlight,
 .highlight .w {
-  color: #93a1a1;
-  background-color: #002b36;
+  color: #121212;
+  background-color: whitesmoke;
 }
 
 .highlight .err {
@@ -1527,7 +1527,7 @@ span.gha-time {
 .gha-github-icon {
   display: inline;
   float: left;
-  padding: 9px 12px 0;
+  padding: 8px 12px 0;
   width: 35px;
   height: 35px;
   color: #121212;
@@ -1591,6 +1591,7 @@ span.gha-time {
   color: #bbb;
   text-align: center;
   font: normal normal 30px octicons;
+  padding-left: 15px;
 }
 
 .gha-activity-icon .gha-small {
@@ -1601,6 +1602,7 @@ span.gha-time {
   display: inline-block;
   float: left;
   width: calc(100% - 50px);
+  padding-left: 15px;
 }
 
 .gha-message-commits {
@@ -2377,20 +2379,20 @@ span.gha-time {
 
   /* -------------- */
 }
-/* 
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+
+  /* -webkit-transition: -webkit-transform 0.4s ease-in-out;
   -moz-transition: -moz-transform 0.4s ease-in-out;
   -ms-transition: -ms-transform 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-} */
+  -webkit-filter: brightness(1);
+  filter: brightness(1);
+}
 
 .preview:hover .post-image {
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
-}
+  -webkit-filter: brightness(1.2);
+  filter: brightness(1.25);
+} */
 
 /* ------------------------------------------- */
 
