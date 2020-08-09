@@ -2380,7 +2380,7 @@ span.gha-time {
   /* -------------- */
 }
 
-  /* -webkit-transition: -webkit-transform 0.4s ease-in-out;
+/* -webkit-transition: -webkit-transform 0.4s ease-in-out;
   -moz-transition: -moz-transform 0.4s ease-in-out;
   -ms-transition: -ms-transform 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
@@ -2596,15 +2596,15 @@ table td {
 }
 
 .no-webp .hero_profile_img {
-  background-image: url("/assets/image/wallpaper.png");
+  background-image: url("https://s3.amazonaws.com/sachinreddy.com/assets/image/wallpaper.png");
 }
 
 .webp .hero_profile_img {
-  background-image: url("/assets/image/wallpaper.png");
+  background-image: url("https://s3.amazonaws.com/sachinreddy.com/assets/image/wallpaper.png");
 }
 
 .no-webp .post_card_img {
-  background-image: url("/assets/image/wallpaper.png");
+  background-image: url("https://s3.amazonaws.com/sachinreddy.com/assets/image/wallpaper.png");
 }
 
 .webp .post_card_img {
