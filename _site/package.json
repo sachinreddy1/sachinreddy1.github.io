@@ -39,7 +39,7 @@
     "del": "^3.0.0",
     "fstream": ">=1.0.12",
     "gulp-uglifycss": "^1.1.0",
-    "lodash": ">=4.17.19",
+    "lodash": ">=4.17.21",
     "lodash.template": ">=4.5.0",
     "marked": "^0.7.0",
     "run-sequence": "^2.2.1",
