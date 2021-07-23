@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
@@ -164,6 +165,124 @@
 
         <section class="section-padding post" itemprop="articleBody">
           <div class="markdown-body">
+            <div style="position:relative;padding-top:40%;">
+              <iframe
+                src="https://www.youtube.com/embed/K3n09A45o8Y"
+                frameborder="0"
+                allowfullscreen
+                style="position:absolute;top:0;left:0;width:100%;height:100%;""
+              ></iframe>
+            </div>
+            <h2 class="code-line" data-line-start=0 data-line-end=1 ><a id="Background_0"></a>Background</h2>
+<p class="has-line-data" data-line-start="1" data-line-end="2">After reading through Zuofu Cheng’s <a href="https://www.ideals.illinois.edu/bitstream/handle/2142/50364/Zuofu_Cheng.pdf?sequence=1">Dissertation</a> on Real-Time Geometric Acoustics in Interactive Applications, I was inspired to apply some of his concepts into my own Minecraft Mod. Seeing that Zuofu had incredible success in implementing Geometric Acoustics in <a href="https://www.youtube.com/watch?v=TXUTgEmnD6U">Quake 3</a>, I felt Minecraft would be a great application to apply these sound concepts to.</p>
+<p class="has-line-data" data-line-start="3" data-line-end="4">I planned to create a mod that would overhaul Minecraft’s sound engine, adding echoing in the form of real-time reverberation and occlusion.</p>
+<h3 class="code-line" data-line-start=5 data-line-end=6 ><a id="GoalsFunctionalities_5"></a>Goals/Functionalities</h3>
+<ul>
+<li class="has-line-data" data-line-start="6" data-line-end="7">Simple Reverberation</li>
+<li class="has-line-data" data-line-start="7" data-line-end="8">Raytracing Environment</li>
+<li class="has-line-data" data-line-start="8" data-line-end="9">Real-time Reverberation</li>
+<li class="has-line-data" data-line-start="9" data-line-end="10">Real-time Occlusion</li>
+<li class="has-line-data" data-line-start="10" data-line-end="12">Visualizing Raytraces in GUI</li>
+<li class="has-line-data" data-line-start="10" data-line-end="12">Stereo Sound</li>
+</ul>
+<h3 class="code-line" data-line-start=12 data-line-end=13 ><a id="Simple_Reverberation_12"></a>Simple Reverberation</h3>
+<p class="has-line-data" data-line-start="13" data-line-end="14">To begin, I needed to access Minecraft’s OpenAL sound engine and add filters to all the sound sources to give a reverberation effect. I used OpenAL’s <a href="https://kcat.strangesoft.net/misc-downloads/Effects%20Extension%20Guide.pdf">Effects Extension Guide</a>, which served in-valuable in implementing the various featured needed in the mod.</p>
+<p class="has-line-data" data-line-start="15" data-line-end="16">The first major step was to create auxiliary effect slots which are  containers for DSP Effects. Four effect slots are created with the following:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="17" data-line-end="21" class="language-java"><span class="hljs-comment">// Creating Effect Slot</span>
+<span class="hljs-keyword">int</span> auxFXSlot0 = EFX10.alGenAuxiliaryEffectSlots();
+EFX10.alAuxiliaryEffectSloti(auxFXSlot0, EFX10.AL_EFFECTSLOT_AUXILIARY_SEND_AUTO, AL10.AL_TRUE);
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="22" data-line-end="23">After this, effect objects need to be created in order to bind to these effect slots. This is done with the following:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="24" data-line-end="28" class="language-java"><span class="hljs-comment">// Creating Effect Object</span>
+<span class="hljs-keyword">int</span> reverb0 = EFX10.alGenEffects();
+EFX10.alEffecti(reverb0, EFX10.AL_EFFECT_TYPE, EFX10.AL_EFFECT_EAXREVERB);
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="28" data-line-end="29">There are two reverb effect types in this SDK: AL_EFFECT_REVERB and AL_EFFECT_EAXREVERB. I decided to use AL_EFFECT_EAXREVERB since it has a more advanced parameter set.</p>
+<p class="has-line-data" data-line-start="30" data-line-end="31">After adding the code, the next step was to create filters</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="32" data-line-end="36" class="language-java"><span class="hljs-comment">// Creating Filter</span>
+<span class="hljs-keyword">int</span> sendFilter0 = EFX10.alGenFilters();
+EFX10.alFilteri(sendFilter0, EFX10.AL_FILTER_TYPE, EFX10.AL_FILTER_LOWPASS);
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="36" data-line-end="37">After generating a Filter object, the application can set the values for each of the parameters using the alFilter(i,iv,f,fv) function call, which will be used when calculating the environment.</p>
+<p class="has-line-data" data-line-start="38" data-line-end="39">To then set the reverberation parameters, I can simply do:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="40" data-line-end="47" class="language-java"><span class="hljs-comment">// Set reverberation parameters</span>
+EFX10.alEffectf(reverb0, EFX10.AL_EAXREVERB_DENSITY, r.density);     
+EFX10.alEffectf(reverb0, EFX10.AL_EAXREVERB_DIFFUSION, r.diffusion);
+EFX10.alEffectf(reverb0, EFX10.AL_EAXREVERB_GAIN, r.gain);
+EFX10.alEffectf(reverb0, EFX10.AL_EAXREVERB_GAINHF, r.gainHF);
+...
+<span class="hljs-comment">//Attach updated effect object</span>
+EFX10.alAuxiliaryEffectSloti(auxFXSlot0, EFX10.AL_EFFECTSLOT_EFFECT, reverb0);
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="47" data-line-end="48">I created a reverberation class to easily add these values for density, diffusion, etc. Each of which ranges from 0 to 10.</p>
+<p class="has-line-data" data-line-start="49" data-line-end="50">And lastly, I had to configure the filter for each slot that was created with:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="51" data-line-end="55" class="language-java">EFX10.alFilterf(sendFilter0, EFX10.AL_LOWPASS_GAIN, sendGain0);
+EFX10.alFilterf(sendFilter0, EFX10.AL_LOWPASS_GAINHF, sendCutoff0);
+AL11.alSource3i(sourceID, EFX10.AL_AUXILIARY_SEND_FILTER, auxFXSlot0, <span class="hljs-number">0</span>, sendFilter0);
+</code></pre></div></div>
+<p class="has-line-data" data-line-start="55" data-line-end="56">To test the reverberation, I simply set the four gains to 1.0 and four cutOffs to 1.0. This gave a large and pronounced reverberation for each sound source in the game.</p>
+<h3 class="code-line" data-line-start=57 data-line-end=58 ><a id="Raytracing_Environment_57"></a>Raytracing Environment</h3>
+<p class="has-line-data" data-line-start="59" data-line-end="60">The next hard step was to use raytracing to calculate the environment, so that accurate values could be used for the Gain and Cutoff values. These values will allow for accurate reverberation. For example, if a player is in an open field, they should not hear large reverberation due to a lack of reflected sound waves. On the other hand, if a player is in a cave, reverberation should be pronounced considering the possibility of echoing.</p>
+<p class="has-line-data" data-line-start="61" data-line-end="62">With a given set of rays emitting from a sound source, each of which can bounce up to four times if the ray hits a block, the reflectance and ray distance are accumulated in an array indexed by the ray bounce. These ray bounces help to determine the size of the room a player is standing in. If no ray bounces are present for the entire set of rays, then we can assume the player is standing in an open field. Consider the image below:</p>
+<p class="has-line-data" data-line-start="63" data-line-end="64"><img src="https://s3.amazonaws.com/sachinreddy.com/GeometricAcoustics/EnvironmentEvaluation.png" style="display: block;margin: auto; width: 50%;" alt="Environment Evaluation" title="Environment Evaluation"></p>
+<p class="has-line-data" data-line-start="65" data-line-end="66">To give an even better idea, here is a simplied version of the code:</p>
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre
+      class="highlight"
+    ><code class="has-line-data" data-line-start="68" data-line-end="136" class="language-java"><span class="hljs-comment">// Getting player and sound positions</span>
+Vec3d soundPos = <span class="hljs-keyword">new</span> Vec3d(posX, posY, posZ);
+Vec3d playerPos = minecraft.thePlayer.getPositionVector();
+
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">float</span> phi = <span class="hljs-number">1.618033988f</span>;
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">float</span> gAngle = phi * (<span class="hljs-keyword">float</span>)Math.PI * <span class="hljs-number">2.0f</span>;
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">float</span> maxDistance = <span class="hljs-number">256.0f</span>;
+
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> numRays = <span class="hljs-number">30</span>;
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> rayBounces = <span class="hljs-number">4</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; numRays; i++)
+{
+    <span class="hljs-keyword">float</span> fi = (<span class="hljs-keyword">float</span>)i;
+    <span class="hljs-keyword">float</span> fiN = (<span class="hljs-keyword">float</span>)fi / (<span class="hljs-keyword">float</span>)numRays;
+    <span class="hljs-keyword">float</span> longitude = gAngle * fi * <span class="hljs-number">1.0f</span>;
+    <span class="hljs-keyword">float</span> latitude = (<span class="hljs-keyword">float</span>)Math.asin(fiN * <span class="hljs-number">2.0f</span> - <span class="hljs-number">1.0f</span>);
+    
+    Vec3d rayDir = <span class="hljs-keyword">new</span> Vec3d(<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>);
+    {
+        <span class="hljs-keyword">double</span> x = Math.cos(latitude) * Math.cos(longitude);
+        <span class="hljs-keyword">double</span> y = Math.cos(latitude) * Math.sin(longitude);
+        <span class="hljs-keyword">double</span> z = Math.sin(latitude);
+        rayDir = <span class="hljs-keyword">new</span> Vec3d(x, y, z);
+    }
+    
+    Vec3d rayStart = <span class="hljs-keyword">new</span> Vec3d(soundPos.xCoord, soundPos.yCoord, soundPos.zCoord);
+    Vec3d rayEnd = <span class="hljs-keyword">new</span> Vec3d(rayStart.xCoord + rayDir.xCoord * maxDistance, rayStart.yCoord + rayDir.yCoord * maxDistance, rayStart.zCoord + rayDir.zCoord * maxDistance);
+    RayTraceResult rayHit = minecraft.theWorld.rayTraceBlocks(rayStart, rayEnd, <span class="hljs-keyword">true</span>);
+    
+    <span class="hljs-keyword">if</span> (rayHit != <span class="hljs-keyword">null</span>)
+    {
+        <span class="hljs-keyword">double</span> rayLength = soundPos.distanceTo(rayHit.hitVec);
                 
         <span class="hljs-comment">// Additional bounces</span>
         Int3 lastHitBlock = Int3.create(rayHit.getBlockPos().getX(), rayHit.getBlockPos().getY(), rayHit.getBlockPos().getZ());
