@@ -28,7 +28,7 @@
     "gulp-util": "^1.0.0",
     "gulp-webp": "^4.0.0",
     "pump": "^1.0.3",
-    "ws": "3.3.2"
+    "ws": "5.2.3"
   },
   "bugs": {
     "url": "https://github.com/shakyShane/jekyll-gulp-sass-browser-sync/issues"
