@@ -1,6 +1,6 @@
 ### Links
 
-[Play Store (Coming Soon!)](https://play.google.com/store/apps/details?id=com.sachinreddy.feature)
+[**Play Store**](https://play.google.com/store/apps/details?id=com.sachinreddy.feature)
 [Latest APK](app-release.apk)
 [Link to Github Repo](https://github.com/sachinreddy1/Voicebox)
 [Privacy Policy](/Privacy_Policy)
