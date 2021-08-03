@@ -43,6 +43,6 @@
     "lodash.template": ">=4.5.0",
     "marked": "^0.7.0",
     "run-sequence": "^2.2.1",
-    "tar": ">=2.2.2"
+    "tar": ">=5.0.7"
   }
 }
