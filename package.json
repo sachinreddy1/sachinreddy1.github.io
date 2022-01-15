@@ -41,7 +41,7 @@
     "gulp-uglifycss": "^1.1.0",
     "lodash": ">=4.17.19",
     "lodash.template": ">=4.5.0",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "run-sequence": "^2.2.1",
     "tar": ">=2.2.2"
   }
